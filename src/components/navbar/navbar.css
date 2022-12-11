@@ -1,0 +1,97 @@
+
+.navbar {
+  direction: ltr !important;
+}
+
+.avatar{
+  margin-left: 1.5rem;
+  width : 39px;
+  height : 40px;
+  color: #2f439a;
+}
+
+.avatar2{
+  margin-left: 1.5rem;
+  width : 39px;
+  height : 40px;
+  color: #2f439a;
+}
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.link  {
+  font-weight: 600;
+ padding: 15px;
+}
+.link-vendors{
+  font-weight: bold;
+  padding: auto;
+}
+.link,
+.link-button, .link-vendors{
+ 
+  font-size: 1rem;
+  color: #2f439a;
+  text-decoration: none;
+}
+
+.link-button {
+  background:transparent;
+  margin: 0 0 0 30px;
+  text-shadow: 0px 0px 0px #00000000;
+  /* padding: 5px 15px; */
+  position: relative;
+  font-weight: 600;
+
+}
+
+.navbar.light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+background-color: transparent;
+
+}
+
+.navbar-wrap {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+  margin: auto;
+}
+
+.navbar.dark {
+  background-image: linear-gradient(40deg, #ffffff 11%, #e5e9ff 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+background-color: transparent;
+}
+
+.navbar.light .link,
+.navbar.light .lang {
+  color: #2f439a;
+}
+
+
+@media (max-width: 910px) {
+  .navbar-wrap {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .avatar{
+    margin-right: 0.875rem;
+  }
+}

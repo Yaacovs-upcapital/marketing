@@ -1,0 +1,152 @@
+
+
+.details-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 10px;
+  min-height: 50px;
+  margin-bottom: 80px;
+}
+
+.details {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #2f439a;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px;
+}
+
+.job-container {
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  color: #2f439a;
+  margin-bottom: 80px;
+}
+
+.job-desc-wrap {
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+.desc-title,
+.job-app-title {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.job-app-title {
+  padding-top: 80px;
+  color: #fff;
+  text-align: center;
+}
+
+.job-app {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../assets/images/blue_dot.png);
+  height: 80vh;
+  background-size: cover;
+}
+
+.job-form {
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+.job-qualification{
+text-align: justify;
+}
+
+.detail-input input,
+.detail-input textarea,
+.upload {
+  border: 1px solid #fff;
+  color: #fff !important;
+  background-color: #ffffff00 !important;
+  border-radius: 5px !important;
+  text-align: right;
+  font-weight: 400;
+  font-size: 16px;
+  direction: rtl;
+  margin: 10px 0;
+}
+
+.detail-input ::placeholder {
+  color: #fff;
+}
+
+.job-form input[type="submit"] {
+  background-color: #fff;
+  color: #2f439a;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+  text-align: center;
+  font-size: 18px;
+}
+
+.upload input {
+  border: none;
+  margin: 0;
+}
+
+.upload {
+  display: flex;
+  align-items: center;
+  padding: 0 auto;
+}
+
+.upload-title {
+  font-size: 16px;
+  width: 30%;
+  padding-right: 8px;
+  font-weight: 400;
+}
+
+@media (max-width:768px) {
+  .bg-img{
+    margin-bottom: 50px;
+  }
+
+  .job-container, .job-form{
+    width: 70%;
+  }
+
+  .details-wrap{
+    display: block;
+  }
+
+  .details{
+    font-size: 0.9em;
+    margin-bottom: 15px;
+  }
+
+  .desc-title{
+    font-size: 1.5em;
+  }
+ .upload-title{
+   margin-top: 8px;
+    font-size: 0.8em;
+    width: 100%;
+  }
+
+  .detail-input input, .detail-input textarea,  .job-desc-wrap, .job-qualification{
+    font-size: 0.9em;
+  }
+  .upload{
+   display: block;
+  }
+
+}

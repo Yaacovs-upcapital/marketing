@@ -1,0 +1,18 @@
+.link-btn {
+  color: #fff;
+  border-color: #2f439a;
+  border-width: 1px !important;
+  border-style: solid;
+  border-radius: 5px;
+  margin: 0 0 0 30px !important;
+  text-shadow: 0px 0px 0px #00000000;
+  padding: 5px 15px;
+  position: relative;
+  background: #2f439a;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  line-height: 22px;
+}
+

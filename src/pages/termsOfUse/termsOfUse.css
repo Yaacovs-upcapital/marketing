@@ -1,0 +1,30 @@
+
+.terms-container  {
+  text-align: justify;
+  line-height: 1.3em;
+  font-weight: 500;
+  color: #2f439a;
+  margin-bottom: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  
+    
+}
+
+.p-title {
+  text-decoration: underline;
+}
+
+@media (max-width:768px) {
+  .terms-container{
+    font-size: 0.8em;
+    width: 75%;
+    margin-right:  20px;
+    margin-left: auto;
+  }
+
+  .last-update{
+    margin-right:  30px;
+
+  }
+}

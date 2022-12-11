@@ -1,0 +1,18 @@
+.drawer-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2f439a;
+}
+
+.opened-nav {
+  width: 100%;
+  text-align: center;
+  background: #2f439a;
+}
+
+.drawer-container .link-button, .drawer-container .link{
+    margin: 0;
+    font-size: 20px;
+}

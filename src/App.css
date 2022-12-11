@@ -1,0 +1,45 @@
+.en {
+  direction: ltr !important;
+}
+
+.noEn {
+  direction: rtl !important;
+}
+
+@font-face {
+  font-family: "RagRegular"; /*Can be any text*/
+  src: local("RagSans-1.4-Regular"),
+    url("./fonts/RagSans-1.4-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "RagRegular2"; /*Can be any text*/
+  src: local("RagSans-1.4-Regular2"),
+    url("./fonts/RagSans-1.4-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "RagBold"; /*Can be any text*/
+  src: local("RagSans-1.4-Bold"),
+    url("./fonts/RagSans-1.4-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "RagBold2"; /*Can be any text*/
+  src: local("RagSans-1.4-Bold2"),
+    url("./fonts/RagSans-1.4-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "LeonRegular"; /*Can be any text*/
+  src: local("LeonRegular"), url("./fonts/Leon-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "LeonBold"; /*Can be any text*/
+  src: local("LeonBold"), url("./fonts/Leon-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "RAG-Sans1.0-Regular"; /*Can be any text*/
+  src: local("RAG-Sans1.0-Regular"), url("./fonts/RAG-Sans1.0-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "RAG-Sans1.0-Bold"; /*Can be any text*/
+    src: local("RAG-Sans1.0-Bold"), url("./fonts/RAG-Sans1.0-Bold.otf") format("opentype");
+  }

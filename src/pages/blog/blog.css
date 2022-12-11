@@ -1,0 +1,24 @@
+.articles-wrap {
+  direction: rtl;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  padding-top: 40px;
+}
+
+.articles-wrap .card-title{
+font-size: 20px;
+}
+
+@media (max-width: 767px) {
+     .articles-wrap {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .blog-container .bg-img{
+    margin-bottom: 60px;
+  }
+}
