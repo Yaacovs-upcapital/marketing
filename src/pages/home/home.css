@@ -30,7 +30,7 @@
 
 @media screen and (min-width:500px) {
   .home-title{
-    margin-top: 120px;
+    margin-top: 8rem;
   }
 }
 @media screen and (max-width: 991px) {
@@ -131,10 +131,10 @@
 
 @media screen and (max-width: 400px) {
   .home-jumbotron {
-    background-image: url(../../assets/images/bg-1.png);
+    background-image: url(../../assets/images/bg1-small.png);
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 700px;
+    /* height: 700px; */
     padding-top: 2rem;
     padding-bottom: 9rem;
     margin-left: -6rem;
@@ -150,7 +150,13 @@
   .img-fluid {
     max-width: 140% !important;
     height: auto !important;
-    margin: 10px !important;
+    margin: 0px !important;
+  }
+
+  .img2-fluid {
+    max-width: 140% !important;
+    height: auto !important;
+    margin: 0px !important;
   }
 }
 
@@ -167,6 +173,8 @@
     margin-right: -6rem;
     padding-left: 100px;
     padding-right: 100px;
+    margin-top: -34rem;
+
   }
 }
 
@@ -182,7 +190,7 @@
     margin-right: -6rem;
     padding-left: 100px;
     padding-right: 100px;
-    margin-top: -90vh;
+    margin-top: -103vh;
   }
 }
 

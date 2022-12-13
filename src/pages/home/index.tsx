@@ -23,17 +23,13 @@ import yaron from "../../assets/images/yaron.png";
 import interview from "../../assets/images/interview.webp"
 import smiling from "../../assets/images/smiling.webp"
 import techbgb from "../../assets/images/tech-bgb.png"
-import ContactForm from "../../components/footer";
 import useWindowSize from "../../components/windowSize";
-// import Slider from 'infinite-react-carousel';
 import { useTranslation } from "react-i18next";
 import "../../translations/i18n";
 import pointerImage from "../../assets/images/pointer-left.png";
-import techBgImage from "../../assets/images/red-curl.png";
-import homeBack from "../../assets/images/home-back.svg";
+import arrowDown from "../../assets/images/arrow-down.png";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-// import { t } from "i18next";
 const partners = [Obelisk, Oracle, PrimeSec, Erech, BDO, Deloitte, Tadmor, PWC]
 const careerPath = "../career"
 
@@ -46,14 +42,14 @@ const Home = (props) => {
     const handleDragStart = (e) => e.preventDefault();
 
     const items = [
-        <div style={{textAlign:"center"}}><img height={"50rem"} width={"110rem"} src={Obelisk} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{textAlign:"center"}}><img height={"50rem"} width={"110rem"} src={Oracle} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{textAlign:"center"}}><img height={"50rem"} width={"110rem"} src={PrimeSec} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{textAlign:"center"}}> <img height={"50rem"} width={"110rem"} src={Erech} onDragStart={handleDragStart} role="presentation" /></div>,
-       <div style={{textAlign:"center"}}><img height={"50rem"} width={"110rem"} src={BDO} onDragStart={handleDragStart} role="presentation" /></div>,
-       <div style={{textAlign:"center"}}><img height={"50rem"} width={"110rem"} src={Deloitte} onDragStart={handleDragStart} role="presentation" /></div>,
-       <div style={{textAlign:"center"}}><img height={"50rem"} width={"110rem"} src={Tadmor} onDragStart={handleDragStart} role="presentation" /></div>,
-       <div style={{textAlign:"center"}}><img height={"50rem"} width={"100rem"} src={PWC} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"110rem"} src={Obelisk} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"110rem"} src={Oracle} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"110rem"} src={PrimeSec} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}> <img height={"50rem"} width={"110rem"} src={Erech} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"110rem"} src={BDO} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"110rem"} src={Deloitte} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"110rem"} src={Tadmor} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"100rem"} src={PWC} onDragStart={handleDragStart} role="presentation" /></div>,
 
     ];
 
@@ -80,17 +76,25 @@ const Home = (props) => {
 
 
                         <div style={{ display: 'flex', justifyContent: 'left', marginTop: "40px", padding: "0" }} className="col-lg-10 col-md-12 col-sm-12 mt-3 jumborton-image">
-                            <img src={home} className="img-fluid" style={{ marginTop: "70px", marginLeft: "-47px" }} />
+                            <img src={home} className="img-fluid" style={{ marginTop: "35px", marginLeft: "-47px" }} />
                         </div>
 
-
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: "baseline", marginTop:useWindowSize()>500?"-90px":"-50px",marginRight:useWindowSize()>500?"-76px":'' }}>
+                            <img src={arrowDown} style={{ width: '22px', height: '40px' }} className="img2-fluid" onClick={() => {
+                                let offsetTop = (document.getElementById("product") as HTMLElement).offsetTop;
+                                window.scrollTo({
+                                    top:window.innerWidth>500?offsetTop+100: offsetTop+300,
+                                    behavior: "smooth"
+                                });
+                            }} />
+                        </div>
 
                     </div>
                 </div>
 
             </div>
 
-            <div className="product" style={{ display: "flex", justifyContent: "center" }} >
+            <div className="product" id="product" style={{ display: "flex", justifyContent: "center" }} >
                 <div className="product-content container" style={{ width: "65rem", margin: "auto" }}>
                     <div className="row">
                         <div className="col-lg-4 col-md-4 col-sm-12">
@@ -123,7 +127,7 @@ const Home = (props) => {
 
 
             <div className="parent-wrap2">
-                <div className="row" style={{marginRight:useWindowSize()>500?'':'-38px'}}>
+                <div className="row" style={{ marginRight: useWindowSize() > 500 ? '' : '-38px' }}>
 
                     <div className="bg-pointer col-lg-3 col-md-12 col-sm-12 p-3 ">
                         <img className="bg-pointer2" src={pointerImage} alt="..." />
@@ -252,7 +256,7 @@ const Home = (props) => {
                     <h1 className="tech">{t('tech')}</h1><h1 className="tech" style={{ color: "red" }}>.</h1>
                 </div>
                 <div>
-                    <img src={techbgb} style={{display:useWindowSize()>700?'block':"none"}} className="techBlue" />
+                    <img src={techbgb} style={{ display: useWindowSize() > 700 ? 'block' : "none" }} className="techBlue" />
                 </div>
 
                 <div className="container">
@@ -448,15 +452,15 @@ const Home = (props) => {
                         {useWindowSize() <= 767 ?
                             <div >
                                 <AliceCarousel
-                                    autoPlay={true} 
-                                    mouseTracking 
+                                    autoPlay={true}
+                                    mouseTracking
                                     autoPlayInterval={1000}
                                     items={items}
                                     autoPlayDirection={'ltr'}
                                     animationDuration={1000}
                                     infinite={true}
-                                    />
-                                    
+                                />
+
 
                             </div>
                             :

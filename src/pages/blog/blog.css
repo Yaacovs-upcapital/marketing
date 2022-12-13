@@ -8,6 +8,10 @@
   padding-top: 40px;
 }
 
+.card{
+  --bs-card-border-radius: 0.8rem !important;
+
+}
 .articles-wrap .card-title{
 font-size: 20px;
 }
@@ -20,5 +24,9 @@ font-size: 20px;
 
   .blog-container .bg-img{
     margin-bottom: 60px;
+  }
+  .img4-fluid {
+    max-width: 100% !important;
+    height: auto !important;
   }
 }

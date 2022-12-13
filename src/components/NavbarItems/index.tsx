@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useTranslation } from 'react-i18next';
 import { Avatar, LogoBlue } from '../../assets/icons';
 import avatar from "../../assets/images/avatar.png";
+import bg1 from '../../assets/images/bg-1.png';
+import collapseNav from '../../assets/images/collapse-nav.png';
 import "./navbaritems.css";
 // import avatar from "../../assets/images/Asset 49.png";
 const useStyles = makeStyles(theme => ({
@@ -133,7 +135,7 @@ const NavbarItems = (props) => {
 
   return (
     <>
-      <nav className={scrolled ? "navbar fixed-top navbar-expand-lg nav-bg " : "navbar fixed-top navbar-expand-lg bg-light nav-bg"} >
+      <nav className={scrolled ? "navbar fixed-top navbar-expand-lg "  : "navbar fixed-top navbar-expand-lg "} style={{   backgroundImage:useWindowSize()>500? `url(${bg1})`:`url(${collapseNav})`,backgroundRepeat: 'noRepeat', backgroundSize:"cover"}}>
         <div className="container-fluid">
 
 
@@ -166,15 +168,21 @@ const NavbarItems = (props) => {
           <button className="navbar-toggler" style={{ position: "fixed", right: "10px", top: "19px" }} type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" onClick={handleNavbar}></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo02" style={{}}>
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo02" style={{padding:useWindowSize()>500?"":"0 1rem 0 1rem"}}>
 
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" style={{display:useWindowSize()>500?'flex':'inherit', flexDirection:useWindowSize()>500?"row-reverse":'inherit', width:useWindowSize()>700?810:'inherit'}}>
               <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/"} className="nav-link" >{t("home")}</NavLink></li>
-              <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/our-solution/"} className="nav-link">{t('solution')}</NavLink></li>
-              <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/about-us/"} className="nav-link">{t('about')}</NavLink></li>
+              <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/our-solution/"} className="nav-link" >{t('solution')}</NavLink></li>
+              <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/about-us/"} className="nav-link" >{t('about')}</NavLink></li>
               <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/blog/"} className="nav-link">{t("blog")}</NavLink></li>
               <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/career/"} className="nav-link" style={{ pointerEvents: "none" }} >{t("career")}</NavLink></li>
-              <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/contact-us/"} className="nav-link" style={{ pointerEvents: "none" }}>{t("contact")}</NavLink></li>
+              <li className="nav-item" style={{textAlign:"right"}}><div onClick={() => {
+                                let offsetTop = (document.getElementById("contact") as HTMLElement).offsetTop;
+                                window.scrollTo({
+                                    top:window.innerWidth>500?offsetTop+100: offsetTop,
+                                    behavior: "smooth"
+                                });
+                            }} className="nav-link" style={{cursor:"pointer"}}>{t("contact")}</div></li>
 
 
 

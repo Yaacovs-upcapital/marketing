@@ -26,6 +26,11 @@
   justify-content: space-evenly;
   direction: rtl;
 }
+.team-container2 {
+  display: flex !important;
+  justify-content: flex-start !important;
+  direction: rtl;
+}
 
 .member-image {
   border-radius: 70px;
@@ -57,6 +62,11 @@
     width: 84%;
   }
 
+  /* .team-member {
+    margin-bottom: 180px;
+    margin-left: 15px;
+
+  } */
   .team-member {
     margin-bottom: 40px;
   }
@@ -90,6 +100,10 @@
     font-size: 1.2em;
 
   }
+  .img-wrap {
+    position: relative;
+    margin-right: 40px;
+}
 }
 
 @media screen and (min-width:991px){
@@ -97,11 +111,15 @@
     background-image: url("../../assets/images/about-up.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 1200px;
-  
+    background-position-y: 100%;
+    padding: 20px;  
   }
   .img-down{
-    margin-left: 85px;;
+    margin-left: 0px;;
+  }
+  .img-wrap{
+    margin-right: 27px;
+
   }
 }
 
@@ -123,13 +141,14 @@
     background-image: url("../../assets/images/about-up.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 2400px;
+    height: 2040px;
   
   }
 
   .img-down{
     margin-left: 5px;;
   }
+  
 }
 
 

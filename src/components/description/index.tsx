@@ -1,24 +1,56 @@
 import React, { useState } from 'react'
 import plus from '../../assets/images/plus.png'
-import { t } from "i18next";
+import Tooltip from '@mui/material/Tooltip';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Button from '@mui/material/Button';
 
 const Description = (props) => {
-    const [visible, setVisible] = useState(false)
-    let { member } = props
-    return (
-        <div className="team-member">
-            <div className="img-wrap">
-                <img src={member.image} className='member-image' />
-                <div><img src={plus} className='plus-img' onClick={()=>setVisible(!visible)}/></div>
+console.log('data', props.data)
+    const theme = createTheme({
+        components: {
+            // Name of the component
+            MuiTooltip: {
+                defaultProps: {
+                    disableHoverListener: true
+                },
+                styleOverrides: {
+                    tooltip: {
+                        fontSize: "1em",
+                        color: "#2f439a",
+                        backgroundColor: "white",
+                        textAlign: 'justify',
+                        fontFamily: "RAG-Sans1.0-Regular",
+                        direction: "rtl",
+                        boxShadow: " 0px 0px 30px -15px rgb(0 0 0 / 30%)",
+        borderRadius: "20px",
+                    },
+                    arrow:{
+                        color: "white",
+                        boxShadow: " 0px 0px 30px -15px rgb(0 0 0 / 30%)",
+                        borderRadius: "20px",
+                    }
+                  }
+            },
 
-            </div>
-            <div>
-                <h4 className='member-title'>{member.name}</h4>
-                <p className='member-title'>{member.title}</p>
-            </div>
-            <p className='member-description container' style={{display:visible?'block':'none'}}>
-                {member.desc}
-            </p>
+        },
+    })
+
+    const [open, setOpen] = useState(false);
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+    return (
+        <div >
+            <ThemeProvider theme={theme} >
+                <Tooltip  className='plus-img' title={props.data} open={open} onBlur={handleClose} onClick={() => setOpen(!open)} arrow>
+                    <Button  > <img src={plus} /></Button>
+                </Tooltip>
+            </ThemeProvider>
         </div>
     )
 }

@@ -14,14 +14,14 @@ const Footer = () => {
   const lang = i18n.language
   return (
     <div>
-      <div className="contact">
+      <div className="contact" id="contact">
 
         <div className="container" style={{ display: "flex", justifyContent: "right", paddingRight: "50px" }}>
-          <p className="form-title" style={{ fontSize: "35pt" }}>{t("contact")}</p>
+          <p className="form-title" style={{ fontSize: "35pt", marginRight:"1rem" }}>{t("contact")}</p>
           <p className="form-title" style={{ color: "red", fontSize: "35pt" }}>.</p>
         </div>
-        <div className="row p-5" >
-          <div className="col-lg-5 col-md-12 col-sm-12  mt-3 mb-3" style={{ display: useWindowSize() > 700 ? "" : "8rem" }}>
+        <div className="container row p-5" style={{margin:"auto"}}>
+          <div className="col-lg-4 col-md-12 col-sm-12  mt-3 mb-3" style={{ display: useWindowSize() > 700 ? "" : "8rem" }}>
             <div >
 
               <p className="second-title">{t("contact_form")}:</p>
@@ -74,12 +74,12 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="col-lg-3 col-md-12 col-sm-12 mt-3 mb-3">
+          <div className="col-lg-4 col-md-12 col-sm-12 mt-3 mb-3">
             <div style={{ color: "white" }}>
-              <div className="form-title mb-4" style={{ paddingRight: "15px" }}>{t("additional_info")}</div>
-              <div className="contact-detail" style={{ paddingRight: "15px" }}>{t("terms")}</div>
-              <div className="contact-detail" style={{ paddingRight: "15px" }}>{t("policy")}</div>
-              <div className="contact-detail" style={{ paddingRight: "15px" }}>{t("accessibilty")}</div>
+              <div className="form-title" style={{ paddingRight: "0" }}>{t("additional_info")}</div>
+              <div className="contact-detail" style={{ paddingRight: "0" }}>{t("terms")}</div>
+              <div className="contact-detail" style={{ paddingRight: "0" }}>{t("policy")}</div>
+              <div className="contact-detail" style={{ paddingRight: "0" }}>{t("accessibility")}</div>
               <div>
                 <div className="row mt-4">
 

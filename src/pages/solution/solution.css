@@ -48,10 +48,15 @@
     background-image: url("../../assets/images/sol-up.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 700px;
+    height: 759px;
    
-  
+  margin-top: 6rem;
   }
+  .how{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 1rem !important;
+   }
 }
 
 @media screen and (max-width:991px){
@@ -74,12 +79,20 @@
   }
 }
 
-@media screen and (max-width:700px){
+@media screen and (max-width:500px){
   .sol-up{
-    background-image: url("../../assets/images/sol-up.png");
+    background-image: url("../../assets/images/page-bg-small.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 1730px;
+    background-size: contain;
+    /* height: 2100px; */
+    background-position-y: 40%;
+    padding: 0px 1rem 0 1rem;
   
   }
+  .img3-fluid {
+    max-width: 140% !important;
+    height: auto !important;
+    margin:  83px 0 auto 0    !important;
+  }
+
 }
