@@ -3,9 +3,10 @@ import plus from '../../assets/images/plus.png'
 import Tooltip from '@mui/material/Tooltip';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import './description.css';
 
 const Description = (props) => {
-console.log('data', props.data)
+    console.log('data', props.data)
     const theme = createTheme({
         components: {
             // Name of the component
@@ -22,14 +23,14 @@ console.log('data', props.data)
                         fontFamily: "RAG-Sans1.0-Regular",
                         direction: "rtl",
                         boxShadow: " 0px 0px 30px -15px rgb(0 0 0 / 30%)",
-        borderRadius: "20px",
+                        borderRadius: "20px",
                     },
-                    arrow:{
+                    arrow: {
                         color: "white",
                         boxShadow: " 0px 0px 30px -15px rgb(0 0 0 / 30%)",
                         borderRadius: "20px",
                     }
-                  }
+                }
             },
 
         },
@@ -45,9 +46,9 @@ console.log('data', props.data)
         setOpen(true);
     };
     return (
-        <div >
+        <div  className='plus-img' >
             <ThemeProvider theme={theme} >
-                <Tooltip  className='plus-img' title={props.data} open={open} onBlur={handleClose} onClick={() => setOpen(!open)} arrow>
+                <Tooltip title={props.data} open={open} onBlur={handleClose} onClick={() => setOpen(!open)} arrow>
                     <Button  > <img src={plus} /></Button>
                 </Tooltip>
             </ThemeProvider>

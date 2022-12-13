@@ -92,11 +92,11 @@ const About = () => {
 				</div>
 
 				<ThemeProvider theme={theme}>
-					<div>
+					<div >
 
 
 
-						<div className=" container mt-3">
+						<div className=" container mt-3" style={{ width: useWindowSize() > 500 ? "74rem" : "", margin: "auto" }}>
 							<h1 style={{ color: "#2f439a", fontSize: "40pt", textAlign: "right" }}>הצוות<span style={{ color: "red" }}>.</span></h1>
 						</div>
 
@@ -105,8 +105,7 @@ const About = () => {
 							<div className="team-member" >
 								<div className="img-wrap">
 									<img src={mariano} alt="mariano" className='member-image' />
-									<img src={plus} className='plus-img' />
-
+									<Description data={partners.mariano} />
 								</div>
 								<div className="mt-2 mb-2">
 									{/* <h4 className='member-title'>{t("mariano")}</h4> */}
@@ -114,14 +113,14 @@ const About = () => {
 									{/* <p className='member-title'>{t("mariano_title")}</p> */}
 									<h4 className='member-title'>מייסד ומנכ״ל</h4>
 								</div>
-								
+
 							</div>
 
 							<div className="team-member" >
 								<div className="img-wrap">
 									<img src={ron} alt="ron" className='member-image'></img>
-									<img src={plus} className='plus-img'
-									/>
+									<Description data={partners.ron} />
+
 								</div>
 								{/* <div>
 	<h4 className='member-title'>{t("ron")}</h4>
@@ -133,13 +132,15 @@ const About = () => {
 									{/* <p className='member-title'>{t("mariano_title")}</p> */}
 									<h4 className='member-title'>יו״ר אפ קפיטל</h4>
 								</div>
-								
+
 							</div>
 							<div className="team-member" >
 								<div className="img-wrap">
 									<img src={yaron} alt="yaron" className='member-image' />
-									<div style={{ cursor: "pointer" }}><img src={plus} className='plus-img'
-									/></div>
+									<div style={{ cursor: "pointer" }}>
+									<Description data={partners.yaron} />
+
+									</div>
 
 								</div>
 								{/* <div>
@@ -150,13 +151,15 @@ const About = () => {
 									<h4 className='member-title'>ירון כהן</h4>
 									<h4 className='member-title'>מנכ״ל כספים</h4>
 								</div>
-								
+
 							</div>
 							<div className="team-member">
 								<div className="img-wrap">
 									<img src={avi} alt="avi" className='member-image' />
-									<div style={{ cursor: "pointer" }}><img src={plus} className='plus-img'
-									/></div>
+									<div style={{ cursor: "pointer" }}>
+									<Description data={partners.avi} />
+
+									</div>
 
 								</div>
 								{/* <div>
@@ -167,7 +170,7 @@ const About = () => {
 									<h4 className='member-title'>אבי סונק</h4>
 									<h4 className='member-title'>סמנכ״ל פיתוח עסקי וניהול מוצר</h4>
 								</div>
-								
+
 							</div>
 
 
@@ -179,51 +182,57 @@ const About = () => {
 							<div className="team-member last3">
 								<div className="img-wrap">
 									<img src={yoni} alt="yoni" className='member-image' />
-									<div style={{ cursor: "pointer" }}><img style={{ position: "absolute" }} src={plus} className='plus-img'
-									/></div>
+									<div style={{ cursor: "pointer" }}>
+									<Description data={partners.yoni} />
+
+									</div>
 
 								</div>
 								<div className="mt-2 mb-2 img-down" >
 									<h4 className='member-title'>יוני שמלה</h4>
 									<h4 className='member-title'>סמנכ״ל טכנולוגיות</h4>
 								</div>
-								
+
 							</div>
 							<div className="team-member last2">
 								<div className="img-wrap">
 									<img src={tzahi} alt="tzahi" className='member-image' />
-									<div style={{ cursor: "pointer" }}><img style={{ position: "absolute" }} src={plus} className='plus-img'
-									/></div>
+									<div style={{ cursor: "pointer" }}>
+									<Description data={partners.tzahi} />
+
+									</div>
 
 								</div>
 								<div className="mt-2 mb-2 img-down">
 									<h4 className='member-title'>צחי קופרלי</h4>
 									<h4 className='member-title'>בעלים, דירקטור וסמנכ"ל קשרי מסחר</h4>
 								</div>
-								
+
 							</div>
 							<div className="team-member last1">
 								<div className="img-wrap">
 									<img src={ore} alt="ore" className='member-image' />
-									<div style={{ cursor: "pointer" }}><img src={plus} className='plus-img'
-									/></div>
+									<div style={{ cursor: "pointer" }}>
+									<Description data={partners.ore} />
+
+									</div>
 
 								</div>
 								<div className="mt-2 mb-2 img-down">
 									<h4 className='member-title'>אור גולן</h4>
 									<h4 className='member-title'>סמנכ״ל שיווק</h4>
 								</div>
-								
+
 							</div>
 
 							<div className="team-member last1" style={{ visibility: "hidden", display: useWindowSize() > 500 ? '' : "none" }}>
 								<div className="img-wrap">
-									<div style={{ cursor: "pointer" }}>
-										<img className='member-image'  />
+									<div >
+										<img className='member-image' />
 									</div>
 
 								</div>
-								
+
 							</div>
 
 
