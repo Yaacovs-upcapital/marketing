@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 
 
 export default function MediaControlCard(props: any) {
-const {t}=useTranslation()
+  const { t } = useTranslation()
 
   return (
     <Card
@@ -31,12 +31,11 @@ const {t}=useTranslation()
         }}
       >
         <CardContent>{props.children}</CardContent>
-        <div style={{ marginRight: 30 }}>
-          <Link to={props.path || "/"} className="link-btn">
-            {t("read_more")}
-            <ChevronLeftIcon />
-          </Link>
-        </div>
+          <div style={{padding:"16px"}}>
+            <Link to={props.path || "/"} className="link-btn">
+              {t("to_apply")}
+            </Link>
+          </div>
       </Box>
       {props.image ? (
         <CardMedia

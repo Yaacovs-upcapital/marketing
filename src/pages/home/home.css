@@ -196,10 +196,12 @@
 
 .product-header {
   color: #fff;
-  font-size: 1.55rem;
+  font-size: 23px;
   margin-bottom: 1.5rem;
   font-family: "LeonRegular";
 padding-top: 1rem;
+text-align: justify;
+    font-weight: bold;
 }
 
 .product-title {
@@ -436,7 +438,7 @@ padding-top: 1rem;
 
 .career-text {
   color: #2f439a !important;
-  font-size: 2rem !important;
+  font-size: 1.5rem !important;
   text-align: justify;
 
 }
@@ -634,10 +636,12 @@ padding-top: 1rem;
 }
 .card-title,
 .card-text {
-  text-align: justify;
   font-family: "Helvetica Hebrew", Sans-serif;
   line-height: 1.3em;
 }
+
+.card-text {
+  text-align: justify;}
 
 .career-bg {
   background-image: url("../../assets/images/career-bg.png");
@@ -712,19 +716,7 @@ padding-top: 1rem;
   margin: 0;
 }
 
-.job-title {
-  font-size: 28px;
-  font-weight: 700;
-}
 
-.job-details {
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.job-details-wrap {
-  margin-top: 15px;
-}
 
 .carousel-wrapper {
   width: 100%;
@@ -846,7 +838,6 @@ padding-top: 1rem;
   .card-text,
   .card-title,
   .job-details-wrap {
-    width: 90%;
     margin-left: auto;
     margin-right: auto;
   }

@@ -201,7 +201,7 @@ const Home = (props) => {
             </div>
 
             <div className="container">
-                <h1 className="process-title" style={{ paddingRight: "30px" }}> {t('process')} <span style={{ color: "red", fontFamily: "LeonRegular" }}>?</span></h1>
+                <h1 className="process-title" style={{  }}> {t('process')} <span style={{ color: "red", fontFamily: "LeonRegular" }}>?</span></h1>
             </div>
 
             <div className="process" style={{ textAlign: "center" }}>
@@ -250,9 +250,9 @@ const Home = (props) => {
             </div>
 
 
-            <div className="tech-bg container mt-5 mb-5 tech-circular" style={{ marginRight: "10%" }} >
+            <div className="tech-bg container mt-5 mb-5 tech-circular" style={{ marginRight:useWindowSize()>500?"":"16%" }} >
 
-                <div style={{ display: "flex", justifyContent: "right", marginBottom: "2rem" }}>
+                <div style={{ display: "flex", justifyContent: "right", marginBottom: "2rem", marginRight:useWindowSize()>500?"":"-31px" }}>
                     <h1 className="tech">{t('tech')}</h1><h1 className="tech" style={{ color: "red" }}>.</h1>
                 </div>
                 <div>
@@ -260,9 +260,8 @@ const Home = (props) => {
                 </div>
 
                 <div className="container">
-                    <div className="">
 
-                        <div className="row" >
+                        <div className="row" style={{margin:"auto"}} >
 
                             <div className="col-lg-3 col-md-12 col-sm-12 " style={{ display: "flex", justifyContent: "center" }}>
 
@@ -340,7 +339,6 @@ const Home = (props) => {
                         </div>
 
 
-                    </div>
                 </div>
             </div>
 
@@ -482,9 +480,9 @@ const Home = (props) => {
                                                 style={{ color: 'red' }}>.</h2></div>
 
                                         <div className="text-wrapper" >
-                                            <div className="career-text"><p style={{ margin: 0 }}>{t("career_text1")}</p></div>
-                                            <div className="career-text"><p style={{ margin: 0 }}>{t("career_text2")}</p></div>
-                                            <div className="career-text"><p style={{ margin: 0 }}>{t("career_text3")}</p></div>
+                                            <div className="career-text"><p >{t("career_text1")}</p></div>
+                                            <div className="career-text"><p >{t("career_text2")}</p></div>
+                                            <div className="career-text"><p >{t("career_text3")}</p></div>
 
                                             <div className="career-slogan"><p>{t("career_text4")}</p></div>
 

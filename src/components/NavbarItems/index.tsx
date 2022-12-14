@@ -162,7 +162,7 @@ const NavbarItems = (props) => {
             </button>
           </div> */}
 
-          <NavLink to={"/app/"} className="vendors_login_lg" >{t("vendors_login")}</NavLink>
+          <a href={"https://vendors.upcapital.io/"} className="vendors_login_lg" >{t("vendors_login")}</a>
 
 
           <button className="navbar-toggler" style={{ position: "fixed", right: "10px", top: "19px" }} type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -175,7 +175,7 @@ const NavbarItems = (props) => {
               <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/our-solution/"} className="nav-link" >{t('solution')}</NavLink></li>
               <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/about-us/"} className="nav-link" >{t('about')}</NavLink></li>
               <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/blog/"} className="nav-link">{t("blog")}</NavLink></li>
-              <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/career/"} className="nav-link" style={{ pointerEvents: "none" }} >{t("career")}</NavLink></li>
+              <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/career/"} className="nav-link"  >{t("career")}</NavLink></li>
               <li className="nav-item" style={{textAlign:"right"}}><div onClick={() => {
                                 let offsetTop = (document.getElementById("contact") as HTMLElement).offsetTop;
                                 window.scrollTo({

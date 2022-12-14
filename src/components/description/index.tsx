@@ -4,6 +4,7 @@ import Tooltip from '@mui/material/Tooltip';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import './description.css';
+import useWindowSize from '../windowSize';
 
 const Description = (props) => {
     console.log('data', props.data)
@@ -12,26 +13,44 @@ const Description = (props) => {
             // Name of the component
             MuiTooltip: {
                 defaultProps: {
-                    disableHoverListener: true
+                    disableHoverListener: true,
+                    PopperProps: {
+                        // placement:"auto-start"
+                    }
                 },
                 styleOverrides: {
-                    tooltip: {
+                    tooltipArrow: {
                         fontSize: "1em",
                         color: "#2f439a",
                         backgroundColor: "white",
                         textAlign: 'justify',
                         fontFamily: "RAG-Sans1.0-Regular",
                         direction: "rtl",
-                        boxShadow: " 0px 0px 30px -15px rgb(0 0 0 / 30%)",
+                        // boxShadow: " 0px 0px 50px -15px rgb(0 0 0 / 30%)",
+                        filter: "drop-shadow(0px 0px 5px rgba(0, 0, 0, .5))",
+
                         borderRadius: "20px",
+                        padding: 20,
+                        width: useWindowSize() > 500 ? "35vw" : "",
+                        maxWidth: "90vw",
+                        margin: "auto",
+                        '&::after': {
+                            "content": '""',
+                            filter: "drop-shadow(0px 0px 5px rgba(0, 0, 0, .5))"
+
+                        }
                     },
+
                     arrow: {
                         color: "white",
-                        boxShadow: " 0px 0px 30px -15px rgb(0 0 0 / 30%)",
+                        boxShadow: " 0px 0px 50px -15px rgb(0 0 0 / 30%)",
                         borderRadius: "20px",
-                    }
+                    },
+
+
                 }
             },
+
 
         },
     })
@@ -46,10 +65,15 @@ const Description = (props) => {
         setOpen(true);
     };
     return (
-        <div  className='plus-img' >
+        <div className='plus-img' >
             <ThemeProvider theme={theme} >
-                <Tooltip title={props.data} open={open} onBlur={handleClose} onClick={() => setOpen(!open)} arrow>
-                    <Button  > <img src={plus} /></Button>
+                <Tooltip
+                    title={props.data}
+                    open={open}
+                    onBlur={() => setOpen(false)}
+                    arrow
+                >
+                    <button style={{ background: "transparent", border: "none" }}> <img onClick={() => setOpen(!open)} src={plus} /></button>
                 </Tooltip>
             </ThemeProvider>
         </div>

@@ -13,7 +13,7 @@ const JobOffer = () => {
     )
     return (
         <div style={{ direction: "rtl" }}>
-            <div className="bg-img">
+            <div className="">
                 <h2 className="single-aricle-title" style={{fontSize:useWindowSize()<=768?"1.3em":""}}>
                     {jobOffers[jobIndex].jobTitle}
                 </h2>
@@ -37,7 +37,7 @@ const JobOffer = () => {
                         {
                             jobOffers[jobIndex].jobQf.length &&
                             jobOffers[jobIndex].jobQf.map((item, i) => (
-                                <li key={i} >
+                                <li style={{  fontFamily: "RAG-Sans1.0-Regular"}} key={i} >
                                     {item}
                                 </li>
                             ))}

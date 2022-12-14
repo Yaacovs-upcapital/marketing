@@ -168,7 +168,7 @@ const About = () => {
 </div> */}
 								<div className="mt-2 mb-2">
 									<h4 className='member-title'>אבי סונק</h4>
-									<h4 className='member-title'>סמנכ״ל פיתוח עסקי וניהול מוצר</h4>
+									<h4 className='member-title'>משנה למנכ"ל</h4>
 								</div>
 
 							</div>
@@ -220,7 +220,7 @@ const About = () => {
 								</div>
 								<div className="mt-2 mb-2 img-down">
 									<h4 className='member-title'>אור גולן</h4>
-									<h4 className='member-title'>סמנכ״ל שיווק</h4>
+									<h4 className='member-title'>סמנכ"ל שיווק ופיתוח עסקי</h4>
 								</div>
 
 							</div>

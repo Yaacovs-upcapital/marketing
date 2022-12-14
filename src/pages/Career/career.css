@@ -1,0 +1,46 @@
+.career-big-title {
+  font-size: 50pt;
+}
+
+.job-title {
+  margin: 2rem 0 2rem 0;
+  font-weight: bolder;
+}
+.job-offers {
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+.job-title,
+.job-card-title,
+.job-card-text,
+.job-details,
+.career-big-title {
+  color: #2f439a;
+  font-family: "RagRegular";
+}
+.job-card-title,.job-details{
+    font-weight: bold;
+
+}
+.job-card-title{
+    font-size:1.2rem;
+}
+.job-card-text{
+    font-size:1.1rem;
+}
+.job-details{
+    font-size:1rem;
+
+}
+
+@media (min-width: 600px) {
+  .job-offers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .job-offers {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

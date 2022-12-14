@@ -10,8 +10,10 @@
 
 .card{
   --bs-card-border-radius: 0.8rem !important;
+  
 
 }
+
 .articles-wrap .card-title{
 font-size: 20px;
 }

@@ -12,15 +12,16 @@ import "./footer.css"
 const Footer = () => {
   const { t } = useTranslation()
   const lang = i18n.language
+
   return (
-    <div>
+    <div style={{display: window.location.href.indexOf("job-offer")!=-1?"none":""}}>
       <div className="contact" id="contact">
 
-        <div className="container" style={{ display: "flex", justifyContent: "right", paddingRight: "50px" }}>
-          <p className="form-title" style={{ fontSize: "35pt", marginRight:"1rem" }}>{t("contact")}</p>
+        <div className="container" style={{ display: "flex", justifyContent: "right"}}>
+          <p className="form-title" style={{ fontSize: "35pt",paddingRight: "12px"  }}>{t("contact")}</p>
           <p className="form-title" style={{ color: "red", fontSize: "35pt" }}>.</p>
         </div>
-        <div className="container row p-5" style={{margin:"auto"}}>
+        <div className="container row" style={{margin:"auto"}}>
           <div className="col-lg-4 col-md-12 col-sm-12  mt-3 mb-3" style={{ display: useWindowSize() > 700 ? "" : "8rem" }}>
             <div >
 
@@ -96,7 +97,6 @@ const Footer = () => {
 
 
         </div>
-
 
 
 

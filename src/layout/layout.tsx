@@ -12,6 +12,7 @@ import ClientLogin from "../pages/clientLogin";
 import { useEffect } from "react";
 import About from "../pages/aboutUs";
 import Blog from "../pages/blog";
+import Career from "../pages/Career";
 export function ScrollToTop() {
     const { pathname } = useLocation();
 
@@ -34,8 +35,7 @@ const Layout = (props) => {
                 <Route path="/our-solution/" element={<Solution />} />
                 <Route path="/about-us/" element={<About />} />
                 <Route path="/blog/" element={<Blog />} />
-                {/* <Route path="/career/" element={<Career />} />
-                <Route path="/contact-us/" element={<ContactUs />} /> */}
+                <Route path="/career/" element={<Career />} />
                 <Route path="/blog/:id/" element={<FintechNation />} />
                 <Route path="/job-offer/:id/" element={<JobOffer />} />
                 <Route path="/terms-of-use/" element={<TermOfUse />} />

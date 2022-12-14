@@ -15,10 +15,12 @@
   border-style: solid;
   border-width: 1px;
   border-color: #2f439a;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   text-align: center;
   padding: 10px;
+  font-family: "RAG-Sans1.0-Regular";
+
 }
 
 .job-container {
@@ -33,18 +35,24 @@
 .job-desc-wrap {
   margin-bottom: 40px;
   text-align: justify;
+  font-family: "RAG-Sans1.0-Regular";
+
 }
 
 .desc-title,
 .job-app-title {
   font-size: 26px;
   font-weight: 700;
+  font-family: "RAG-Sans1.0-Regular";
+
 }
 
 .job-app-title {
   padding-top: 80px;
   color: #fff;
   text-align: center;
+  font-family: "RAG-Sans1.0-Regular";
+
 }
 
 .job-app {
@@ -65,6 +73,8 @@
 
 .job-qualification{
 text-align: justify;
+font-family: "RAG-Sans1.0-Regular" !important;
+
 }
 
 .detail-input input,
@@ -79,6 +89,8 @@ text-align: justify;
   font-size: 16px;
   direction: rtl;
   margin: 10px 0;
+font-family: "RAG-Sans1.0-Regular" !important;
+
 }
 
 .detail-input ::placeholder {
@@ -87,7 +99,7 @@ text-align: justify;
 
 .job-form input[type="submit"] {
   background-color: #fff;
-  color: #2f439a;
+  color: #2f439a !important;
   padding: 12px 20px;
   border: none;
   border-radius: 5px;
@@ -114,12 +126,25 @@ text-align: justify;
   padding-right: 8px;
   font-weight: 400;
 }
+.single-aricle-title{
+  color:#2f439a;
+margin:6rem auto 2rem auto;
+padding-bottom: 0;
+display: flex;
+justify-content: center;
+
+}
 
 @media (max-width:768px) {
   .bg-img{
     margin-bottom: 50px;
   }
 
+  .single-aricle-title{
+    color:#2f439a;
+  margin: 3rem;
+  padding-bottom: 0;
+  }
   .job-container, .job-form{
     width: 70%;
   }

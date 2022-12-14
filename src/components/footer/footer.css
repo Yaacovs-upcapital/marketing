@@ -4,7 +4,10 @@
 .second-title {
   color: white;
 }
-
+.footer-content{
+  padding:0 !important;
+  margin:auto
+}
 .form-title {
   text-align: right;
   margin-bottom: 0;
