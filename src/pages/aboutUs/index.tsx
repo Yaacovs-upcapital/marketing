@@ -92,7 +92,7 @@ const About = () => {
 				</div>
 
 				<ThemeProvider theme={theme}>
-					<div >
+					<div style={{ marginTop: "3rem" }}>
 
 
 
@@ -128,9 +128,9 @@ const About = () => {
 </div> */}
 								<div className="mt-2 mb-2">
 									{/* <h4 className='member-title'>{t("mariano")}</h4> */}
-									<h4 className='member-title'>רון כהן</h4>
+									<h4 className='member-title'>{t("ron")}</h4>
 									{/* <p className='member-title'>{t("mariano_title")}</p> */}
-									<h4 className='member-title'>יו״ר אפ קפיטל</h4>
+									<h4 className='member-title'>{t("ron_title")}</h4>
 								</div>
 
 							</div>
@@ -138,7 +138,7 @@ const About = () => {
 								<div className="img-wrap">
 									<img src={yaron} alt="yaron" className='member-image' />
 									<div style={{ cursor: "pointer" }}>
-									<Description data={partners.yaron} />
+										<Description data={partners.yaron} />
 
 									</div>
 
@@ -157,7 +157,7 @@ const About = () => {
 								<div className="img-wrap">
 									<img src={avi} alt="avi" className='member-image' />
 									<div style={{ cursor: "pointer" }}>
-									<Description data={partners.avi} />
+										<Description data={partners.avi} />
 
 									</div>
 
@@ -183,7 +183,7 @@ const About = () => {
 								<div className="img-wrap">
 									<img src={yoni} alt="yoni" className='member-image' />
 									<div style={{ cursor: "pointer" }}>
-									<Description data={partners.yoni} />
+										<Description data={partners.yoni} />
 
 									</div>
 
@@ -198,7 +198,7 @@ const About = () => {
 								<div className="img-wrap">
 									<img src={tzahi} alt="tzahi" className='member-image' />
 									<div style={{ cursor: "pointer" }}>
-									<Description data={partners.tzahi} />
+										<Description data={partners.tzahi} />
 
 									</div>
 
@@ -213,7 +213,7 @@ const About = () => {
 								<div className="img-wrap">
 									<img src={ore} alt="ore" className='member-image' />
 									<div style={{ cursor: "pointer" }}>
-									<Description data={partners.ore} />
+										<Description data={partners.ore} />
 
 									</div>
 

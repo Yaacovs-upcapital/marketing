@@ -28,8 +28,8 @@
   height: 70px;
 }
 
-@media screen and (min-width:500px) {
-  .home-title{
+@media screen and (min-width: 500px) {
+  .home-title {
     margin-top: 8rem;
   }
 }
@@ -103,7 +103,6 @@
   }
 }
 
-
 @media screen and (max-width: 700px) {
   .home-jumbotron {
     background-image: url(../../assets/images/bg-1.png);
@@ -174,7 +173,6 @@
     padding-left: 100px;
     padding-right: 100px;
     margin-top: -34rem;
-
   }
 }
 
@@ -199,9 +197,9 @@
   font-size: 23px;
   margin-bottom: 1.5rem;
   font-family: "LeonRegular";
-padding-top: 1rem;
-text-align: justify;
-    font-weight: bold;
+  padding-top: 1rem;
+  text-align: justify;
+  font-weight: bold;
 }
 
 .product-title {
@@ -252,7 +250,7 @@ text-align: justify;
   width: 100%;
 }
 
-@media screen and (min-width:500px) {
+@media screen and (min-width: 500px) {
   .parent-wrap2 {
     padding-bottom: 5rem;
     padding-right: 0px;
@@ -260,7 +258,6 @@ text-align: justify;
     width: 72rem;
     margin: auto;
   }
-
 }
 
 .parent-wrap,
@@ -440,7 +437,6 @@ text-align: justify;
   color: #2f439a !important;
   font-size: 1.5rem !important;
   text-align: justify;
-
 }
 
 .about-text {
@@ -526,11 +522,10 @@ text-align: justify;
     margin-bottom: 1rem;
   }
 
-  .tech-bg1{
+  .tech-bg1 {
     position: relative !important;
     left: 68px;
   }
-
 
   .techBgImg {
     display: block;
@@ -641,7 +636,8 @@ text-align: justify;
 }
 
 .card-text {
-  text-align: justify;}
+  text-align: justify;
+}
 
 .career-bg {
   background-image: url("../../assets/images/career-bg.png");
@@ -715,8 +711,6 @@ text-align: justify;
 .jobs-btn {
   margin: 0;
 }
-
-
 
 .carousel-wrapper {
   width: 100%;
@@ -819,6 +813,10 @@ text-align: justify;
     font-size: 1em;
     max-width: 60%;
     margin: auto;
+  }
+
+  .parent-wrap2 .p-3 {
+    padding: 1.35rem !important;
   }
 
   .articles-row,

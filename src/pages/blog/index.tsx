@@ -50,40 +50,41 @@ const Blog = () => {
 
 
 
-{getWindowDimensions().width > 1300?
-          <div className="col-lg-8 col-md-12 col-sm-12" style={{ paddingRight: getWindowDimensions().width < 767 ? "" : "" }}>
-            <div className="card" style={{ width: getWindowDimensions().width > 767 ? "102%" : "101%", marginTop: "12px" }}>
-              <div className="row g-0" style={{ padding: "none !important" }}>
-                <div className="col-md-6">
-                  <img src={blog} style={{ height: getWindowDimensions().width > 767 ? "592px" : "", width: getWindowDimensions().width > 767 ? "430px" : "", borderTopLeftRadius: getWindowDimensions().width > 767 ? "" : "0.5rem", borderTopRightRadius: getWindowDimensions().width > 767 ? "" : "0.5rem" }} className="img4-fluid" alt="..." />
-                </div>
-                <div className="col-md-6">
-                  <div className="card-body" style={{ textAlign: "right" }}>
-                    <h5 className="card-title" style={{ fontFamily: "Leon", fontSize: "19pt", color: "rgb(47,67,155)", fontWeight: "800" }}>
-                      שורת צעדים חדשים לסיוע תזרימי לעסקים ולעצמאיים
+          {getWindowDimensions().width > 1300 ?
+            <div className="col-lg-8 col-md-12 col-sm-12" style={{ paddingRight: getWindowDimensions().width < 767 ? "" : "" }}>
+              <div className="card" style={{ width: getWindowDimensions().width > 767 ? "102%" : "101%", marginTop: "12px" }}>
+                <div className="row g-0" style={{ padding: "none !important" }}>
+                  <div className="col-md-6">
+                    <img src={blog} style={{ height: getWindowDimensions().width > 767 ? "592px" : "", width: getWindowDimensions().width > 767 ? "430px" : "", borderTopLeftRadius: getWindowDimensions().width > 767 ? "" : "0.5rem", borderTopRightRadius: getWindowDimensions().width > 767 ? "" : "0.5rem" }} className="img4-fluid" alt="..." />
+                  </div>
+                  <div className="col-md-6">
+                    <div className="card-body" style={{ textAlign: "right" }}>
+                      <h5 className="card-title" style={{ fontFamily: "Leon", fontSize: "19pt", color: "rgb(47,67,155)", fontWeight: "800" }}>
+                        שורת צעדים חדשים לסיוע תזרימי לעסקים ולעצמאיים
                       </h5>
-                    <p className="card-text" style={{ fontFamily: "Leon", fontSize: "14pt", color: "rgb(47,67,155)", fontWeight: "500" }}>
-                      ממשיכים לחיות לצד הקורונה: משרד האוצר הודיע על צעדים תזרימיים לסיוע לעסקים ולעצמאים בהתמודדות עם נגיף האומיקרון | במסגרת הצעדים יוענקו הקלות תזרימיות בשווי של למעלה מ-1.3 מיליארד שקל ויינתנו הקלות בהליכים בירוקרטים לעסקים, הקלות בקבלת הלוואות בערבות המדינה וכן הקלות ליצואנים קטנים ובינוניים.
-                    </p>
-                    <a href="https://bizzness.net/%D7%A9%D7%95%D7%A8%D7%AA-%D7%A6%D7%A2%D7%93%D7%99%D7%9D-%D7%97%D7%93%D7%A9%D7%99%D7%9D-%D7%9C%D7%A1%D7%99%D7%95%D7%A2-%D7%AA%D7%96%D7%A8%D7%99%D7%9E%D7%99-%D7%9C%D7%A2%D7%A1%D7%A7%D7%99%D7%9D-%D7%95/" className="btn btn-outline-primary">קראו עוד</a>
+                      <p className="card-text" style={{ fontFamily: "Leon", fontSize: "14pt", color: "rgb(47,67,155)", fontWeight: "500" }}>
+                        ממשיכים לחיות לצד הקורונה: משרד האוצר הודיע על צעדים תזרימיים לסיוע לעסקים ולעצמאים בהתמודדות עם נגיף האומיקרון | במסגרת הצעדים יוענקו הקלות תזרימיות בשווי של למעלה מ-1.3 מיליארד שקל ויינתנו הקלות בהליכים בירוקרטים לעסקים, הקלות בקבלת הלוואות בערבות המדינה וכן הקלות ליצואנים קטנים ובינוניים.
+                      </p>
+                      <a href="https://bizzness.net/%D7%A9%D7%95%D7%A8%D7%AA-%D7%A6%D7%A2%D7%93%D7%99%D7%9D-%D7%97%D7%93%D7%A9%D7%99%D7%9D-%D7%9C%D7%A1%D7%99%D7%95%D7%A2-%D7%AA%D7%96%D7%A8%D7%99%D7%9E%D7%99-%D7%9C%D7%A2%D7%A1%D7%A7%D7%99%D7%9D-%D7%95/" className="btn btn-outline-primary">קראו עוד</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-:
-          <div className="col-lg-4 col-md-12 col-sm-12">
-            <div className="card" style={{ width: getWindowDimensions().width > 767 ? "104%" : "101%", marginTop: "12px" }}>
-              <img src={workingteam} className="card-img-top" alt="..." style={{ borderTopLeftRadius: "0.8rem", borderTopRightRadius: "0.8rem" }} />
-              <div className="card-body p-3" style={{}}>
-                <h5 className="card-title" style={{ fontFamily: "Leon", fontSize: "19pt", color: "rgb(47,67,155)", fontWeight: "800", direction: "rtl" }}>שורת צעדים חדשים לסיוע תזרימי לעסקים ולעצמאיים</h5>
-                <p className="card-text" style={{ fontFamily: "Leon", fontSize: "14pt", color: "rgb(47,67,155)", fontWeight: "500", direction: "rtl" }}>
-                ממשיכים לחיות לצד הקורונה: משרד האוצר הודיע על צעדים תזרימיים לסיוע לעסקים ולעצמאים בהתמודדות עם נגיף האומיקרון | במסגרת הצעדים יוענקו הקלות תזרימיות בשווי של למעלה מ-1.3 מיליארד שקל ויינתנו הקלות בהליכים בירוקרטים לעסקים, הקלות בקבלת הלוואות בערבות המדינה וכן הקלות ליצואנים קטנים ובינוניים.
-                </p>
-                <a href="https://bizzness.net/%D7%A9%D7%95%D7%A8%D7%AA-%D7%A6%D7%A2%D7%93%D7%99%D7%9D-%D7%97%D7%93%D7%A9%D7%99%D7%9D-%D7%9C%D7%A1%D7%99%D7%95%D7%A2-%D7%AA%D7%96%D7%A8%D7%99%D7%9E%D7%99-%D7%9C%D7%A2%D7%A1%D7%A7%D7%99%D7%9D-%D7%95/" className="btn btn-outline-primary">קראו עוד</a>
+            :
+            <div className="col-lg-4 col-md-12 col-sm-12">
+              <div className="card" style={{ width: getWindowDimensions().width > 767 ? "104%" : "101%", marginTop: "12px" }}>
+                <img src={workingteam} className="card-img-top" alt="..." style={{ borderTopLeftRadius: "0.8rem", borderTopRightRadius: "0.8rem" }} />
+                <div className="card-body p-3" style={{}}>
+                  <h5 className="card-title" style={{ fontFamily: "Leon", fontSize: "19pt", color: "rgb(47,67,155)", fontWeight: "800", direction: "rtl" }}>שורת צעדים חדשים לסיוע תזרימי לעסקים ולעצמאיים</h5>
+                  <p className="card-text" style={{ fontFamily: "Leon", fontSize: "14pt", color: "rgb(47,67,155)", fontWeight: "500", direction: "rtl" }}>
+                    ממשיכים לחיות לצד הקורונה: משרד האוצר הודיע על צעדים תזרימיים לסיוע לעסקים ולעצמאים בהתמודדות עם נגיף האומיקרון | במסגרת הצעדים יוענקו הקלות תזרימיות בשווי של למעלה מ-1.3 מיליארד שקל ויינתנו הקלות בהליכים בירוקרטים לעסקים, הקלות בקבלת הלוואות בערבות המדינה וכן הקלות ליצואנים קטנים ובינוניים.
+                  </p>
+                  <a href="https://bizzness.net/%D7%A9%D7%95%D7%A8%D7%AA-%D7%A6%D7%A2%D7%93%D7%99%D7%9D-%D7%97%D7%93%D7%A9%D7%99%D7%9D-%D7%9C%D7%A1%D7%99%D7%95%D7%A2-%D7%AA%D7%96%D7%A8%D7%99%D7%9E%D7%99-%D7%9C%D7%A2%D7%A1%D7%A7%D7%99%D7%9D-%D7%95/" className="btn btn-outline-primary">קראו עוד</a>
+                </div>
               </div>
             </div>
-          </div>}
+          }
 
           <div className="col-lg-4 col-md-12 col-sm-12">
             <div className="card" style={{ width: getWindowDimensions().width > 767 ? "104%" : "101%", marginTop: "12px" }}>
@@ -137,9 +138,9 @@ const Blog = () => {
               <img src={ronChairmain} className="card-img-top" alt="..." style={{ borderTopLeftRadius: "0.8rem", borderTopRightRadius: "0.8rem" }} />
               <div className="card-body p-3" style={{ textAlign: "right" }}>
                 <h5 className="card-title" style={{ fontFamily: "Leon", fontSize: "19pt", color: "rgb(47,67,155)", fontWeight: "800" }}>רון כהן מונה ליו"ר חברת הפינטק אפ קפיטל
-</h5>
+                </h5>
                 <p className="card-text" style={{ fontFamily: "Leon", fontSize: "14pt", color: "rgb(47,67,155)", fontWeight: "500" }}>
-                רון כהן מונה ליו"ר חברת הפינטק אפ קפיטל פיננסים. החברה פיתחה פלטפורמה טכנולוגית ושירות הנותנים מענה לבעיית מימון ימי האשראי מול הלקוחות שלהם. בימים אלה החברה מובילה מהלך של שת"פ וחיבור עם מוסדות מימון בארץ ובחו"ל.
+                  רון כהן מונה ליו"ר חברת הפינטק אפ קפיטל פיננסים. החברה פיתחה פלטפורמה טכנולוגית ושירות הנותנים מענה לבעיית מימון ימי האשראי מול הלקוחות שלהם. בימים אלה החברה מובילה מהלך של שת"פ וחיבור עם מוסדות מימון בארץ ובחו"ל.
                 </p>
                 <a href="https://finance.walla.co.il/item/3477693" className="btn btn-outline-primary">קראו עוד</a>
               </div>

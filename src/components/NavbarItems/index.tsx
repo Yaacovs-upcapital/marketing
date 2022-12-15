@@ -91,8 +91,7 @@ const NavbarItems = (props) => {
   const [scrolled, setScrolled] = useState(false);
   const onScroll = () => setScrolled(window.scrollY > 60);
 
-
-
+  let dataBsToggle = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     // clean up code
@@ -131,18 +130,23 @@ const NavbarItems = (props) => {
   props.lang.navLang.getlang(language)
 
   const { t } = useTranslation()
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+  const handleNavCollapse = () => {
+    setIsNavCollapsed(false);
+  setTimeout(()=>setIsNavCollapsed(true),1)
+  }
+
 
 
   return (
     <>
-      <nav className={scrolled ? "navbar fixed-top navbar-expand-lg "  : "navbar fixed-top navbar-expand-lg "} style={{   backgroundImage:useWindowSize()>500? `url(${bg1})`:`url(${collapseNav})`,backgroundRepeat: 'noRepeat', backgroundSize:"cover"}}>
+      <nav className={"navbar fixed-top navbar-expand-lg "} style={{ backgroundImage: useWindowSize() > 990 ? `url(${bg1})` : `url(${collapseNav})`, backgroundRepeat: 'noRepeat', backgroundSize: "cover", }}>
         <div className="container-fluid">
-
 
           <NavLink className="navbar-brand" to={"/"}> <LogoBlue className='brnd' /> </NavLink>
           <a href='https://vendors.upcapital.io/' ref={avatarBrandRef} className="navbar-brand avatar_brand"><img src={avatar} className="avatar" /></a>
 
-          {/* <div className='langSetting' ref={langBrandRef}>
+          <div className='langSetting' ref={langBrandRef} >
 
             <button
               value='en'
@@ -160,7 +164,7 @@ const NavbarItems = (props) => {
             >
               {t('he')}
             </button>
-          </div> */}
+          </div>
 
           <a href={"https://vendors.upcapital.io/"} className="vendors_login_lg" >{t("vendors_login")}</a>
 
@@ -168,32 +172,33 @@ const NavbarItems = (props) => {
           <button className="navbar-toggler" style={{ position: "fixed", right: "10px", top: "19px" }} type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" onClick={handleNavbar}></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo02" style={{padding:useWindowSize()>500?"":"0 1rem 0 1rem"}}>
+          <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarTogglerDemo02" style={{ padding: useWindowSize() > 500 ? "" : "0 1rem 0 1rem" }}>
 
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" style={{display:useWindowSize()>500?'flex':'inherit', flexDirection:useWindowSize()>500?"row-reverse":'inherit', width:useWindowSize()>700?810:'inherit'}}>
-              <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/"} className="nav-link" >{t("home")}</NavLink></li>
-              <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/our-solution/"} className="nav-link" >{t('solution')}</NavLink></li>
-              <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/about-us/"} className="nav-link" >{t('about')}</NavLink></li>
-              <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/blog/"} className="nav-link">{t("blog")}</NavLink></li>
-              <li className="nav-item" style={{textAlign:"right"}}><NavLink to={"/career/"} className="nav-link"  >{t("career")}</NavLink></li>
-              <li className="nav-item" style={{textAlign:"right"}}><div onClick={() => {
-                                let offsetTop = (document.getElementById("contact") as HTMLElement).offsetTop;
-                                window.scrollTo({
-                                    top:window.innerWidth>500?offsetTop+100: offsetTop,
-                                    behavior: "smooth"
-                                });
-                            }} className="nav-link" style={{cursor:"pointer"}}>{t("contact")}</div></li>
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" style={{ display: useWindowSize() > 994 ? 'flex' : 'inherit', flexDirection: useWindowSize() > 994 ? "row-reverse" : 'inherit', width: useWindowSize() > 1300 ? 810 : 'inherit' }}>
+              <li className="nav-item " style={{ textAlign: "right" }}><NavLink to={"/"} className="nav-link" onClick={handleNavCollapse}>{t("home")}</NavLink></li>
+              <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/our-solution/"} className="nav-link" onClick={handleNavCollapse}>{t('solution')}</NavLink></li>
+              <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/about-us/"} className="nav-link" onClick={handleNavCollapse}>{t('about')}</NavLink></li>
+              <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/blog/"} className="nav-link" onClick={handleNavCollapse}>{t("blog")}</NavLink></li>
+              <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/career/"} className="nav-link" onClick={handleNavCollapse}>{t("career")}</NavLink></li>
+              <li className="nav-item" style={{ textAlign: "right" }}><div onClick={() => {
+                let offsetTop = (document.getElementById("contact") as HTMLElement).offsetTop;
+                window.scrollTo({
+                  top: window.innerWidth > 500 ? offsetTop + 100 : offsetTop,
+                  behavior: "smooth"
+                });
+                handleNavCollapse()
+              }} className="nav-link" style={{ cursor: "pointer" }} >{t("contact")}</div></li>
 
 
 
 
             </ul>
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" style={{marginTop:"2rem"}}>
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" style={{ marginTop: "2rem" }}>
               <li className="nav-item">
                 <a href='https://vendors.upcapital.io/' className="nav-link vendors_login_sm">{t("vendors_login")} <img src={avatar} className="avatar2" /></a>
 
               </li>
-              {/* <li className="nav-item">
+              <li className="nav-item">
                 <div className='langSetting2'>
                   <button
                     value='en'
@@ -212,7 +217,7 @@ const NavbarItems = (props) => {
                     {t('he')}
                   </button>
                 </div>
-              </li> */}
+              </li>
 
             </ul>
 
