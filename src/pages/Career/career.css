@@ -1,7 +1,14 @@
 .career-big-title {
   font-size: 50pt;
 }
+.career-page-bg{
+  background-image: url('../../assets/images/sol-up.png') ;
+  background-repeat: no-repeat;
+  background-size: contain;
 
+  background-position-y: -49%;
+
+}
 .job-title {
   margin: 2rem 0 2rem 0;
   font-weight: bolder;
@@ -34,13 +41,28 @@
 
 }
 
+@media (max-width: 767px) {
+  .career-page-bg{
+    background-image: url('../../assets/images/page-bg-small.png') ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 32%;
+
+  }
+}
+
 @media (min-width: 600px) {
   .job-offers {
     grid-template-columns: repeat(2, 1fr);
+
   }
+  
 }
 @media (min-width: 900px) {
   .job-offers {
     grid-template-columns: repeat(3, 1fr);
+
   }
+
+
 }

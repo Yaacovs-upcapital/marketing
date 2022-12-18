@@ -70,7 +70,7 @@ const Description = (props) => {
                 <Tooltip
                     title={props.data}
                     open={open}
-                    onBlur={() => setOpen(false)}
+                    // onBlur={() => setOpen(false)}
                     arrow
                 >
                     <button style={{ background: "transparent", border: "none" }}> <img onClick={() => setOpen(!open)} src={plus} /></button>

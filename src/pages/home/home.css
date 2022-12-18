@@ -405,7 +405,10 @@
   border: 1px solid #bfbfbf;
   position: relative;
 }
-
+.carousel-img{
+  height: auto;
+  width: 168px !important;
+}
 .circle-tech {
   /* vertical-align: middle; */
   width: 8rem;

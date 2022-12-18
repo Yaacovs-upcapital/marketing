@@ -122,10 +122,7 @@ const About = () => {
 									<Description data={partners.ron} />
 
 								</div>
-								{/* <div>
-	<h4 className='member-title'>{t("ron")}</h4>
-	<p className='member-title'>{t("ron_title")}</p>
-</div> */}
+
 								<div className="mt-2 mb-2">
 									{/* <h4 className='member-title'>{t("mariano")}</h4> */}
 									<h4 className='member-title'>{t("ron")}</h4>
@@ -148,8 +145,8 @@ const About = () => {
 	<p className='member-title'>{t("yaron_title")}</p>
 </div> */}
 								<div className="mt-2 mb-2">
-									<h4 className='member-title'>ירון כהן</h4>
-									<h4 className='member-title'>מנכ״ל כספים</h4>
+									<h4 className='member-title'>{t("yaron")}</h4>
+									<h4 className='member-title'>{t("yaron_title")}</h4>
 								</div>
 
 							</div>

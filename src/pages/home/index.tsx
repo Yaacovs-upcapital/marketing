@@ -1,5 +1,5 @@
 import "./home.css"
-import { Plus, Up, Phone, Invoice, Approve, Secure, Efficient, Connect, Payment } from "../../assets/icons";
+import { Plus, Up } from "../../assets/icons";
 import Deloitte from "../../assets/images/deloitte-digital.png";
 import Erech from "../../assets/images/erechlogo.png";
 import Oracle from "../../assets/images/oracle.png";
@@ -33,8 +33,6 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 const partners = [Obelisk, Oracle, PrimeSec, Erech, BDO, Deloitte, Tadmor, PWC]
 const careerPath = "../career"
 
-
-
 const Home = (props) => {
     const { t } = useTranslation();
 
@@ -42,14 +40,14 @@ const Home = (props) => {
     const handleDragStart = (e) => e.preventDefault();
 
     const items = [
-        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"110rem"} src={Obelisk} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"110rem"} src={Oracle} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"110rem"} src={PrimeSec} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}> <img height={"50rem"} width={"110rem"} src={Erech} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"110rem"} src={BDO} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"110rem"} src={Deloitte} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"110rem"} src={Tadmor} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img height={"50rem"} width={"100rem"} src={PWC} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img style={{height:51, width:'auto'}} src={Obelisk} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img style={{height:30, width:'auto',margin:"auto"}} src={Oracle} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img style={{height:50, width:'auto'}} src={PrimeSec} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}> <img style={{height:50, width:'auto'}} src={Erech} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img style={{height:50, width:'auto'}} src={BDO} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img style={{height:50, width:'auto'}} src={Deloitte} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img style={{height:50, width:'auto'}} src={Tadmor} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img  style={{height:50, width:'auto'}} src={PWC} onDragStart={handleDragStart} role="presentation" /></div>,
 
     ];
 
@@ -114,13 +112,8 @@ const Home = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div >
+            
 
-                    </div>
-
-                    <div style={{}}>
-
-                    </div>
                 </div>
             </div>
 
@@ -452,11 +445,12 @@ const Home = (props) => {
                                 <AliceCarousel
                                     autoPlay={true}
                                     mouseTracking
-                                    autoPlayInterval={1000}
+                                    autoPlayInterval={1500}
                                     items={items}
                                     autoPlayDirection={'ltr'}
                                     animationDuration={1000}
                                     infinite={true}
+                                    disableButtonsControls={true}
                                 />
 
 

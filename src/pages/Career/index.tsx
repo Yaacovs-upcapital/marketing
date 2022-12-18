@@ -14,10 +14,10 @@ const Career = () => {
             <div className="career-page-bg" >
                 <div className="container" >
 
-                    <div className="career-content">
+                    <div className="career-content" style={{ marginTop:"3rem"}}>
                         <div className="row">
                             <div className="col-lg-5 col-md-5 col-sm-5">
-                                <div className="text-container" style={{ width: "100%" }}>
+                                <div className="text-container" style={{ width: "100%"}}>
                                     <div style={{ display: "flex", justifyContent: "right", lineHeight: 0, marginBottom: "1rem" }} >
                                         <h1 className="career-big-title">{t("career")}
                                             <span
@@ -42,7 +42,7 @@ const Career = () => {
                                     <img className="small-photo" src={smiling} />
                                 </div >
                             </div>
-                            <div className="container" style={{}}>
+                            <div className="container" style={{ marginTop:"3rem", marginBottom:"3rem"}}>
                                 <div className="job-title-wrap">
                                     <h3 className="job-title">{t('latest_jobs')}<span style={{color:"red"}}>.</span></h3>
                                 </div>
