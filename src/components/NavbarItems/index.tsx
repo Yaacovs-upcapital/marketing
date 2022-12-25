@@ -140,7 +140,7 @@ const NavbarItems = (props) => {
 
   return (
     <>
-      <nav className={"navbar fixed-top navbar-expand-lg "} style={{ backgroundImage: useWindowSize() > 990 ? `url(${bg1})` : `url(${collapseNav})`, backgroundRepeat: 'noRepeat', backgroundSize: "cover", }}>
+      <nav className={"navbar fixed-top navbar-expand-lg "} style={{backgroundImage: useWindowSize() > 990 ? `url(${bg1})` : `url(${collapseNav})`, backgroundRepeat: 'noRepeat', backgroundSize: "cover", }}>
         <div className="container-fluid">
 
           <NavLink className="navbar-brand" to={"/"}> <LogoBlue className='brnd' /> </NavLink>
@@ -180,14 +180,16 @@ const NavbarItems = (props) => {
               <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/about-us/"} className="nav-link" onClick={handleNavCollapse}>{t('about')}</NavLink></li>
               <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/blog/"} className="nav-link" onClick={handleNavCollapse}>{t("blog")}</NavLink></li>
               <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/career/"} className="nav-link" onClick={handleNavCollapse}>{t("career")}</NavLink></li>
-              <li className="nav-item" style={{ textAlign: "right" }}><div onClick={() => {
+              <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/contact-us/"} className="nav-link" onClick={handleNavCollapse}>{t("contact")}</NavLink></li>
+                {/* <div onClick={() => {
                 let offsetTop = (document.getElementById("contact") as HTMLElement).offsetTop;
                 window.scrollTo({
                   top: window.innerWidth > 500 ? offsetTop + 100 : offsetTop,
                   behavior: "smooth"
                 });
                 handleNavCollapse()
-              }} className="nav-link" style={{ cursor: "pointer" }} >{t("contact")}</div></li>
+              }} className="nav-link" style={{ cursor: "pointer" }} >{t("contact")}</div> */}
+            
 
 
 

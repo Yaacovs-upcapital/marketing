@@ -62,7 +62,9 @@ input {
   font-size: 1.2em;
   padding-bottom: 0.5rem;
 }
-
+textarea:focus, input:focus{
+  outline: none;
+}
 .text-input {
   padding: 0.5rem;
 }

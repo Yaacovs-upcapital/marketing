@@ -43,17 +43,22 @@
   margin-left: 277px;
 }
 
-.plus-img {
+/* .plus-img {
   position: absolute;
   top: 7rem;
   right: 8.5rem;
-}
+} */
 
 .img-wrap {
   position: relative;
 }
 
+@media screen and (min-width:1550px){
+  .about-up{
+    margin-top: 1rem;
 
+  }
+}
 
 @media (max-width: 767px) {
   .team-container {
@@ -86,11 +91,11 @@
     margin-left: 277px;
   }
 
-  .plus-img {
+  /* .plus-img {
     position: absolute;
     top: 7rem;
     right: 8.5rem;
-}
+} */
 
   .member-description {
     font-size: 0.8em;
@@ -136,7 +141,7 @@
   }
 }
 
-@media screen and (max-width:700px){
+@media screen and (max-width:767px){
   .about-up{
     background-image: url("../../assets/images/page-bg-small.png");
     background-repeat: no-repeat;

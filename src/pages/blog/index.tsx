@@ -11,6 +11,7 @@ import ContactForm from "../../components/footer";
 import { flexbox } from "@mui/system";
 import Navbar from "../../components/navbar";
 import { Box, Card, CardContent, CardMedia } from "@mui/material";
+import useWindowSize from "../../components/windowSize";
 
 const Blog = () => {
 
@@ -44,10 +45,10 @@ const Blog = () => {
     <div style={{ marginBottom: "7rem" }} >
 
 
-      <div className=" container mt-3" style={{}}>
+      <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'} mt-3`} style={{}}>
         <h1 style={{ color: "#2f439a", fontSize: "40pt", textAlign: "right", paddingRight: getWindowDimensions().width > 767 ? "" : "10px", marginTop: getWindowDimensions().width > 767 ? "6rem" : "", marginBottom: getWindowDimensions().width > 767 ? "2rem" : "1rem" }}>מהתקשורת<span style={{ color: "red" }}>.</span></h1>
       </div>
-      <div className="container" style={{ paddingLeft: getWindowDimensions().width > 767 ? "" : "1rem", marginBottom: 2 }}>
+      <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`} style={{ paddingLeft: getWindowDimensions().width > 767 ? "" : "1rem", marginBottom: 2 }}>
         <div className="row" style={getWindowDimensions().width > 767 ? { padding: "none !important", direction: "rtl" } : { paddingLeft: "10px", paddingRight: "10px" }}>
 
 

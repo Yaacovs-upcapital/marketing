@@ -30,6 +30,9 @@ import pointerImage from "../../assets/images/pointer-left.png";
 import arrowDown from "../../assets/images/arrow-down.png";
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import { NavLink } from 'react-router-dom';
+import Description from "../../components/description";
+
 const partners = [Obelisk, Oracle, PrimeSec, Erech, BDO, Deloitte, Tadmor, PWC]
 const careerPath = "../career"
 
@@ -40,66 +43,64 @@ const Home = (props) => {
     const handleDragStart = (e) => e.preventDefault();
 
     const items = [
-        <div style={{ textAlign: "center" }}><img style={{height:51, width:'auto'}} src={Obelisk} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img style={{height:30, width:'auto',margin:"auto"}} src={Oracle} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img style={{height:50, width:'auto'}} src={PrimeSec} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}> <img style={{height:50, width:'auto'}} src={Erech} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img style={{height:50, width:'auto'}} src={BDO} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img style={{height:50, width:'auto'}} src={Deloitte} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img style={{height:50, width:'auto'}} src={Tadmor} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img  style={{height:50, width:'auto'}} src={PWC} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img style={{ height: 51, width: 'auto' }} src={Obelisk} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img style={{ height: 30, width: 'auto', margin: "auto" }} src={Oracle} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={PrimeSec} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}> <img style={{ height: 50, width: 'auto' }} src={Erech} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={BDO} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={Deloitte} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={Tadmor} onDragStart={handleDragStart} role="presentation" /></div>,
+        <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={PWC} onDragStart={handleDragStart} role="presentation" /></div>,
 
     ];
 
 
     return (
 
-
         <div className="page-container">
-            <div className="home-jumbotron" >
-                <div className="container mb-5" >
-                    <div className="row">
+            <div className="home-jumbotron " >
+                <div className={`row ${useWindowSize() > 1550 ? '' : 'container'}`} style={{ paddingRight: useWindowSize() > 1550 ? "2rem" : "" }} >
 
-                        <div className="col-lg-2 col-md-12 col-sm-12 mt-3 mb-5" style={{ zIndex: "1" }} >
-                            <div className="home-title">
-                                <h1 style={{ fontFamily: 'LeonRegular', fontSize: '4em', color: '#2f439a', width: "90vw" }}>{t("convert")}</h1>
-                                <h1 style={{ fontFamily: 'LeonRegular', fontSize: '4em', color: '#2f439a', width: "90vw" }}>{t("shotef")}</h1>
-                                <h1 style={{ color: 'red', fontFamily: 'LeonRegular', fontSize: '4em', fontWeight: 'bold', width: "90vw" }}>{t("plus")}</h1>
-                            </div>
-                            <div style={{ display: 'flex', justifyContent: 'right', padding: "0", width: "300px" }} className="mt-3">
-                                <button style={{ borderRadius: "0.5em", borderStyle: "none", background: "#2f439a", fontFamily: "RAG-Sans 1.0", fontWeight: "bold", fontSize: "0.9em", letterSpacing: "0.75px", color: "#FFFFFF", padding: "0.6rem 1.5rem 0.6rem 1.5rem" }}>{t("sign_up_free")}</button>
-                                <button style={{ marginRight: "1rem", borderRadius: "0.5rem", border: "0.5px solid #2f439a", background: "#fff", fontFamily: "RAG-Sans 1.0", fontWeight: "bold", fontSize: "0.9em", letterSpacing: "0.75px", color: "#2f439a", padding: "0.6rem 1.5rem 0.6rem 1.5rem" }}>{t("consult")}</button>
-                            </div>
+                    <div className="col-lg-2 col-md-12 col-sm-12 mt-3 mb-5" style={{ zIndex: "1" }} >
+                        <div className="home-title">
+                            <h1 className="home-title-1">{t("convert")}</h1>
+                            <h1 className="home-title-2" >{t("shotef")}</h1>
+                            <h1 className="home-title-3">{t("plus")}</h1>
                         </div>
+                        <div style={{ display: 'flex', justifyContent: 'right', padding: "0", width: "300px" }} className="mt-3">
+                            <button className="prepayment-btn"><NavLink to={"/prepayment/"} >{t("sign_up_free")}</NavLink></button>
+                            <button className="consult-btn"><NavLink to={"/consult/"} >{t("consult")}</NavLink></button>
 
-
-                        <div style={{ display: 'flex', justifyContent: 'left', marginTop: "40px", padding: "0" }} className="col-lg-10 col-md-12 col-sm-12 mt-3 jumborton-image">
-                            <img src={home} className="img-fluid" style={{ marginTop: "35px", marginLeft: "-47px" }} />
                         </div>
-
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: "baseline", marginTop:useWindowSize()>500?"-90px":"-50px",marginRight:useWindowSize()>500?"-76px":'' }}>
-                            <img src={arrowDown} style={{ width: '22px', height: '40px' }} className="img2-fluid" onClick={() => {
-                                let offsetTop = (document.getElementById("product") as HTMLElement).offsetTop;
-                                window.scrollTo({
-                                    top:window.innerWidth>500?offsetTop+100: offsetTop+300,
-                                    behavior: "smooth"
-                                });
-                            }} />
-                        </div>
-
                     </div>
+
+
+                    <div style={{ display: 'flex', justifyContent: 'left', marginTop: "40px", padding: "0" }} className="col-lg-10 col-md-12 col-sm-12 mt-3 jumborton-image">
+                        <img src={home} className="img-fluid" />
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: "baseline", marginTop: useWindowSize() > 500 ? "-90px" : "-50px", marginRight: useWindowSize() > 500 ? "-76px" : '' }}>
+                        <img src={arrowDown} style={{}} className="img2-fluid" onClick={() => {
+                            let offsetTop = (document.getElementById("product") as HTMLElement).offsetTop;
+                            window.scrollTo({
+                                top: window.innerWidth > 500 ? offsetTop + 100 : offsetTop + 300,
+                                behavior: "smooth"
+                            });
+                        }} />
+                    </div>
+
                 </div>
 
             </div>
 
             <div className="product" id="product" style={{ display: "flex", justifyContent: "center" }} >
-                <div className="product-content container" style={{ width: "65rem", margin: "auto" }}>
+                <div className={`product-content ${useWindowSize() > 1550 ? 'container-big' : 'container'}`} >
                     <div className="row">
                         <div className="col-lg-4 col-md-4 col-sm-12">
-                            <div>
-                                <div ><p className="product-title">{t('product')}</p></div>
-                                <div style={{ display: "flex" }}> <p className="product-title" >{t('our')}</p>
-                                    <p className="product-title" style={{ color: "red" }}>.</p></div>
+                            <div ><p className="product-title">{t('product')}</p></div>
+                            <div style={{ display: "flex" }}>
+                                <p className="product-title" >{t('our')}</p>
+                                <p className="product-title" style={{ color: "red" }}>.</p>
                             </div>
                             <div>
 
@@ -112,7 +113,7 @@ const Home = (props) => {
                             </div>
                         </div>
                     </div>
-            
+
 
                 </div>
             </div>
@@ -120,16 +121,16 @@ const Home = (props) => {
 
 
             <div className="parent-wrap2">
-                <div className="row" style={{ marginRight: useWindowSize() > 500 ? '' : '-38px' }}>
+                <div className="flow-chart" >
 
-                    <div className="bg-pointer col-lg-3 col-md-12 col-sm-12 p-3 ">
+                    <div className="bg-pointer ">
                         <img className="bg-pointer2" src={pointerImage} alt="..." />
-                        <div className="flow-circle p-1">
+                        <div className="flow-circle ">
 
                             <div className="circle-wrap">
 
-                                <div style={{ marginTop: "-4.2rem", marginRight: "-11.5rem", boxShadow: "" }}>
-                                    <Plus height={"9rem"} width={"9rem"} /></div>
+                                <div style={useWindowSize() > 1550 ? { marginTop: "-6.5rem", marginRight: "-14.5rem" } : { marginTop: "-4.2rem", marginRight: "-11.5rem" }}>
+                                    <Plus height={useWindowSize() > 1550 ? "12rem" : "9rem"} width={useWindowSize() > 1550 ? "12rem" : "9rem"} /></div>
 
                                 <h3 className="product-circle-text" style={{ marginBottom: 0, marginTop: "-3rem", fontWeight: "bold" }}>
                                     {t("product_circle1_header")}</h3>
@@ -139,12 +140,12 @@ const Home = (props) => {
                         </div>
                     </div>
 
-                    <div className="bg-pointer col-lg-3 col-md-12 col-sm-12 p-3">
+                    <div className="bg-pointer ">
                         <img className="bg-pointer2" src={pointerImage} alt="..." />
                         <div className="flow-circle">
                             <div className="circle-wrap">
-                                <div style={{ marginTop: "-7.2rem", marginRight: "-11.5rem" }}>
-                                    <Plus height={"9rem"} width={"9rem"} /></div>
+                                <div style={useWindowSize() > 1550 ? { marginTop: "-10rem", marginRight: "-15rem" } : { marginTop: "-7.2rem", marginRight: "-11.5rem" }}>
+                                    <Plus height={useWindowSize() > 1550 ? "12rem" : "9rem"} width={useWindowSize() > 1550 ? "12rem" : "9rem"} /></div>
 
                                 <h3 className="product-circle-text" style={{ marginBottom: 0, marginTop: "-2.7rem", fontWeight: "bold" }}>{t("product_circle2_header")}</h3>
                                 <p className="product-circle-text" style={{ marginTop: 0 }}>{t("product_circle2")}</p>
@@ -154,12 +155,12 @@ const Home = (props) => {
                     </div >
 
 
-                    <div className="bg-pointer col-lg-3 col-md-12 col-sm-12 p-3">
+                    <div className="bg-pointer ">
                         <img className="bg-pointer2" src={pointerImage} alt="..." />
                         <div className="flow-circle">
                             <div className="circle-wrap">
-                                <div style={{ marginTop: "-5.2rem", marginRight: "-11.5rem" }}>
-                                    <Plus height={"9rem"} width={"9rem"} />
+                                <div style={useWindowSize() > 1550 ? { marginTop: "-8rem", marginRight: "-14.5rem" } : { marginTop: "-5.2rem", marginRight: "-11.5rem" }}>
+                                    <Plus height={useWindowSize() > 1550 ? "12rem" : "9rem"} width={useWindowSize() > 1550 ? "12rem" : "9rem"} />
 
                                 </div>
 
@@ -172,12 +173,12 @@ const Home = (props) => {
                         </div>
                     </div>
 
-                    <div className="bg-pointer col-lg-3 col-md-12 col-sm-12 p-3">
+                    <div className="bg-pointer ">
                         <img className="bg-pointer2" src={pointerImage} alt="..." style={{ opacity: "0" }} />
                         <div className="flow-circle">
                             <div className="circle-wrap">
-                                <div style={{ marginTop: "-6.2rem", marginRight: "-11.5rem" }}>
-                                    <Up height={"9rem"} width={"9rem"} />
+                                <div style={useWindowSize() > 1550 ? { marginTop: "-10rem", marginRight: "-14rem" } : { marginTop: "-6.2rem", marginRight: "-11.5rem" }}>
+                                    <Up height={useWindowSize() > 1550 ? "12rem" : "9rem"} width={useWindowSize() > 1550 ? "12rem" : "9rem"} />
 
                                 </div>
 
@@ -193,14 +194,14 @@ const Home = (props) => {
                 </div>
             </div>
 
-            <div className="container">
-                <h1 className="process-title" style={{  }}> {t('process')} <span style={{ color: "red", fontFamily: "LeonRegular" }}>?</span></h1>
+            <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`}>
+                <h1 className="process-title" style={{}}> {t('process')} <span style={{ color: "red", fontFamily: "LeonRegular" }}>?</span></h1>
             </div>
 
             <div className="process" style={{ textAlign: "center" }}>
 
 
-                <div className="container" style={{ textAlign: "center" }}>
+                <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`} style={{ textAlign: "center" }}>
                     <div className="row">
                         <div className="col-lg-3 col-md-6 col-sm-12" style={{ display: "flex", justifyContent: "center", textAlign: "center" }}>
                             <div className="process-item">
@@ -243,100 +244,100 @@ const Home = (props) => {
             </div>
 
 
-            <div className="tech-bg container mt-5 mb-5 tech-circular" style={{ marginRight:useWindowSize()>500?"":"16%" }} >
+            <div className={`tech-bg mt-5 mb-5 tech-circular ${useWindowSize() > 1550 ? 'container-big' : 'container'}`} style={{ marginRight: useWindowSize() > 500 ? "" : "16%" }} >
 
-                <div style={{ display: "flex", justifyContent: "right", marginBottom: "2rem", marginRight:useWindowSize()>500?"":"-31px" }}>
+                <div style={{ display: "flex", justifyContent: "right", marginBottom: "2rem", marginRight: useWindowSize() > 500 ? "" : "-31px" }}>
                     <h1 className="tech">{t('tech')}</h1><h1 className="tech" style={{ color: "red" }}>.</h1>
                 </div>
                 <div>
                     <img src={techbgb} style={{ display: useWindowSize() > 700 ? 'block' : "none" }} className="techBlue" />
                 </div>
 
-                <div className="container">
+                <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`}>
 
-                        <div className="row" style={{margin:"auto"}} >
+                    <div className="row" style={{ margin: "auto" }} >
 
-                            <div className="col-lg-3 col-md-12 col-sm-12 " style={{ display: "flex", justifyContent: "center" }}>
+                        <div className="col-lg-3 col-md-12 col-sm-12 " style={{ display: "flex", justifyContent: "center" }}>
 
-                                <div className="tech-circle tech-bg1" >
-                                    <div style={{ position: "absolute", top: "5px", right: "-95px" }}>
-                                        <svg overflow="visible" style={{ position: "absolute" }}>
-                                            <circle cx="100" cy="0" r="30" fill="#EAECF5"></circle>
-                                            <text x="100" y="0" dominantBaseline="middle" fill="#2f439a" fontSize="2rem"
-                                                fontFamily="RagBold" textAnchor="middle">1</text>
-                                        </svg>
-                                    </div>
-                                    <div className="flow-circle ">
-
-                                        <div className="circle-tech">
-
-                                            <p style={{ marginBottom: "auto", marginTop: "auto" }}>{t("tech_circle1")}</p>
-
-                                        </div>
-                                    </div>
+                            <div className="tech-circle tech-bg1" >
+                                <div style={{ position: "absolute", top: "5px", right: "-95px" }}>
+                                    <svg overflow="visible" style={{ position: "absolute" }}>
+                                        <circle cx="100" cy="0" r="30" fill="#EAECF5"></circle>
+                                        <text x="100" y="0" dominantBaseline="middle" fill="#2f439a" fontSize="2rem"
+                                            fontFamily="RagBold" textAnchor="middle">1</text>
+                                    </svg>
                                 </div>
-                            </div>
+                                <div className="flow-circle ">
 
-                            <div className="col-lg-3 col-md-12 col-sm-12 mb-5" style={{ display: "flex", justifyContent: "center" }}>
-                                <div className="tech-circle" style={{ marginTop: "3rem" }}>
-                                    <div style={{ position: "absolute", top: "5px", right: "-95px" }}>
-                                        <svg overflow="visible" style={{ position: "absolute" }}>
-                                            <circle cx="100" cy="0" r="30" fill="#EAECF5"></circle>
-                                            <text x="100" y="0" dominantBaseline="middle" fill="#2f439a" fontSize="2rem"
-                                                fontFamily="RagBold" textAnchor="middle">2</text>
-                                        </svg>
-                                    </div>
-                                    <div className="flow-circle">
-                                        <div className="circle-tech">
-                                            <p style={{ marginBottom: "auto", marginTop: "auto" }}>{t("tech_circle2")}</p>
-                                        </div>
-                                    </div>
-                                </div >
-                            </div>
+                                    <div className="circle-tech">
 
-                            <div className="col-lg-3 col-md-12 col-sm-12 " style={{ display: "flex", justifyContent: "center" }}>
-                                <div className="tech-circle tech-bg1" >
-                                    <div style={{ position: "absolute", top: "5px", right: "-95px" }}>
-                                        <svg overflow="visible" style={{ position: "absolute" }}>
-                                            <circle cx="100" cy="0" r="30" fill="#EAECF5"></circle>
-                                            <text x="100" y="0" dominantBaseline="middle" fill="#2f439a" fontSize="2rem"
-                                                fontFamily="RagBold" textAnchor="middle">3</text>
-                                        </svg>
-                                    </div>
-                                    <div className="flow-circle">
-                                        <div className="circle-tech">
-                                            <p style={{ marginBottom: "auto", marginTop: "auto" }}> {t("tech_circle3")}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                        <p style={{ marginBottom: "auto", marginTop: "auto" }}>{t("tech_circle1")}</p>
 
-                            <div className="col-lg-3 col-md-12 col-sm-12" style={{ display: "flex", justifyContent: "center" }}>
-
-                                <div className="tech-circle" style={{ marginTop: "3rem" }}>
-                                    <div style={{ position: "absolute", top: "5px", right: "-95px" }}>
-                                        <svg overflow="visible" style={{ position: "absolute" }}>
-                                            <circle cx="100" cy="0" r="30" fill="#EAECF5"></circle>
-                                            <text x="100" y="0" dominantBaseline="middle" fill="#2f439a" fontSize="2rem"
-                                                fontFamily="RagBold" textAnchor="middle">4</text>
-                                        </svg>
-                                    </div>
-                                    <div className="flow-circle" style={{ padding: "1rem 1.2rem 1rem 1.2rem" }}>
-                                        <div className="circle-tech">
-
-                                            <p style={{ marginBottom: "auto", marginTop: "auto" }}>{t("tech_circle4")}</p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div className="col-lg-3 col-md-12 col-sm-12 mb-5" style={{ display: "flex", justifyContent: "center" }}>
+                            <div className="tech-circle" style={{ marginTop: "3rem" }}>
+                                <div style={{ position: "absolute", top: "5px", right: "-95px" }}>
+                                    <svg overflow="visible" style={{ position: "absolute" }}>
+                                        <circle cx="100" cy="0" r="30" fill="#EAECF5"></circle>
+                                        <text x="100" y="0" dominantBaseline="middle" fill="#2f439a" fontSize="2rem"
+                                            fontFamily="RagBold" textAnchor="middle">2</text>
+                                    </svg>
+                                </div>
+                                <div className="flow-circle">
+                                    <div className="circle-tech">
+                                        <p style={{ marginBottom: "auto", marginTop: "auto" }}>{t("tech_circle2")}</p>
+                                    </div>
+                                </div>
+                            </div >
+                        </div>
+
+                        <div className="col-lg-3 col-md-12 col-sm-12 " style={{ display: "flex", justifyContent: "center" }}>
+                            <div className="tech-circle tech-bg1" >
+                                <div style={{ position: "absolute", top: "5px", right: "-95px" }}>
+                                    <svg overflow="visible" style={{ position: "absolute" }}>
+                                        <circle cx="100" cy="0" r="30" fill="#EAECF5"></circle>
+                                        <text x="100" y="0" dominantBaseline="middle" fill="#2f439a" fontSize="2rem"
+                                            fontFamily="RagBold" textAnchor="middle">3</text>
+                                    </svg>
+                                </div>
+                                <div className="flow-circle">
+                                    <div className="circle-tech">
+                                        <p style={{ marginBottom: "auto", marginTop: "auto" }}> {t("tech_circle3")}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-3 col-md-12 col-sm-12" style={{ display: "flex", justifyContent: "center" }}>
+
+                            <div className="tech-circle" style={{ marginTop: "3rem" }}>
+                                <div style={{ position: "absolute", top: "5px", right: "-95px" }}>
+                                    <svg overflow="visible" style={{ position: "absolute" }}>
+                                        <circle cx="100" cy="0" r="30" fill="#EAECF5"></circle>
+                                        <text x="100" y="0" dominantBaseline="middle" fill="#2f439a" fontSize="2rem"
+                                            fontFamily="RagBold" textAnchor="middle">4</text>
+                                    </svg>
+                                </div>
+                                <div className="flow-circle" style={{ padding: "1rem 1.2rem 1rem 1.2rem" }}>
+                                    <div className="circle-tech">
+
+                                        <p style={{ marginBottom: "auto", marginTop: "auto" }}>{t("tech_circle4")}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
                 </div>
             </div>
 
             <div className="advantages-bg " >
-                <div className="container">
+                <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`}>
                     <div className="">
                         <div className="row">
                             <div className="col-lg-6 col-md-12 col-sm-12">
@@ -359,22 +360,44 @@ const Home = (props) => {
                             <div className="row row-cols-1 row-cols-lg-5 g-2 g-lg-3">
                                 <div className="col-lg-3 col-md-12 col-sm-12" >
                                     <div className="p-3 border bg-light" style={{ borderRadius: "20px" }}>
-                                        <div className="advantages-item" style={{ height: "100px" }}><div ><img src={secure} style={{ height: "40px", width: "auto", marginRight: "10px" }} /></div><div style={{ width: "70%", fontSize: "20px", marginRight: "20px" }} >{t("secure")}</div></div>
+                                        <div className="advantages-item" style={{ height: "100px" }}>
+                                            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
+                                                <img src={secure} className="advantages-image" />
+                                            </div>
+                                            <div className="advantages-rectangle" >{t("secure")}</div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-12 col-sm-12">
                                     <div className="p-3 border bg-light" style={{ borderRadius: "20px" }}>
-                                        <div className="advantages-item" style={{ height: "100px" }}><div ><img src={efficient} style={{ height: "40px", width: "auto", marginRight: "10px" }} /></div><div style={{ width: "70%", fontSize: "20px", marginRight: "20px" }}>{t("efficient")}</div></div>
+                                        <div className="advantages-item" style={{ height: "100px" }}>
+                                            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
+                                                <img src={efficient} className="advantages-image" />
+                                            </div>
+                                            <div className="advantages-rectangle">{t("efficient")}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-12 col-sm-12">
                                     <div className="p-3 border bg-light" style={{ borderRadius: "20px" }}>
-                                        <div className="advantages-item" style={{ height: "100px" }}><div ><img src={connect} style={{ height: "40px", width: "auto", marginRight: "10px" }} /></div><div style={{ width: "70%", fontSize: "20px", marginRight: "20px" }}>{t("connect")}</div></div>
+                                        <div className="advantages-item" style={{ height: "100px" }}>
+                                            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
+                                                <img src={connect} className="advantages-image" />
+                                            </div>
+                                            <div className="advantages-rectangle">{t("connect")}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-12 col-sm-12">
                                     <div className="p-3 border bg-light" style={{ borderRadius: "20px" }}>
-                                        <div className="advantages-item " style={{ height: "100px" }}><div ><img src={payment} style={{ height: "40px", width: "auto", marginRight: "10px" }} /></div><div style={{ width: "70%", fontSize: "20px", marginRight: "20px" }}>{t("payment")}</div></div>
+                                        <div className="advantages-item " style={{ height: "100px" }}>
+                                            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
+                                                <img src={payment} className="advantages-image" />
+                                            </div><div className="advantages-rectangle">{t("payment")}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -386,7 +409,7 @@ const Home = (props) => {
             </div>
 
             <div className="about-bg mt-5">
-                <div className="container">
+                <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`}>
                     <div style={{ display: "flex", justifyContent: "right" }}> <h1 className="about">{t('about')}</h1>
                         <h1 className="about" style={{ color: "red" }}>?</h1></div>
 
@@ -395,12 +418,8 @@ const Home = (props) => {
                         <div className="row">
                             <div className="col-lg-6 col-md-12 col-sm-12">
                                 <div className="about-text mb-3">
-                                    <p style={{ margin: 0, fontSize: "21px" }}>{t("about_text")}</p>
-                                    <button style={{
-                                        borderRadius: "0.5em", borderStyle: "none", background: "#2F439B",
-                                        fontFamily: "RAG-Sans 1.0", fontWeight: "bold", fontSize: "24px", letterSpacing: "0.75px",
-                                        color: "#FFFFFF", padding: "5px 10px", marginTop: "1rem"
-                                    }}>{t('read_more')}</button>
+                                    <p style={{ margin: 0, fontSize:useWindowSize() > 1550 ? "25px":"21px" }}>{t("about_text")}</p>
+                                    <button className="about-btn" ><NavLink to={"/about-us/"} >{t('read_more')}</NavLink></button>
                                 </div>
                             </div>
                             <div className="col-lg-6 col-md-12 col-sm-12">
@@ -409,20 +428,32 @@ const Home = (props) => {
 
 
 
-                                    <div className="row mt-2">
-                                        <div className="col-lg-4 col-md-12 col-sm-12">
-                                            <div style={{ textAlign: "center" }}> <img src={mariano} /><div className="about-name">
-                                                {t('mariano')}</div><div className="about-title">{t('mariano_title')}</div></div>
+                                    <div className="image-flex">
+                                        <div className="">
+                                            <div style={{ textAlign: "center" }}>
+                                                <img src={mariano}  className="personnel-image"/>
+                                                <div className="about-desc"><Description data={`${t('mariano_description')}`} />
+
+                                                </div>
+                                                <div className="about-name">
+                                                    {t('mariano')}</div>
+                                                <div className="about-title">{t('mariano_title')}
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <div className="col-lg-4 col-md-12 col-sm-12">
-                                            <div style={{ textAlign: "center" }}><img src={yaron} /><div className="about-name">
-                                                {t('yaron')}</div><div className="about-title">{t('yaron_title')}</div></div>
+                                        <div className="">
+                                            <div style={{ textAlign: "center" }}><img src={yaron} className="personnel-image"/>
+                                                <div className="about-desc"><Description data={`${t('yaron_description')}`} /></div>
+                                                <div className="about-name">
+                                                    {t('yaron')}</div><div className="about-title">{t('yaron_title')}</div></div>
                                         </div>
 
-                                        <div className="col-lg-4 col-md-12 col-sm-12">
-                                            <div style={{ textAlign: "center" }}><img src={ron} className="rounded-circle" /><div className="about-name">
-                                                {t('ron')}</div><div className="about-title">{t('ron_title')}</div></div>
+                                        <div className="">
+                                            <div style={{ textAlign: "center" }}><img src={ron} className="personnel-image"  />
+                                                <div className="about-desc"><Description data={`${t('ron_description')}`} /></div>
+                                                <div className="about-name">
+                                                    {t('ron')}</div><div className="about-title">{t('ron_title')}</div></div>
                                         </div>
 
                                     </div>
@@ -437,7 +468,7 @@ const Home = (props) => {
 
                 <div style={{ marginBottom: "6rem", marginTop: "10rem" }}>
 
-                    <div className="container" >
+                    <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`} >
                         <div style={{ display: "flex", justifyContent: "right", marginBottom: "1rem" }}><h2 className="partners-title">{t("partners")}</h2><h2 className="partners-title" style={{ color: "red" }}>.</h2></div>
 
                         {useWindowSize() <= 767 ?
@@ -463,7 +494,7 @@ const Home = (props) => {
                 </div>
 
                 <div className="career-bg" >
-                    <div className="container" >
+                    <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`} >
 
                         <div className="career-content">
                             <div className="row">
@@ -480,12 +511,7 @@ const Home = (props) => {
 
                                             <div className="career-slogan"><p>{t("career_text4")}</p></div>
 
-                                            <button style={{
-                                                borderRadius: "0.5em", borderStyle: "none",
-                                                background: "#2F439B", fontFamily: "RAG-Sans1.0-Regular", fontWeight: "bold",
-                                                fontSize: "0.9em", letterSpacing: "0.75px", color: "#FFFFFF",
-                                                padding: "0.8rem 2.5rem 0.8rem 2.5rem", marginTop: "1rem"
-                                            }}>{t("all_positions")}</button>
+                                            <button className="career-btn"><NavLink to={'/career/'}>{t("all_positions")}</NavLink></button>
 
                                         </div>
                                     </div>

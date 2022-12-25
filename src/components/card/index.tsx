@@ -36,17 +36,17 @@ export default function MediaControlCard(props: any) {
       <Box
         style={{
           width: "100%",
-          padding: props.image ? "10px 10px" : "50px 30px",
+          padding: props.image ? "10px 10px" : "30px 30px",
           direction: "rtl",
 
         }}
       >
-        <CardContent>{props.children}</CardContent>
-        <div style={{ padding: "16px", display: window.location.href.indexOf("blog") ? 'none' : '' }}>
-          <Link to={props.path || "/"} className="link-btn">
+        <CardContent style={{height:"100%"}}>{props.children}
+        <div style={{  display: 'flex',justifyContent:""}}>
+          <Link to={props.path || "/"} className="link-btn" style={{display: window.location.href.indexOf("blog")!=-1 ? 'none' : 'block' }}>
             {t("to_apply")}
           </Link>
-        </div>
+        </div></CardContent>
       </Box>
   
     </Card>

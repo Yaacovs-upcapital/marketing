@@ -25,5 +25,8 @@ export { ReactComponent as Connect} from "../../assets/icons/connect.svg"
 export { ReactComponent as Payment} from "../../assets/icons/payment.svg"
 export { ReactComponent as Efficient} from "../../assets/icons/efficient.svg"
 export { ReactComponent as Secure} from "../../assets/icons/secure.svg"
+export { ReactComponent as Telephone} from "../../assets/icons/telephone.svg"
+export { ReactComponent as Envelope} from "../../assets/icons/envelope.svg"
+export { ReactComponent as Waze} from "../../assets/icons/waze.svg"
 
 

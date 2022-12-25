@@ -57,7 +57,7 @@ const About = () => {
 		<>
 			<div >
 				<div className="about-up">
-					<div className="container mt-5 mb-5 p-3 " style={{ width: useWindowSize() > 500 ? "74rem" : "" }}>
+					<div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'} mt-5 mb-5 p-3`}  >
 						<div className="row" >
 
 							<div className="col-lg-7 col-md-12 col-sm-12 p-3" style={{ paddingLeft: "60px !important", fontWeight: "600" }}>
@@ -92,7 +92,7 @@ const About = () => {
 				</div>
 
 				<ThemeProvider theme={theme}>
-					<div style={{ marginTop: "3rem" }}>
+					<div style={{ marginTop: "3rem", marginBottom:"6rem" }}>
 
 
 
@@ -108,9 +108,7 @@ const About = () => {
 									<Description data={partners.mariano} />
 								</div>
 								<div className="mt-2 mb-2">
-									{/* <h4 className='member-title'>{t("mariano")}</h4> */}
 									<h4 className='member-title'>מריאנו פטסינסקי</h4>
-									{/* <p className='member-title'>{t("mariano_title")}</p> */}
 									<h4 className='member-title'>מייסד ומנכ״ל</h4>
 								</div>
 
@@ -124,9 +122,7 @@ const About = () => {
 								</div>
 
 								<div className="mt-2 mb-2">
-									{/* <h4 className='member-title'>{t("mariano")}</h4> */}
 									<h4 className='member-title'>{t("ron")}</h4>
-									{/* <p className='member-title'>{t("mariano_title")}</p> */}
 									<h4 className='member-title'>{t("ron_title")}</h4>
 								</div>
 
@@ -140,10 +136,7 @@ const About = () => {
 									</div>
 
 								</div>
-								{/* <div>
-	<h4 className='member-title'>{t("yaron")}</h4>
-	<p className='member-title'>{t("yaron_title")}</p>
-</div> */}
+
 								<div className="mt-2 mb-2">
 									<h4 className='member-title'>{t("yaron")}</h4>
 									<h4 className='member-title'>{t("yaron_title")}</h4>
@@ -159,14 +152,11 @@ const About = () => {
 									</div>
 
 								</div>
-								{/* <div>
-	<h4 className='member-title'>{t("avi")}</h4>
-	<p className='member-title'>{t("avi_title")}</p>
-</div> */}
 								<div className="mt-2 mb-2">
-									<h4 className='member-title'>אבי סונק</h4>
-									<h4 className='member-title'>משנה למנכ"ל</h4>
+									<h4 className='member-title'>{t("avi")}</h4>
+									<h4 className='member-title'>{t("avi_title")}</h4>
 								</div>
+
 
 							</div>
 

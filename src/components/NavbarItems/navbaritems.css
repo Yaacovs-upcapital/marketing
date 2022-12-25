@@ -1,197 +1,181 @@
-
- .navbar-toggler:focus {
-    text-decoration: none;
-    outline: 0;
-    box-shadow: none !important;
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none !important;
 }
 
-.navbar-toggle{
-    border: red;
-
+.navbar-toggle {
+  border: red;
+  margin: 0px;
 }
-
-
- @media screen and (max-width:991px){
-    
-    .avatar {
-        position: absolute;
-        right: 58px;
-        top: 19px;
-        height: 38px;
-        width: 38px;
-    }
-
-    .langSetting{
-        position: absolute;
-        right: 120px;
-        top: 20px;
-    }
-
-    .langSetting> button{
-        border: none;
-        background: none;
-        font-size: 20px;
-        color:#2f439a;
-        font-weight: 500;
-    }
-
-    .vendors_login_lg{
-        position: absolute;
-        right: 70px;
-        top: 25px;
-        text-decoration: none;
-        font-size: 20px;
-        color: #2f439a;
-        font-weight: 500;
-        display: none;
-    }
-
-    .langSetting2> button{
-        border: none;
-        background: none;
-        font-size: 20px;
-        color:#2f439a;
-        font-weight: 500;
-    }
-
-    .navbar ul {
-        display: flex;
-        list-style-type: none;
-        padding: 0;
-        align-items: flex-end;
-        justify-content: center;
-        
-    }
-
-    .nav-link{
-        font-size: 20px !important;
-        color: #2f439a !important;
-        font-weight: 500 !important; 
-    }
-
-    .brnd{
-        width: 120px !important;
-        height: auto !important;
-        margin-top: 3px !important;
-    }
-
-
+@media screen and (min-width: 500px) {
+    .fixed-top {
+        top: -2px !important;
+      }
 }
+@media screen and (max-width: 991px) {
+  .avatar {
+    position: absolute;
+    right: 58px;
+    top: 19px;
+    height: 38px;
+    width: 38px;
+  }
 
-@media screen and (min-width:991px){
+  .langSetting {
+    position: absolute;
+    right: 120px;
+    top: 20px;
+  }
 
-    .avatar {
-        position: absolute;
-        right: 24px;
-        top: 23px;
-        height: 38px;
-        width: 38px;
-    }
-
-    .langSetting{
-        position: absolute;
-        right: 220px;
-        top: 24px;
-    }
-
-    .langSetting> button{
-        border: none;
-        background: none;
-        font-size: 20px;
-        color:#2f439a;
-        font-weight: 500;
-    }
-
-    .langSetting2> button{
-        border: none;
-        background: none;
-        font-size: 20px;
-        color:#2f439a;
-        font-weight: 500;
-        display: none;
-    }
-
-    .vendors_login_lg{
-        position: absolute;
-        right: 70px;
-        top: 25px;
-        text-decoration: none;
-        font-size: 20px;
-        color: #2f439a;
-        font-weight: 500;
-    }
-
-    .vendors_login_sm{
-        display: none !important;
-    }
-
-    .langSetting2>span{
-        display: none;
-    }
-
-    .nav-link{
-        font-size: 20px !important;
-        color: #2f439a !important;
-        font-weight: 400 !important; 
-    }
-
-    .navbar-nav{
-        margin-left: 12% !important;
-    }
-}
-
-
-
- .active{
-text-decoration: underline  !important;
- color: #2f439a !important;
- font-weight: 600 !important;
-}
-
-
-#vendors_login{
-    position: relative;
-    left: 129px;
-    font-size: 18px;
-    font-weight: 600;
+  .langSetting > button {
+    border: none;
+    background: none;
+    font-size: 20px;
     color: #2f439a;
+    font-weight: 500;
+  }
+
+  .vendors_login_lg {
+    position: absolute;
+    right: 70px;
+    top: 25px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #2f439a;
+    font-weight: 500;
+    display: none;
+  }
+
+  .langSetting2 > button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: #2f439a;
+    font-weight: 500;
+  }
+
+  .navbar ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 20px !important;
+    color: #2f439a !important;
+    font-weight: 500 !important;
+  }
+
+  .brnd {
+    width: 120px !important;
+    height: auto !important;
+    margin-top: 3px !important;
+  }
 }
 
+@media screen and (min-width: 991px) {
+  .avatar {
+    position: absolute;
+    right: 24px;
+    top: 23px;
+    height: 38px;
+    width: 38px;
+  }
 
+  .langSetting {
+    position: absolute;
+    right: 220px;
+    top: 24px;
+  }
 
+  .langSetting > button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: #2f439a;
+    font-weight: 500;
+  }
 
+  .langSetting2 > button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: #2f439a;
+    font-weight: 500;
+    display: none;
+  }
 
-.makeStyles-selectedLangTextWeb-111{
-    margin-left:0px !important;
+  .vendors_login_lg {
+    position: absolute;
+    right: 70px;
+    top: 25px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #2f439a;
+    font-weight: 500;
+  }
+
+  .vendors_login_sm {
+    display: none !important;
+  }
+
+  .langSetting2 > span {
+    display: none;
+  }
+
+  .nav-link {
+    font-size: 20px !important;
+    color: #2f439a !important;
+    font-weight: 400 !important;
+  }
+
+  .navbar-nav {
+    margin-left: 12% !important;
+  }
 }
 
-.makeStyles-langTextWeb-110{
-    margin-right:3px !important;
+.active {
+  text-decoration: underline !important;
+  color: #2f439a !important;
+  font-weight: 600 !important;
 }
 
-@media (min-width: 960px){
-.makeStyles-selectedLangTextWeb-31{
- margin-left:3px !important;
+#vendors_login {
+  position: relative;
+  left: 129px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2f439a;
 }
-.makeStyles-langTextWeb-30{
+
+.makeStyles-selectedLangTextWeb-111 {
+  margin-left: 0px !important;
+}
+
+.makeStyles-langTextWeb-110 {
+  margin-right: 3px !important;
+}
+
+@media (min-width: 960px) {
+  .makeStyles-selectedLangTextWeb-31 {
+    margin-left: 3px !important;
+  }
+  .makeStyles-langTextWeb-30 {
     margin-right: 4px !important;
+  }
 }
 
-}
-
- @media (min-width: 600px) and (max-width: 1279.95px)
-{
-.makeStyles-langTextWeb-6{
+@media (min-width: 600px) and (max-width: 1279.95px) {
+  .makeStyles-langTextWeb-6 {
     font-size: 14px !important;
     margin-right: 3px !important;
-}
+  }
 
-
-.makeStyles-selectedLangTextWeb-7 {
+  .makeStyles-selectedLangTextWeb-7 {
     font-size: 14px !important;
     margin-left: 3px !important;
+  }
 }
-
-} 
-
-

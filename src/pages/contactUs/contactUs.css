@@ -1,0 +1,97 @@
+.contact-page-bg{
+  background-image: linear-gradient(to right,#fff,#e5e8ff);
+  height: 96vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 5rem;
+}
+
+.contact-page-title{
+  text-align: right;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: "LeonRegular";
+  color: #2f439a;
+
+}
+
+.contact-page {
+  width: 100%;
+  margin: auto;
+  border: 1px;
+  border-radius: 20px;
+  margin:  auto;
+  background-color: #fff;
+padding: 2rem;
+}
+
+.contact-title {
+  color: #2f439a;
+  padding-bottom: 1.5rem;
+  margin-bottom: 0;
+}
+
+.info {
+  padding-top: 5px;
+  text-align: right;
+  color: #2f439a;
+}
+.info-details{
+  padding-bottom: 2rem;
+
+}
+.contact-title {
+  font-size: 19.8px;
+  text-align: right;
+  font-family: "LeonBold";
+}
+.contact-footer{
+  position: -webkit-sticky;
+
+    position: sticky;
+    bottom: 0;
+    height: 0;
+  }
+@media (max-width: 767px) {
+  .contact-page {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .info {
+    padding-top: 2rem;
+    width: 100%;
+    text-align: right;
+  }
+  
+  .info {
+    border-left: 0px;
+    text-align: center;
+    padding-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 1000px) {  
+  .contact-page {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap:60px;
+    grid-row-gap: 0px;
+    }
+}
+
+@media (min-width: 767px) {  
+  .contact-page {
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (min-width: 1550px) {  
+  .container-contact {
+ width: 118rem;
+ margin: auto;
+}
+}
+
