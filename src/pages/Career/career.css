@@ -4,9 +4,8 @@
 .career-page-bg{
   background-image: url('../../assets/images/sol-up.png') ;
   background-repeat: no-repeat;
-  background-size: contain;
-
-  background-position-y: -49%;
+  background-size: 100% 56%;
+  /* background-position-y: -45%; */
 
 }
 .job-title {
@@ -41,6 +40,14 @@
 
 }
 
+.offers{
+  margin-top: 7rem !important;
+}
+@media screen and  (max-width: 994px) {
+  .career-page-bg .career-content{
+    flex-direction: column;
+  }
+}
 @media (max-width: 767px) {
   .career-page-bg{
     background-image: url('../../assets/images/page-bg-small.png') ;

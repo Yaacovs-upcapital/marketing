@@ -311,9 +311,7 @@
     height: auto !important;
     margin: 10px !important;
   }
-  .product {
-    margin-top: -34rem;
-  }
+  
   .process {
     background-image: url("../../assets/images/process-bgm2.png");
     background-repeat: no-repeat;
@@ -550,7 +548,7 @@
     margin-right: -6rem;
     padding-left: 100px;
     padding-right: 100px;
-    margin-top: min(-70vh);
+    margin-top: min(-51rem);
   }
 }
 

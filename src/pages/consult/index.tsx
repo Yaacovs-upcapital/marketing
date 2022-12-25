@@ -12,7 +12,7 @@ const Consult = () => {
   return (
       <div className='contact-page-bg '>
         <div className='container'>
-          <div><p className="contact-page-title" >{t("contact")}<span style={{color:'red'}}>.</span></p></div>
+          <div><p className="contact-page-title" >{t("consult")}<span style={{color:'red'}}>.</span></p></div>
 
           <div style={{}} className="contact-page">
             <div>
