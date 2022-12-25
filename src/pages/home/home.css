@@ -542,7 +542,7 @@
     background-repeat: no-repeat;
     background-size: 100%;
     height: 695px;
-    padding-top: min(10rem);
+    padding-top: min(12rem);
     padding-bottom: 9rem;
     margin-left: -6rem;
     margin-right: -6rem;
@@ -552,12 +552,7 @@
   }
 }
 
-@media screen and (min-width: 1200px){
-  .product {
-  padding-top: 21rem;
-  margin-top: -97vh;
-  }
-}
+
 @media screen and(min-width:1750px){
   .product{
   margin-top: -31rem;
