@@ -47,9 +47,8 @@ padding: 2rem;
   font-family: "LeonBold";
 }
 .contact-footer{
-  position: -webkit-sticky;
 
-    position: sticky;
+    position: fixed;
     bottom: 0;
     height: 0;
   }

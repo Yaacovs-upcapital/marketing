@@ -93,8 +93,8 @@ const Home = (props) => {
 
             </div>
 
-            <div className="product" id="product" style={{ display: "flex", justifyContent: "center" }} >
-                <div className={`product-content ${useWindowSize() > 1550 ? 'container-big' : 'container'}`} >
+            <div className="product" id="product" style={{ display: "flex", justifyContent: "center",flexShrink:1 }} >
+                <div className={`product-content ${useWindowSize() > 1750 ? 'container-big' : 'container'}`} >
                     <div className="row">
                         <div className="col-lg-4 col-md-4 col-sm-12">
                             <div ><p className="product-title">{t('product')}</p></div>

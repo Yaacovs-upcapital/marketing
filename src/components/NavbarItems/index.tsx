@@ -140,7 +140,7 @@ const NavbarItems = (props) => {
 
   return (
     <>
-      <nav className={"navbar fixed-top navbar-expand-lg "} style={{backgroundImage: useWindowSize() > 990 ? `url(${bg1})` : `url(${collapseNav})`, backgroundRepeat: 'noRepeat', backgroundSize: "cover", }}>
+      <nav className={"navbar fixed-top navbar-expand-xl "} style={{backgroundImage: useWindowSize() > 990 ? `url(${bg1})` : `url(${collapseNav})`, backgroundRepeat: 'noRepeat', backgroundSize: "cover", }}>
         <div className="container-fluid">
 
           <NavLink className="navbar-brand" to={"/"}> <LogoBlue className='brnd' /> </NavLink>
@@ -174,7 +174,7 @@ const NavbarItems = (props) => {
           </button>
           <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarTogglerDemo02" style={{ padding: useWindowSize() > 500 ? "" : "0 1rem 0 1rem" }}>
 
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" style={{ display: useWindowSize() > 994 ? 'flex' : 'inherit', flexDirection: useWindowSize() > 994 ? "row-reverse" : 'inherit', width: useWindowSize() > 1300 ? 810 : 'inherit' }}>
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" style={{ display: useWindowSize() > 1200 ? 'flex' : 'inherit', flexDirection: useWindowSize() > 1200 ? "row-reverse" : 'inherit', width: useWindowSize() > 1300 ? 810 : 'inherit' }}>
               <li className="nav-item " style={{ textAlign: "right" }}><NavLink to={"/"} className="nav-link" onClick={handleNavCollapse}>{t("home")}</NavLink></li>
               <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/our-solution/"} className="nav-link" onClick={handleNavCollapse}>{t('solution')}</NavLink></li>
               <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/about-us/"} className="nav-link" onClick={handleNavCollapse}>{t('about')}</NavLink></li>

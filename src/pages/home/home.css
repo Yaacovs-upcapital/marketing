@@ -7,6 +7,11 @@
   margin: auto !important;
 }
 
+.home-flex{
+  display: flex;
+  justify-content:space-around ;
+}
+
 .home-title-1,
 .home-title-2,
 .home-title-3 {
@@ -133,6 +138,7 @@
 .home-jumbotron .img-fluid {
   margin-top: 3%;
   margin-left: -6%;
+  max-height: 51rem;
 }
 
 .advantages-image {
@@ -315,6 +321,7 @@
     height: 2000px;
     margin-top: -60px;
     padding-bottom: 14rem;
+    /* margin-bottom: 33rem; */
   }
   .tech-bg {
     background-image: url("../../assets/images/red-curl4.png");
@@ -322,6 +329,8 @@
     background-position: 64% 70%;
     background-size: 9rem;
     margin-bottom: 1rem;
+    margin-right: 16% !important;
+
   }
   .bg-pointer {
     display: flex;
@@ -417,15 +426,15 @@
   }
 
   .small-photo {
-    transform: translate(0px, 25px);
-    height: 120px;
-    width: 120px;
+    transform: translate(0px, 25px)  !important;
+    height: 120px !important;
+    width: 120px  !important;
   }
 
   .large-photo {
-    transform: translate(100px, -59px);
-    height: 250px;
-    width: 250px;
+    transform: translate(100px, -59px)  !important;
+    height: 250px  !important;
+    width: 250px  !important;
   }
 
   .job-title {
@@ -477,6 +486,16 @@
   .career-title {
     margin-top: 80px;
   }
+  .partners-title,
+.career-title,
+.icon-title,
+.tech,
+.advantages-item,
+.about,
+.about-images,
+.process-title {
+  font-size: 3rem !important;
+}
 }
 
 @media screen and (max-width: 680px) {
@@ -525,16 +544,28 @@
     background-repeat: no-repeat;
     background-size: 100%;
     height: 695px;
-    padding-top: 45vh;
+    padding-top: min(10rem);
     padding-bottom: 9rem;
     margin-left: -6rem;
     margin-right: -6rem;
     padding-left: 100px;
     padding-right: 100px;
-    margin-top: -103vh;
+    margin-top: min(-70vh);
   }
 }
 
+@media screen and (min-width: 1200px){
+  .product {
+  padding-top: 21rem;
+  margin-top: -97vh;
+  }
+}
+@media screen and(min-width:1750px){
+  .product{
+  margin-top: -31rem;
+  height: 860px;
+  padding-top: 26rem;
+}}
 .product-header {
   color: #fff;
   font-size: 23px;
@@ -664,7 +695,7 @@
     background-image: url("../../assets/images/process-bgm.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 1200px;
+    /* height: 1200px; */
     padding-bottom: 6rem;
   }
 }
@@ -745,7 +776,7 @@
 .about-images,
 .process-title {
   color: #2f439a;
-  font-size: 4rem !important;
+  font-size: 4rem 
 }
 
 .career-slogan {
@@ -1154,9 +1185,9 @@
     height: 60px;
   }
   .product {
-    margin-top: -45vh;
-    height: 851px;
-    padding-top: 40vh;
+    margin-top: -36rem;
+    height: 934px;
+    padding-top: 18rem;
   }
 
   .product-title {
@@ -1173,7 +1204,7 @@
 
   .parent-wrap2 {
     width: 95rem;
-    margin: 5rem auto;
+    margin-bottom: 5rem ;
   }
   .flow-circle,
   .flow-circle-no-red {
@@ -1197,7 +1228,7 @@
     width: 12rem;
   }
   .process {
-    height: 900px;
+    height: 915px;
   }
   .num {
     font-size: 15.5rem;
@@ -1217,7 +1248,7 @@
   }
 
   .advantages-bg {
-    height: 849px;
+    height: 910px;
     display: flex;
     padding-top: 5.5rem;
   }
@@ -1275,6 +1306,18 @@
   .career-btn {
     font-size: 1.8rem !important;
   }
+  
+.tech,
+.advantages,
+.about,
+.partners-title,
+.career-title,
+.process-title,
+.product-title {
+  font-family: "LeonRegular";
+  font-size: 4rem;
+}
+
 }
 @media screen and (max-width: 600px) {
   .flow-chart {

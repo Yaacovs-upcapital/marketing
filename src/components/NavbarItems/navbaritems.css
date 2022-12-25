@@ -13,10 +13,10 @@
         top: -2px !important;
       }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1200px) {
   .avatar {
     position: absolute;
-    right: 58px;
+    right: 70px;
     top: 19px;
     height: 38px;
     width: 38px;
@@ -76,7 +76,7 @@
   }
 }
 
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 1200px) {
   .avatar {
     position: absolute;
     right: 24px;
@@ -179,3 +179,4 @@
     margin-left: 3px !important;
   }
 }
+
