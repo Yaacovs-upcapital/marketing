@@ -50,7 +50,7 @@ const Career = () => {
                                 <div className="job-details">מספר משרה: 102</div>
                                 <div className="job-details">מיקום המשרה: תל אביב</div>
                                 <div className="job-details">סוג המשרה: מלאה</div>
-                                <div className="job-details">תאריך אחרון להגשת מועמדות: 01/12/2021</div>
+                                <div className="job-details">תאריך אחרון להגשת מועמדות: 01/03/2023</div>
                             </div>
                         </MediaControlCard>
                         <MediaControlCard path="/job-offer/:201/">
@@ -60,7 +60,7 @@ const Career = () => {
                                 <div className="job-details">מספר משרה: 201</div>
                                 <div className="job-details">מיקום המשרה: תל אביב</div>
                                 <div className="job-details">סוג המשרה: מלאה</div>
-                                <div className="job-details">תאריך אחרון להגשת מועמדות: 01/11/2021</div>
+                                <div className="job-details">תאריך אחרון להגשת מועמדות: 01/03/2023</div>
                             </div>
                         </MediaControlCard>
                         <MediaControlCard path="/job-offer/:301/">
@@ -70,7 +70,7 @@ const Career = () => {
                                 <div className="job-details">מספר משרה: 301</div>
                                 <div className="job-details">מיקום המשרה: תל אביב</div>
                                 <div className="job-details">סוג המשרה: מלאה</div>
-                                <div className="job-details">תאריך אחרון להגשת מועמדות: 01/12/2021</div>
+                                <div className="job-details">תאריך אחרון להגשת מועמדות: 01/03/2023</div>
                             </div>
                         </MediaControlCard>
 

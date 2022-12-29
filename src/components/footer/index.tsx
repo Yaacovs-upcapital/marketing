@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { i18n } from "../../translations/i18n";
 import useWindowSize from "../windowSize";
 import "./footer.css"
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useTranslation()
@@ -64,7 +65,7 @@ const Footer = () => {
                 </div>
                 <div className="detail-wrap">
                   {/* <div className="detail-name">{t("address")}</div> */}
-                  <div className="contact-detail"><img src={addr} style={{ height: "30px", width: "30px" }} /> {t("address_text")}</div>
+                  <div className="contact-detail"><img src={addr} style={{ height: "30px", width: "30px" }} />< a style={{textDecoration:"none",color: "#fff"}} href="https://www.google.com/maps/place/Ha-Rakun+St+2,+Hod+HaSharon/@32.1333401,34.8992777,17z/data=!3m1!4b1!4m5!3m4!1s0x151d37a203e81299:0x7719e5e2c71c2b78!8m2!3d32.1333401!4d34.9014664" target="blank">{t("address_text")}</a> </div>
                 </div>
 
 
@@ -77,14 +78,14 @@ const Footer = () => {
           <div className="col-lg-4 col-md-12 col-sm-12 mt-3 mb-3">
             <div style={{ color: "white" }}>
               <div className="form-title" style={{ paddingRight: "0" }}>{t("additional_info")}</div>
-              <div className="contact-detail" style={{ paddingRight: "0" }}>{t("terms")}</div>
-              <div className="contact-detail" style={{ paddingRight: "0" }}>{t("policy")}</div>
+              <div className="contact-detail" style={{ paddingRight: "0" }}><NavLink style={{textDecoration:"none",color: "#fff"}}  to={"/terms-of-use/"} >{t("terms")}</NavLink></div>
+              <div className="contact-detail" style={{ paddingRight: "0" }}><NavLink style={{textDecoration:"none",color: "#fff"}}  to={"/privacy-policy/"} >{t("policy")}</NavLink></div>
               <div className="contact-detail" style={{ paddingRight: "0" }}>{t("accessibility")}</div>
               <div>
-                <div className="row mt-4">
+                <div className="mt-4" style={{display:"flex", alignItems:"center"}}>
 
-                  <img style={{ width: "110px", height: "auto" }} src={dunBradstreet} />
-                  <img style={{ width: "112px", height: "auto" }} src={iso} />
+                  <a href="https://www.dnb.com/" target="blank"> <img style={{ width: "110px", height: "auto", margin:"10px" }} src={dunBradstreet} /></a>
+                  <a href="https://www.iso.org/isoiec-27001-information-security.html" target="blank"><img style={{ width: "116px", height: "auto",margin:"10px" }} src={iso} /></a>
 
 
 

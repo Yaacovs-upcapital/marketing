@@ -32,31 +32,7 @@ const Prepayment = () => {
                 </form>
               </div>
             </div>
-            <div className="info" >
-              <div className='info-details'>
-                <h2 className="contact-title" >{t("contact_info")}</h2>
-                <div style={{ textAlign: "right" }}><Envelope style={{ height: "30px", width: "30px" }} />info@upcapital.io </div>
-                <div style={{ textAlign: "right" }}><Telephone style={{ height: "30px", width: "30px" }} /> 073-7801153</div>
-                <div style={{ textAlign: "right" }}><Waze style={{ height: "30px", width: "30px" }} /> {t("address_text")}</div>
-              </div>
-              <div>
-                <div className="contact-title" style={{ paddingRight: "0" }}>{t("additional_info")}</div>
-                <div className="contact-page-detail" style={{ paddingRight: "0" }}>{t("terms")}</div>
-                <div className="contact-page-detail" style={{ paddingRight: "0" }}>{t("policy")}</div>
-                <div className="contact-page-detail" style={{ paddingRight: "0" }}>{t("accessibility")}</div>
-                <div>
-                  <div className="">
-
-                    <img style={{ width: "110px", height: "auto" }} src={dunBradstreet} />
-                    <img style={{ width: "112px", height: "auto" }} src={iso} />
-
-
-
-                  </div>
-
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
         

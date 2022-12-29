@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './contactUs.css'
 import { useTranslation } from 'react-i18next';
 
@@ -10,6 +10,49 @@ import useWindowSize from '../../components/windowSize';
 const ContactUs = () => {
   const { t } = useTranslation()
 
+  const [vendorInput, setVendorInput] = useState({ fname: '', lname: '', email: '', company: '', message: '' })
+  const handleFormChange = (event) => {
+    event.preventDefault()
+    console.log("value changed: ", event.target.value)
+    // const inputName = event.target.name
+    // const inputValue = event.target.value.trim().toLowerCase()
+    // validate(inputName, inputValue)
+
+    setVendorInput({ ...vendorInput, [event.target.name]: event.target.value });
+
+  }
+
+  const sendMail = async (event) => {
+    event.preventDefault();
+const msg=emailTemplate(vendorInput)
+    const reqop = {
+      method: 'POST',
+      body: JSON.stringify({
+        message2: msg,
+        subject: 'Vendor Info',
+        email: "yaacovs@upcapital.io"
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+    console.log(reqop.body);
+
+    // await fetch("http://localhost:3500/api/mailer", reqop)
+    await fetch("https://app.upcapital.io/node//mailer", reqop)
+      .then(res => console.log(res))
+  }
+
+
+  let emailTemplate =(obj:any)=>{
+   return `<div>
+      <div style="display:flex; justify-content:right;"> שם מלא</div><div>${obj.fname} ${obj.lname}</div>
+      <div style="display:flex;justify-content:right;">דוא"ל</div><div>${obj.email}</div>
+      <div style="display:flex; justify-content:right;">חברה</div><div>${obj.company}</div>
+      <div style="display:flex; justify-content:right;">הודעה</div><div>${obj.message}</div>
+    </div>`
+}
+// emailTemplate(vendorInput)
   return (
     <div>
       <div className='contact-page-bg '>
@@ -21,14 +64,14 @@ const ContactUs = () => {
               <p className="contact-title">{t("contact_form")}:</p>
             </div>
               <div>
-                <form style={{}}>
-                  <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} required /><div className="input-line"></div></div>
-                  <div className="text-input"><input type="text" id="lname" name="lname" placeholder={t('phone')} required /><div className="input-line"></div></div>
+                <form onSubmit={sendMail} style={{}}>
+                  <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange} required /><div className="input-line"></div></div>
+                  <div className="text-input"><input type="text" id="lname" name="lname" placeholder={t('phone')} value={vendorInput.lname} onChange={handleFormChange} required /><div className="input-line"></div></div>
 
-                  <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} required /><div className="input-line"></div></div>
-                  <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} /><div className="input-line"></div></div>
+                  <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange} required /><div className="input-line"></div></div>
+                  <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} value={vendorInput.company} onChange={handleFormChange} /><div className="input-line"></div></div>
 
-                  <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} /><div className="input-line"></div></div>
+                  <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /><div className="input-line"></div></div>
                   <div><input type="submit" value={"שליחה"} /></div>
                 </form>
               </div></div>

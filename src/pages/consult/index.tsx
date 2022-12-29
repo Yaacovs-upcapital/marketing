@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './consult.css'
 import { useTranslation } from 'react-i18next';
 
@@ -9,6 +9,37 @@ import iso from "../../assets/images/iso.png";
 const Consult = () => {
   const { t } = useTranslation()
 
+  const [vendorInput, setVendorInput] = useState({ fname: '', lname: '', email: '', company: '', message: '' })
+  const handleFormChange = (event) => {
+    event.preventDefault()
+    console.log("value changed: ", event.target.value)
+    // const inputName = event.target.name
+    // const inputValue = event.target.value.trim().toLowerCase()
+    // validate(inputName, inputValue)
+
+    setVendorInput({ ...vendorInput, [event.target.name]: event.target.value });
+
+  }
+  const sendMail = async (event) => {
+    event.preventDefault();
+
+    const reqop = {
+      method: 'POST',
+      body: JSON.stringify({
+        message: "dasgsd",
+        subject: t('consult'),
+        email: "yaacovs@upcapital.io"
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+    console.log(reqop.body);
+
+    // await fetch("http://localhost:3500/api/mailer", reqop)
+    await fetch("https://app.upcapital.io/node//mailer", reqop)
+      .then(res => console.log(res))
+  }
   return (
       <div className='contact-page-bg '>
         <div className='container'>
@@ -20,14 +51,14 @@ const Consult = () => {
                 <p className="contact-title">{t("contact_form")}:</p>
               </div>
               <div>
-                <form style={{}}>
-                  <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} required /><div className="input-line"></div></div>
-                  <div className="text-input"><input type="text" id="lname" name="lname" placeholder={t('phone')} required /><div className="input-line"></div></div>
+                <form onSubmit={sendMail} style={{}}>
+                  <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange}  required /><div className="input-line"></div></div>
+                  <div className="text-input"><input type="text" id="lname" name="lname" placeholder={t('phone')} value={vendorInput.lname} onChange={handleFormChange}  required /><div className="input-line"></div></div>
 
-                  <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} required /><div className="input-line"></div></div>
-                  <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} /><div className="input-line"></div></div>
+                  <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange}  required /><div className="input-line"></div></div>
+                  <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} value={vendorInput.company} onChange={handleFormChange} /><div className="input-line"></div></div>
 
-                  <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} /><div className="input-line"></div></div>
+                  <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /><div className="input-line"></div></div>
                   <div><input type="submit" value={"שליחה"} /></div>
                 </form>
               </div>

@@ -1,14 +1,16 @@
 import "./home.css"
 import { Plus, Up } from "../../assets/icons";
 import Deloitte from "../../assets/images/deloitte-digital.png";
-import Erech from "../../assets/images/erechlogo.png";
+import Kvish from "../../assets/images/Kevish.png";
 import Oracle from "../../assets/images/oracle.png";
 import BDO from "../../assets/images/bdo.png";
 import Obelisk from "../../assets/images/obelisk.png";
-import PrimeSec from "../../assets/images/prime-sec.png";
+import Big from "../../assets/images/big.png";
 import PWC from "../../assets/images/pwc.png";
-import Tadmor from "../../assets/images/tadmor.png";
-import People from "../../assets/images/people.png";
+import Brosh from "../../assets/images/brosh.jpeg";
+import Barnea from "../../assets/images/barnea.png";
+import Sec4U from "../../assets/images/sec4u.png";
+import SPS from "../../assets/images/SPS.png";
 import home from "../../assets/images/home-bg.png";
 import invoice from "../../assets/images/invoice.png";
 import approved from "../../assets/images/approved.png";
@@ -33,7 +35,19 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import { NavLink } from 'react-router-dom';
 import Description from "../../components/description";
 
-const partners = [Obelisk, Oracle, PrimeSec, Erech, BDO, Deloitte, Tadmor, PWC]
+const partners = [
+    { name: Obelisk, link: "https://www.bdo.co.il/he-il/home-he" },
+     { name: Oracle, link: "https://www.oracle.com" }, 
+     { name:Brosh, link: "" }, 
+     { name: Big, link: "https://bigcenters.co.il/" }, 
+     { name: BDO, link: "https://www.bdo.co.il/he-il/home-he" },
+      { name: Deloitte, link: "https://www2.deloitte.com/il/en.html" }, 
+      { name: Barnea, link: "https://www.barlaw.co.il/" }, 
+      { name: PWC, link: "https://www.pwc.com/il/he.html" },
+       {name:Kvish, link:"https://www.kvish6.co.il/"}, 
+       {name:Sec4U, link:"https://www.sec4u.co.il/"},
+       {name: SPS, link:"https://sps.co.il/en/doccycle-en/"}
+    ]
 const careerPath = "../career"
 
 const Home = (props) => {
@@ -42,18 +56,29 @@ const Home = (props) => {
 
     const handleDragStart = (e) => e.preventDefault();
 
-    const items = [
-        <div style={{ textAlign: "center" }}><img style={{ height: 51, width: 'auto' }} src={Obelisk} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img style={{ height: 30, width: 'auto', margin: "auto" }} src={Oracle} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={PrimeSec} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}> <img style={{ height: 50, width: 'auto' }} src={Erech} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={BDO} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={Deloitte} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={Tadmor} onDragStart={handleDragStart} role="presentation" /></div>,
-        <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={PWC} onDragStart={handleDragStart} role="presentation" /></div>,
+    const items = partners.map(item => (<div style={{ display: "flex", justifyContent: "center" }}><div className="image-border"><a href={item.link} target="blank"><div className="partners-image" style={{ backgroundImage: `url(${item.name})` }}></div></a></div></div>))
 
-    ];
+    // [
+    //     <div style={{ textAlign: "center" }}><img style={{ height: 51, width: 'auto' }} src={Obelisk} onDragStart={handleDragStart} role="presentation" /></div>,
+    //     <div style={{ textAlign: "center", display:"flex", alignItems:"center" }}><img style={{ height: 30, width: 'auto', margin: "auto" }} src={Oracle} onDragStart={handleDragStart} role="presentation" /></div>,
+    //     <div style={{ textAlign: "center" }}><img style={{ height: 60, width: 'auto' }} src={Brosh} onDragStart={handleDragStart} role="presentation" /></div>,
+    //     <div style={{ textAlign: "center" }}> <img style={{ height: 70, width: 'auto' }} src={Big} onDragStart={handleDragStart} role="presentation" /></div>,
+    //     <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={BDO} onDragStart={handleDragStart} role="presentation" /></div>,
+    //     <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={Deloitte} onDragStart={handleDragStart} role="presentation" /></div>,
+    //     <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={Barnea} onDragStart={handleDragStart} role="presentation" /></div>,
+    //     <div style={{ textAlign: "center" }}><img style={{ height: 50, width: 'auto' }} src={PWC} onDragStart={handleDragStart} role="presentation" /></div>,
+    //     <div style={{ textAlign: "center" }}><img style={{ height: 70, width: 'auto' }} src={Kvish} onDragStart={handleDragStart} role="presentation" /></div>,
+    //     <div style={{ textAlign: "center" }}><img style={{ height: 90, width: 'auto' }} src={Sec4U} onDragStart={handleDragStart} role="presentation" /></div>,
+    //     <div style={{ textAlign: "center" }}><img style={{ height: 80, width: 'auto' }} src={SPS} onDragStart={handleDragStart} role="presentation" /></div>,
 
+    // ];
+
+    const responsive = {
+        992: { items: 3 },
+        1024: { items: 4 },
+        1250: { items: 5 },
+        1550: { items: 6 },
+    };
 
     return (
 
@@ -61,39 +86,38 @@ const Home = (props) => {
             <div className="home-jumbotron " >
                 <div className={`row ${useWindowSize() > 1550 ? '' : 'container'}`} style={{ paddingRight: useWindowSize() > 1550 ? "2rem" : "" }} >
 
-                    <div className="col-lg-2 col-md-12 col-sm-12 mt-3 mb-5" style={{ zIndex: "1" }} >
+                    <div className="col-lg-4 col-md-12 col-sm-12 mt-3 mb-5" style={{ zIndex: "1", position: 'relative' }} >
                         <div className="home-title">
                             <h1 className="home-title-1">{t("convert")}</h1>
                             <h1 className="home-title-2" >{t("shotef")}</h1>
                             <h1 className="home-title-3">{t("plus")}</h1>
                         </div>
-                        <div style={{ display: 'flex', justifyContent: 'right', padding: "0", width: "300px" }} className="mt-3">
-                            <button className="prepayment-btn"><NavLink to={"/prepayment/"} >{t("sign_up_free")}</NavLink></button>
-                            <button className="consult-btn"><NavLink to={"/consult/"} >{t("consult")}</NavLink></button>
+                        <div style={{}} className="mt-3 home-btns">
+                            <button className="prepayment-btn"><NavLink className="homeBtn" to={"/prepayment/"} >{t("sign_up_free")}</NavLink></button>
+                            <button className="consult-btn"><NavLink className="homeBtn" to={"/consult/"} >{t("to_consult")}</NavLink></button>
 
                         </div>
                     </div>
 
 
-                    <div style={{ display: 'flex', justifyContent: 'left', marginTop: "40px", padding: "0" }} className="col-lg-10 col-md-12 col-sm-12 mt-3 jumborton-image">
+                    <div style={{ display: 'flex', justifyContent: 'left', marginTop: "40px", padding: "0" }} className="col-lg-8 col-md-12 col-sm-12 mt-3 jumborton-image">
                         <img src={home} className="img-fluid" />
                     </div>
 
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: "baseline", marginTop: useWindowSize() > 500 ? "-90px" : "-50px", marginRight: useWindowSize() > 500 ? "-76px" : '' }}>
-                        <img src={arrowDown} style={{}} className="img2-fluid" onClick={() => {
-                            let offsetTop = (document.getElementById("product") as HTMLElement).offsetTop;
-                            window.scrollTo({
-                                top: window.innerWidth > 500 ? offsetTop + 100 : offsetTop + 300,
-                                behavior: "smooth"
-                            });
-                        }} />
-                    </div>
+
 
                 </div>
-
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: "baseline", marginTop: -60, marginRight: useWindowSize() > 500 ? "-76px" : '' }}>
+                    <img src={arrowDown} style={{}} className="img2-fluid" onClick={() => {
+                        let offsetTop = (document.getElementById("product") as HTMLElement).offsetTop;
+                        window.scrollTo({
+                            top: window.innerWidth > 1000 ? offsetTop + 300 : offsetTop + 200,
+                            behavior: "smooth"
+                        });
+                    }} />
+                </div>
             </div>
-
-            <div className="product" id="product" style={{ display: "flex", justifyContent: "center",flexShrink:1 }} >
+            <div className="product" id="product" style={{ display: "flex", justifyContent: "center", flexShrink: 1 }} >
                 <div className={`product-content ${useWindowSize() > 1750 ? 'container-big' : 'container'}`} >
                     <div className="row">
                         <div className="col-lg-4 col-md-4 col-sm-12">
@@ -116,10 +140,9 @@ const Home = (props) => {
 
 
                 </div>
+
+
             </div>
-
-
-
             <div className="parent-wrap2">
                 <div className="flow-chart" >
 
@@ -418,7 +441,7 @@ const Home = (props) => {
                         <div className="row">
                             <div className="col-lg-6 col-md-12 col-sm-12">
                                 <div className="about-text mb-3">
-                                    <p style={{ margin: 0, fontSize:useWindowSize() > 1550 ? "25px":"21px" }}>{t("about_text")}</p>
+                                    <p style={{ margin: 0, fontSize: useWindowSize() > 1550 ? "25px" : "21px" }}>{t("about_text")}</p>
                                     <button className="about-btn" ><NavLink to={"/about-us/"} >{t('read_more')}</NavLink></button>
                                 </div>
                             </div>
@@ -431,7 +454,7 @@ const Home = (props) => {
                                     <div className="image-flex">
                                         <div className="">
                                             <div style={{ textAlign: "center" }}>
-                                                <img src={mariano}  className="personnel-image"/>
+                                                <img src={mariano} className="personnel-image" />
                                                 <div className="about-desc"><Description data={`${t('mariano_description')}`} />
 
                                                 </div>
@@ -443,14 +466,14 @@ const Home = (props) => {
                                         </div>
 
                                         <div className="">
-                                            <div style={{ textAlign: "center" }}><img src={yaron} className="personnel-image"/>
+                                            <div style={{ textAlign: "center" }}><img src={yaron} className="personnel-image" />
                                                 <div className="about-desc"><Description data={`${t('yaron_description')}`} /></div>
                                                 <div className="about-name">
                                                     {t('yaron')}</div><div className="about-title">{t('yaron_title')}</div></div>
                                         </div>
 
                                         <div className="">
-                                            <div style={{ textAlign: "center" }}><img src={ron} className="personnel-image"  />
+                                            <div style={{ textAlign: "center" }}><img src={ron} className="personnel-image" />
                                                 <div className="about-desc"><Description data={`${t('ron_description')}`} /></div>
                                                 <div className="about-name">
                                                     {t('ron')}</div><div className="about-title">{t('ron_title')}</div></div>
@@ -469,7 +492,7 @@ const Home = (props) => {
                 <div style={{ marginBottom: "6rem", marginTop: "10rem" }}>
 
                     <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`} >
-                        <div style={{ display: "flex", justifyContent: "right", marginBottom: "1rem" }}><h2 className="partners-title">{t("partners")}</h2><h2 className="partners-title" style={{ color: "red" }}>.</h2></div>
+                        <div style={{ display: "flex", justifyContent: "right", marginBottom: "2.5rem" }}><h2 className="partners-title">{t("partners")}</h2><h2 className="partners-title" style={{ color: "red" }}>.</h2></div>
 
                         {useWindowSize() <= 767 ?
                             <div >
@@ -487,8 +510,21 @@ const Home = (props) => {
 
                             </div>
                             :
-                            <div className="images-row">
-                                {partners.map(item => (<div className="image-border"><div className="partners-image" style={{ backgroundImage: `url(${item})` }}></div></div>))}
+                            <div >
+                                <AliceCarousel
+                                    autoPlay={true}
+                                    mouseTracking
+                                    autoPlayInterval={1500}
+                                    items={items}
+                                    autoPlayDirection={'ltr'}
+                                    animationDuration={1000}
+                                    infinite={true}
+                                    disableButtonsControls={true}
+                                    responsive={responsive}
+
+                                />
+
+
                             </div>}
                     </div>
                 </div>

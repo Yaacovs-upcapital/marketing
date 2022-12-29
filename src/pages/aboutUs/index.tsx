@@ -62,7 +62,7 @@ const About = () => {
 
 							<div className="col-lg-7 col-md-12 col-sm-12 p-3" style={{ paddingLeft: "60px !important", fontWeight: "600" }}>
 								<div className="up-title" style={{ display: "flex", justifyContent: "right", color: "rgb(47,67,155)", marginBottom: "2rem" }}>
-									<h3 style={{ lineHeight: "1", color: "#2f439", fontFamily: "Leon", fontSize: "50pt" }}>UPcapital</h3><h3 style={{ lineHeight: "1", color: "red", fontFamily: "Leon", fontSize: "50pt" }}>.</h3></div>
+									<h3 style={{ lineHeight: "1", color: "#2f439", fontFamily: "LeonRegular", fontSize: "50pt" }}>אפ קפיטל</h3><h3 style={{ lineHeight: "1", color: "red", fontFamily: "LeonRegular", fontSize: "50pt" }}>.</h3></div>
 								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
 									חברת פינ-טק אשר פיתחה טכנולוגיה ייחודית ושירות דיגיטלי חדשני להנגשת אשראי ומימון לעסקים קטנים ובינוניים (MSME) בצורה פשוטה, מהירה והוגנת. הפיתוח הייחודי של החברה שם קץ לכשל שוק ידוע ולראשונה מאפשר לעסקים נגישות להון החוזר הלא מנוצל שלהם אשר עד כה היה "תקוע" ב"שוטף פלוס".
 								</p>
@@ -132,11 +132,8 @@ const About = () => {
 									<img src={yaron} alt="yaron" className='member-image' />
 									<div style={{ cursor: "pointer" }}>
 										<Description data={partners.yaron} />
-
 									</div>
-
 								</div>
-
 								<div className="mt-2 mb-2">
 									<h4 className='member-title'>{t("yaron")}</h4>
 									<h4 className='member-title'>{t("yaron_title")}</h4>

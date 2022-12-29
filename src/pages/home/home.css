@@ -7,9 +7,9 @@
   margin: auto !important;
 }
 
-.home-flex{
+.home-flex {
   display: flex;
-  justify-content:space-around ;
+  justify-content: space-around;
 }
 
 .home-title-1,
@@ -38,7 +38,7 @@
   border-radius: 0.5em;
   border-style: none;
   background: #2f439a;
-  font-family: "RAG-Sans 1.0";
+  font-family: "RAG-Sans1.0-Regular";
   font-weight: bold;
   font-size: 0.9em;
   letter-spacing: 0.75px;
@@ -50,7 +50,7 @@
   border-radius: 0.5rem;
   border: 0.5px solid #2f439a;
   background: transparent;
-  font-family: "RAG-Sans 1.0";
+  font-family: "RAG-Sans1.0-Regular";
   font-weight: bold;
   font-size: 0.9em;
   letter-spacing: 0.75px;
@@ -61,7 +61,16 @@
   color: #2f439a !important;
   text-decoration: none;
 }
-
+/* .prepayment-btn a, .consult-btn a{
+  flex-basis: content;
+} */
+.home-btns {
+  left: calc(-50vw + 50%);
+  display: flex;
+  justify-content: right;
+  padding: 0;
+  /* flex-basis:20rem; */
+}
 .flow-chart {
   display: flex;
   justify-content: center;
@@ -76,8 +85,10 @@
   font-size: 20px;
   letter-spacing: 0.75px;
   color: #ffffff !important;
-  padding: 5px 20px;
+  padding: 0.6rem 1.5rem 0.6rem 1.5rem;
   margin-top: 1rem;
+  width: 13rem;
+
 }
 
 .about-btn a,
@@ -93,6 +104,12 @@
   box-shadow: 0 0 10px #aaaaaa;
 }
 
+.consult-btn, .prepayment-btn{
+flex-basis: 8rem;
+/* max-width: 8rem; */
+flex-grow: 1;
+height: auto !important;
+}
 .career-btn {
   border-radius: 0.5em;
   border-style: none;
@@ -256,7 +273,6 @@
     background-size: 100%;
     height: 1291px;
     padding-top: 2rem;
-    padding-bottom: 9rem;
     margin-left: -6rem;
     margin-right: -6rem;
     padding-right: 100px;
@@ -311,7 +327,7 @@
     height: auto !important;
     margin: 10px !important;
   }
-  
+
   .process {
     background-image: url("../../assets/images/process-bgm2.png");
     background-repeat: no-repeat;
@@ -321,6 +337,9 @@
     padding-bottom: 14rem;
     /* margin-bottom: 33rem; */
   }
+.product{
+  margin-top: -28rem;
+}
   .tech-bg {
     background-image: url("../../assets/images/red-curl4.png");
     background-repeat: no-repeat;
@@ -328,7 +347,6 @@
     background-size: 9rem;
     margin-bottom: 1rem;
     margin-right: 16% !important;
-
   }
   .bg-pointer {
     display: flex;
@@ -424,15 +442,15 @@
   }
 
   .small-photo {
-    transform: translate(0px, 25px)  !important;
+    transform: translate(0px, 25px) !important;
     height: 120px !important;
-    width: 120px  !important;
+    width: 120px !important;
   }
 
   .large-photo {
-    transform: translate(100px, -59px)  !important;
-    height: 250px  !important;
-    width: 250px  !important;
+    transform: translate(100px, -59px) !important;
+    height: 250px !important;
+    width: 250px !important;
   }
 
   .job-title {
@@ -484,16 +502,16 @@
   .career-title {
     margin-top: 80px;
   }
-  .partners-title,
-.career-title,
-.icon-title,
-.tech,
-.advantages-item,
-.about,
-.about-images,
-.process-title {
-  font-size: 3rem !important;
-}
+  
+  .career-title,
+  .icon-title,
+  .tech,
+  .advantages-item,
+  .about,
+  .about-images,
+  .process-title {
+    font-size: 3rem !important;
+  }
 }
 
 @media screen and (max-width: 680px) {
@@ -534,31 +552,36 @@
     height: auto !important;
     margin: 0px !important;
   }
+  .partners-title{
+    font-size: 2.8rem !important; 
+  }
 }
 
 @media screen and (min-width: 991px) {
   .product {
     background-image: url(../../assets/images/home-upz.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     height: 695px;
     padding-top: min(12rem);
-    padding-bottom: 9rem;
-    margin-left: -6rem;
+    padding-bottom: 2rem;
+    /* margin-left: -6rem; */
     margin-right: -6rem;
     padding-left: 100px;
     padding-right: 100px;
     margin-top: min(-51rem);
+    margin-bottom: -7rem;
+
   }
 }
 
-
-@media screen and(min-width:1750px){
-  .product{
-  margin-top: -31rem;
-  height: 860px;
-  padding-top: 26rem;
-}}
+@media screen and(min-width:1750px) {
+  .product {
+    margin-top: -31rem;
+    height: 860px;
+    padding-top: 26rem;
+  }
+}
 .product-header {
   color: #fff;
   font-size: 23px;
@@ -577,13 +600,13 @@
 .product-content {
   /* display: flex;
   justify-content: space-between; */
-  font-family: "Leon";
+  font-family: "LeonRegular";
   width: 72rem !important;
 }
 
 .product-text {
   color: #fff;
-  font-family: "Leon";
+  font-family: "LeonRegular";
   font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.2em;
@@ -695,9 +718,14 @@
 
 .process-header {
   color: red;
+  font-weight: bold !important;
 }
 
-.process-header,
+.process-header {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
 .process-step {
   font-size: 1.2rem;
   margin: 0;
@@ -769,7 +797,7 @@
 .about-images,
 .process-title {
   color: #2f439a;
-  font-size: 4rem 
+  font-size: 4rem;
 }
 
 .career-slogan {
@@ -808,6 +836,7 @@
   box-shadow: 0px 0px 5px #aaaaaa;
   border: 1px solid #bfbfbf;
   border-radius: 10px;
+  width: 200px;
 }
 .image-border:hover {
   box-shadow: 0px 0px 10px #aaaaaa;
@@ -1179,7 +1208,7 @@
   }
   .product {
     margin-top: -36rem;
-    height: 934px;
+    height: 800px;
     padding-top: 18rem;
   }
 
@@ -1197,7 +1226,7 @@
 
   .parent-wrap2 {
     width: 95rem;
-    margin-bottom: 5rem ;
+    margin-bottom: 5rem;
   }
   .flow-circle,
   .flow-circle-no-red {
@@ -1229,12 +1258,10 @@
   .process-item {
     width: 13rem;
   }
-  .process-header,
-  .process-step {
+  .process-header {
     font-size: 1.4rem;
     margin: 0;
   }
-  .process-header,
   .process-step {
     font-size: 1.2rem;
     margin: 0;
@@ -1286,31 +1313,35 @@
     height: 13rem !important;
   }
 
-  .about-bg{
+  .about-bg {
     margin-bottom: 6rem;
   }
   .career-text {
     font-size: 1.8rem !important;
   }
-  .career-slogan{
+  .career-slogan {
     font-size: 2.3rem !important;
-
   }
   .career-btn {
     font-size: 1.8rem !important;
   }
-  
-.tech,
-.advantages,
-.about,
-.partners-title,
-.career-title,
-.process-title,
-.product-title {
-  font-family: "LeonRegular";
-  font-size: 4rem;
+
+  .tech,
+  .advantages,
+  .about,
+  .partners-title,
+  .career-title,
+  .process-title,
+  .product-title {
+    font-family: "LeonRegular";
+    font-size: 4rem;
+  }
 }
 
+@media screen and (min-width: 1750px) {
+  .product{
+    height: 1100px;
+  }
 }
 @media screen and (max-width: 600px) {
   .flow-chart {
@@ -1323,5 +1354,8 @@
   .flow-chart {
     flex-direction: column;
     margin-right: 158%;
+  }
+  .product{
+    margin-top: -35rem;
   }
 }

@@ -8,7 +8,7 @@ import Footer from "../components/footer";
 import JobOffer from "../pages/jobOffer";
 import TermOfUse from "../pages/termsOfUse";
 import PrivacyPolicy from "../pages/policy";
-import ClientLogin from "../pages/clientLogin";
+// import ClientLogin from "../pages/clientLogin";
 import { useEffect } from "react";
 import About from "../pages/aboutUs";
 import Blog from "../pages/blog";
@@ -46,9 +46,9 @@ const Layout =  (props) => {
                 <Route path="/job-offer/:id/" element={<JobOffer />} />
                 <Route path="/terms-of-use/" element={<TermOfUse />} />
                 <Route path="/privacy-policy/" element={<PrivacyPolicy />} />
-                <Route path="/app/" element={<ClientLogin />} />
+                {/* <Route path="/app/" element={<ClientLogin />} /> */}
                 <Route path="/contact-us/" element={<ContactUs />} />
-                <Route path="/consuly/" element={<Consult />} />
+                <Route path="/consult/" element={<Consult />} />
                 <Route path="/prepayment/" element={<Prepayment />} />
             </Routes>
             {displayFooter&&<Footer />}
