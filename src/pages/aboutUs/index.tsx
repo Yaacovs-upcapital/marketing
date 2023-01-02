@@ -61,38 +61,33 @@ const About = () => {
 						<div className="row" >
 
 							<div className="col-lg-7 col-md-12 col-sm-12 p-3" style={{ paddingLeft: "60px !important", fontWeight: "600" }}>
-								<div className="up-title" style={{ display: "flex", justifyContent: "right", color: "rgb(47,67,155)", marginBottom: "2rem" }}>
-									<h3 style={{ lineHeight: "1", color: "#2f439", fontFamily: "LeonRegular", fontSize: "50pt" }}>אפ קפיטל</h3><h3 style={{ lineHeight: "1", color: "red", fontFamily: "LeonRegular", fontSize: "50pt" }}>.</h3></div>
+								<div className="up-title" style={{ display: "flex",color: "rgb(47,67,155)", marginBottom: "2rem" }}>
+									<h3 style={{ lineHeight: "1", color: "#2f439", fontFamily: "LeonRegular", fontSize: "50pt" }}>{t('up_capital')}</h3><h3 style={{ lineHeight: "1", color: "red", fontFamily: "LeonRegular", fontSize: "50pt" }}>.</h3></div>
 								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
-									חברת פינ-טק אשר פיתחה טכנולוגיה ייחודית ושירות דיגיטלי חדשני להנגשת אשראי ומימון לעסקים קטנים ובינוניים (MSME) בצורה פשוטה, מהירה והוגנת. הפיתוח הייחודי של החברה שם קץ לכשל שוק ידוע ולראשונה מאפשר לעסקים נגישות להון החוזר הלא מנוצל שלהם אשר עד כה היה "תקוע" ב"שוטף פלוס".
-								</p>
+									{t('about_p1')}								</p>
 								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)", fontWeight: "bold" }}>
-									מדובר בהון חוזר, לא נגיש, לא נזיל ולא מנוצל.
-								</p>
+{t('solution_p2')}								</p>
 								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
-									חברה, שהוקמה על-ידי יזמים מנוסים וצוות מומחים בתחומי הטכנולוגיה, האשראי ושוק ההון, שמה לה למטרה לייצר מציאות כלכלית חדשה לעסקים ולחזק את כלכלת ישראל וזאת מתוך הבנה כי של העסקים הקטנים והבינוניים מהווים מנוע צמיחה משמעותי בכלכלה הישראלית ויכולתם לגדול ולהתפתח תשליך על המשק כולו.
-								</p>
+								{t('about_p2')}										</p>
 								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
-									תהליך הפיכת ההון הלא מנוצל לזמין מתבצע בלחיצת כפתור אחת, ללא ערבויות וביטחונות אישיים כפי שמקובל בשוק הפיננסי המסורתי ויוצר מצב של WIN-WIN בעבור כל הצדדים.
-								</p>
+								{t('about_p3')}										</p>
 								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
-									בנוסף, השילוב של הטכנולוגיה הייחודית לצד הידע וההבנה העמוקה של צוות המומחים בתחום, מאפשר לתפור לכל לקוח "חליפה אישית" המותאמת למידותיו וצרכיו.
-								</p>
+								{t('about_p4')}										</p>
 								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
-									Up Capital פועלת יחד עם הפירמות המובילות ובשיתוף פעולה עם מוסדות הפיננסים המרכזיים בישראל ובעולם בתחום ראיית החשבון, המשפט והדיגיטל.
-								</p>
+								{t('about_p5')}										</p>
 
 							</div>
 							<div className="col-lg-5 col-md-12 col-sm-12" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
 								<img className="img-fluid" src={aboutLeft} alt="..." />
 							</div>
-							<div className="mt-3"><h1 style={{ color: "red", fontSize: useWindowSize() > 500 ? "24pt" : "18pt", textAlign: "center", fontWeight: "bold" }}>ביחד, ניצור מציאות כלכלית חדשה לעסקים ולכלכלת ישראל.</h1></div>
+							<div className="mt-3"><h1 style={{ color: "red", fontSize: useWindowSize() > 500 ? "24pt" : "18pt", textAlign: "center", fontWeight: "bold" }}>
+							{t('about_p6')}</h1></div>
 						</div>
 					</div>
 				</div>
 
 				<ThemeProvider theme={theme}>
-					<div style={{ marginTop: "3rem", marginBottom:"6rem" }}>
+					<div style={{ marginTop: "3rem", marginBottom: "6rem" }}>
 
 
 
@@ -108,8 +103,8 @@ const About = () => {
 									<Description data={partners.mariano} />
 								</div>
 								<div className="mt-2 mb-2">
-									<h4 className='member-title'>מריאנו פטסינסקי</h4>
-									<h4 className='member-title'>מייסד ומנכ״ל</h4>
+									<h4 className='member-title'>{t('mariano')} </h4>
+									<h4 className='member-title'>{t('mariano_title')}</h4>
 								</div>
 
 							</div>
@@ -173,8 +168,8 @@ const About = () => {
 
 								</div>
 								<div className="mt-2 mb-2 img-down" >
-									<h4 className='member-title'>יוני שמלה</h4>
-									<h4 className='member-title'>סמנכ״ל טכנולוגיות</h4>
+									<h4 className='member-title'>{t('yoni')}</h4>
+									<h4 className='member-title'>{t('yoni_title')}</h4>
 								</div>
 
 							</div>
@@ -188,8 +183,8 @@ const About = () => {
 
 								</div>
 								<div className="mt-2 mb-2 img-down">
-									<h4 className='member-title'>צחי קופרלי</h4>
-									<h4 className='member-title'>בעלים, דירקטור וסמנכ"ל קשרי מסחר</h4>
+									<h4 className='member-title'>{t('tzahi')} </h4>
+									<h4 className='member-title'>{t('tzahi_title')}</h4>
 								</div>
 
 							</div>
@@ -203,8 +198,8 @@ const About = () => {
 
 								</div>
 								<div className="mt-2 mb-2 img-down">
-									<h4 className='member-title'>אור גולן</h4>
-									<h4 className='member-title'>סמנכ"ל שיווק ופיתוח עסקי</h4>
+									<h4 className='member-title'>{t('orr')}</h4>
+									<h4 className='member-title'>{t('orr_title')}</h4>
 								</div>
 
 							</div>

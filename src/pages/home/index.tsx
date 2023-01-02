@@ -86,7 +86,7 @@ const Home = (props) => {
             <div className="home-jumbotron " >
                 <div className={`row ${useWindowSize() > 1550 ? '' : 'container'}`} style={{ paddingRight: useWindowSize() > 1550 ? "2rem" : "" }} >
 
-                    <div className="col-lg-4 col-md-12 col-sm-12 mt-3 mb-5" style={{ zIndex: "1", position: 'relative' }} >
+                    <div className="col-lg-3 col-md-12 col-sm-12 mt-3 mb-5" style={{ zIndex: "1", position: 'relative' }} >
                         <div className="home-title">
                             <h1 className="home-title-1">{t("convert")}</h1>
                             <h1 className="home-title-2" >{t("shotef")}</h1>
@@ -100,18 +100,18 @@ const Home = (props) => {
                     </div>
 
 
-                    <div style={{ display: 'flex', justifyContent: 'left', marginTop: "40px", padding: "0" }} className="col-lg-8 col-md-12 col-sm-12 mt-3 jumborton-image">
+                    <div style={{ display: 'flex', justifyContent: 'left', marginTop: "40px", padding: "0" }} className="col-lg-9 col-md-12 col-sm-12 mt-3 jumborton-image">
                         <img src={home} className="img-fluid" />
                     </div>
 
 
 
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: "baseline", marginTop: -60, marginRight: useWindowSize() > 500 ? "-76px" : '' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: "baseline", marginTop: -40, marginRight: useWindowSize() > 500 ? "-76px" : '' }}>
                     <img src={arrowDown} style={{}} className="img2-fluid" onClick={() => {
                         let offsetTop = (document.getElementById("product") as HTMLElement).offsetTop;
                         window.scrollTo({
-                            top: window.innerWidth > 1000 ? offsetTop + 300 : offsetTop + 200,
+                            top: window.innerWidth > 1000 ? offsetTop + 280 : offsetTop + 200,
                             behavior: "smooth"
                         });
                     }} />

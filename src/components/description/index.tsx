@@ -7,7 +7,6 @@ import './description.css';
 import useWindowSize from '../windowSize';
 
 const Description = (props) => {
-    console.log('data', props.data)
     const theme = createTheme({
         components: {
             // Name of the component

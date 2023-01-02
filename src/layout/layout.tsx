@@ -1,6 +1,5 @@
 import { Routes, Route, Link, BrowserRouter, useLocation, HashRouter } from "react-router-dom";
 
-import FintechNation from "../pages/fintechNation";
 import Home from "../pages/home";
 import Solution from "../pages/solution";
 import Navbar from "../components/navbar";
@@ -14,7 +13,6 @@ import About from "../pages/aboutUs";
 import Blog from "../pages/blog";
 import Career from "../pages/Career";
 import ContactUs from "../pages/contactUs";
-import { display } from "@mui/system";
 import Prepayment from "../pages/prepayment";
 import Consult from "../pages/consult";
 export function ScrollToTop() {
@@ -29,8 +27,8 @@ export function ScrollToTop() {
 
 const Layout =  (props) => {
     const  location = window.location.href
-    const displayFooter=location.indexOf('contact-us')==-1
-// console.log("pathname",location)
+    const displayFooter=location.indexOf('contact-us')!=-1 || location.indexOf('prepayment')!=-1 
+console.log("displayFooter",displayFooter)
     return (
         <HashRouter  >
             <Navbar navLang={props} />
@@ -42,7 +40,6 @@ const Layout =  (props) => {
                 <Route path="/about-us/" element={<About />} />
                 <Route path="/blog/" element={<Blog />} />
                 <Route path="/career/" element={<Career />} />
-                <Route path="/blog/:id/" element={<FintechNation />} />
                 <Route path="/job-offer/:id/" element={<JobOffer />} />
                 <Route path="/terms-of-use/" element={<TermOfUse />} />
                 <Route path="/privacy-policy/" element={<PrivacyPolicy />} />
@@ -51,7 +48,7 @@ const Layout =  (props) => {
                 <Route path="/consult/" element={<Consult />} />
                 <Route path="/prepayment/" element={<Prepayment />} />
             </Routes>
-            {displayFooter&&<Footer />}
+            {!displayFooter&&<Footer />}
         </HashRouter>
     );
 };

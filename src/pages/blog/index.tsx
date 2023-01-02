@@ -46,7 +46,7 @@ const Blog = () => {
 
 
       <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'} mt-3`} style={{}}>
-        <h1 style={{ color: "#2f439a", fontSize: "40pt", textAlign: "right", paddingRight: getWindowDimensions().width > 767 ? "" : "10px", marginTop: getWindowDimensions().width > 767 ? "6rem" : "", marginBottom: getWindowDimensions().width > 767 ? "2rem" : "1rem" }}>מהתקשורת<span style={{ color: "red" }}>.</span></h1>
+        <h1 style={{ color: "#2f439a", fontSize: "40pt", paddingRight: getWindowDimensions().width > 767 ? "" : "10px", marginTop: getWindowDimensions().width > 767 ? "6rem" : "", marginBottom: getWindowDimensions().width > 767 ? "2rem" : "1rem" }}>{t('media')}<span style={{ color: "red" }}>.</span></h1>
       </div>
       <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`} style={{ paddingLeft: getWindowDimensions().width > 767 ? "" : "1rem", marginBottom: 2 }}>
         <div className="row" style={getWindowDimensions().width > 767 ? { padding: "none !important", direction: "rtl" } : { paddingLeft: "10px", paddingRight: "10px" }}>

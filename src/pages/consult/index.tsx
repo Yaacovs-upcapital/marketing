@@ -6,104 +6,154 @@ import { Envelope, Telephone, Waze } from '../../assets/icons';
 import egg from "../../assets/images/egg.png";
 import dunBradstreet from "../../assets/images/dun-bradstreet.png";
 import iso from "../../assets/images/iso.png";
-const Consult = () => {
-  const { t } = useTranslation()
+import useWindowSize from '../../components/windowSize';
+const Consult = () => {  const { t } = useTranslation()
 
-  const [vendorInput, setVendorInput] = useState({ fname: '', lname: '', email: '', company: '', message: '' })
-  const handleFormChange = (event) => {
-    event.preventDefault()
-    console.log("value changed: ", event.target.value)
-    // const inputName = event.target.name
-    // const inputValue = event.target.value.trim().toLowerCase()
-    // validate(inputName, inputValue)
+const [vendorInput, setVendorInput] = useState({ fname: '', lname: '', email: '', company: '', message: '' })
+const handleFormChange = (event) => {
+  event.preventDefault()
+  console.log("value changed: ", event.target.value)
+  const inputName = event.target.name
+  const inputValue = event.target.value.trim().toLowerCase()
+  validate(inputName, inputValue)
 
-    setVendorInput({ ...vendorInput, [event.target.name]: event.target.value });
+  setVendorInput({ ...vendorInput, [event.target.name]: event.target.value });
 
+}
+
+const sendMail = async (event) => {
+  event.preventDefault();
+  const msg = emailTemplate(vendorInput)
+  const reqop = {
+    method: 'POST',
+    body: JSON.stringify({
+      message2: msg,
+      subject: t('consult'),
+      email: "yaacovs@upcapital.io"
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
   }
-  const sendMail = async (event) => {
-    event.preventDefault();
+  console.log(reqop.body);
 
-    const reqop = {
-      method: 'POST',
-      body: JSON.stringify({
-        message: "dasgsd",
-        subject: t('consult'),
-        email: "yaacovs@upcapital.io"
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+  // await fetch("http://localhost:3500/api/mailer", reqop)
+  await fetch("https://app.upcapital.io/node//mailer", reqop)
+    .then(res => console.log(res))
+}
+const [errors, setErrors] = useState({ fname: '', phone: '', email: '', company: '' })
+
+const validate = (inputName, inputValue) => {
+  if (inputName == 'email') {
+    if (!/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(inputValue)) {
+      setErrors({ ...errors, email: t("error_email") })
+    } else {
+      setErrors({ ...errors, email: '' })
     }
-    console.log(reqop.body);
+  } else if (inputName == 'phone') {
+    if (inputValue.length != 10 || !/^[0-9]+$/.test(inputValue)) {
 
-    // await fetch("http://localhost:3500/api/mailer", reqop)
-    await fetch("https://app.upcapital.io/node//mailer", reqop)
-      .then(res => console.log(res))
+      setErrors({ ...errors, phone: t("error_phone") })
+
+    } else {
+      setErrors({ ...errors, phone: '' })
+    }
+  } else if (inputName == 'fname') {
+    if (inputValue.length == 0) {
+      setErrors({ ...errors, fname: t("error_name") })
+    } else {
+      setErrors({ ...errors, fname: '' })
+    }
+  } else if (inputName == 'company') {
+
+    if (inputValue.length == 0) {
+
+      setErrors({ ...errors, company: t("error_company") })
+
+    } else {
+      setErrors({ ...errors, company: '' })
+    }
   }
-  return (
-      <div className='contact-page-bg '>
-        <div className='container'>
-          <div><p className="contact-page-title" >{t("consult")}<span style={{color:'red'}}>.</span></p></div>
+}
+let emailTemplate = (obj: any) => {
+  return `<div>
+  <div> name- ${obj.fname} ${obj.lname}<div>
+  <div>email- ${obj.email}<div>
+  <div>company - ${obj.company}<div>
+  <div>message - ${obj.message}<div>
+  </div>`
+}
+// emailTemplate(vendorInput)
+return (
+  <div>
+    <div className='contact-page-bg '>
+      <div className={`${useWindowSize() > 1550 ? 'container-contact' : 'container'}`}>
+        <div><p className="consult-page-title" >{t("consult")}<span style={{ color: 'red' }}>.</span></p></div>
 
-          <div style={{}} className="contact-page">
+        <div style={{}} className="contact-page">
+          <div ><div>
+            <p className="contact-title">{t("contact_form")}:</p>
+          </div>
             <div>
-              <div >
-                <p className="contact-title">{t("contact_form")}:</p>
-              </div>
-              <div>
-                <form onSubmit={sendMail} style={{}}>
-                  <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange}  required /><div className="input-line"></div></div>
-                  <div className="text-input"><input type="text" id="lname" name="lname" placeholder={t('phone')} value={vendorInput.lname} onChange={handleFormChange}  required /><div className="input-line"></div></div>
+              <form onSubmit={sendMail} style={{}}>
+                <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange} required /></div>
+                <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.fname}</div>
 
-                  <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange}  required /><div className="input-line"></div></div>
-                  <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} value={vendorInput.company} onChange={handleFormChange} /><div className="input-line"></div></div>
+                <div className="text-input"><input type="text" id="lname" name="lname" placeholder={t('phone')} value={vendorInput.lname} onChange={handleFormChange} required /></div>
+                <div  style={{ color: 'red', fontSize:"0.7rem" }}>{errors.phone}</div>
 
-                  <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /><div className="input-line"></div></div>
-                  <div><input type="submit" value={"שליחה"} /></div>
-                </form>
-              </div>
+                <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange} required /></div>
+                <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.email}</div>
+
+                <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} value={vendorInput.company} onChange={handleFormChange} /></div>
+                <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.company}</div>
+
+                <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div>
+                <div><input type="submit" value={"שליחה"} /></div>
+              </form>
+            </div></div>
+          <div className="info" >
+            <div className='info-details'>
+              <h2 className="contact-title" >{t("contact_info")}</h2>
+              <div style={{ textAlign: "right" }}><Envelope style={{ height: "30px", width: "30px" }} />info@upcapital.io </div>
+              <div style={{ textAlign: "right" }}><Telephone style={{ height: "30px", width: "30px" }} /> 073-7801153</div>
+              <div style={{ textAlign: "right" }}><Waze style={{ height: "30px", width: "30px" }} /> {t("address_text")}</div>
             </div>
-            <div className="info" >
-              <div className='info-details'>
-                <h2 className="contact-title" >{t("contact_info")}</h2>
-                <div style={{ textAlign: "right" }}><Envelope style={{ height: "30px", width: "30px" }} />info@upcapital.io </div>
-                <div style={{ textAlign: "right" }}><Telephone style={{ height: "30px", width: "30px" }} /> 073-7801153</div>
-                <div style={{ textAlign: "right" }}><Waze style={{ height: "30px", width: "30px" }} /> {t("address_text")}</div>
-              </div>
+            <div>
+              <div className="contact-title" style={{ paddingRight: "0" }}>{t("additional_info")}</div>
+              <div className="contact-page-detail" style={{ paddingRight: "0" }}>{t("terms")}</div>
+              <div className="contact-page-detail" style={{ paddingRight: "0" }}>{t("policy")}</div>
+              <div className="contact-page-detail" style={{ paddingRight: "0" }}>{t("accessibility")}</div>
               <div>
-                <div className="contact-title" style={{ paddingRight: "0" }}>{t("additional_info")}</div>
-                <div className="contact-page-detail" style={{ paddingRight: "0" }}>{t("terms")}</div>
-                <div className="contact-page-detail" style={{ paddingRight: "0" }}>{t("policy")}</div>
-                <div className="contact-page-detail" style={{ paddingRight: "0" }}>{t("accessibility")}</div>
-                <div>
-                  <div className="">
+                <div >
 
-                    <img style={{ width: "110px", height: "auto" }} src={dunBradstreet} />
-                    <img style={{ width: "112px", height: "auto" }} src={iso} />
+                  <img style={{ width: "110px", height: "auto" }} src={dunBradstreet} />
+                  <img style={{ width: "112px", height: "auto" }} src={iso} />
 
 
-
-                  </div>
 
                 </div>
+
               </div>
             </div>
           </div>
         </div>
-        
- <div className="row" style={{position:"fixed", bottom: 0, width: "100%" }}>
-          <div className="col-lg-6 col-md-12 col-sm-12" style={{ textAlign: "center" }}>
-            <div>{t("rights")}</div>
-          </div>
+      </div>
 
-          <div className="col-lg-6 col-md-12 col-sm-12" style={{ textAlign: "center" }}>
-            <div><img src={egg} width="20%" height="20%" /></div>
-          </div>
 
-        </div>
-     
     </div>
-  )
+    <div className="row contact-footer">
+      <div className="col-lg-6 col-md-12 col-sm-12" style={{ textAlign: "center" }}>
+        <div>{t("rights")}</div>
+      </div>
+
+      <div className="col-lg-6 col-md-12 col-sm-12" style={{ textAlign: "center" }}>
+        <div><img src={egg} width="20%" height="20%" /></div>
+      </div>
+
+    </div>
+  </div>
+)
 }
 
 export default Consult

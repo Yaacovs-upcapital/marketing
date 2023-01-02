@@ -14,9 +14,9 @@ const ContactUs = () => {
   const handleFormChange = (event) => {
     event.preventDefault()
     console.log("value changed: ", event.target.value)
-    // const inputName = event.target.name
-    // const inputValue = event.target.value.trim().toLowerCase()
-    // validate(inputName, inputValue)
+    const inputName = event.target.name
+    const inputValue = event.target.value.trim().toLowerCase()
+    validate(inputName, inputValue)
 
     setVendorInput({ ...vendorInput, [event.target.name]: event.target.value });
 
@@ -24,7 +24,7 @@ const ContactUs = () => {
 
   const sendMail = async (event) => {
     event.preventDefault();
-const msg=emailTemplate(vendorInput)
+    const msg = emailTemplate(vendorInput)
     const reqop = {
       method: 'POST',
       body: JSON.stringify({
@@ -42,17 +42,49 @@ const msg=emailTemplate(vendorInput)
     await fetch("https://app.upcapital.io/node//mailer", reqop)
       .then(res => console.log(res))
   }
+  const [errors, setErrors] = useState({ fname: '', phone: '', email: '', company: '' })
 
+  const validate = (inputName, inputValue) => {
+    if (inputName == 'email') {
+      if (!/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(inputValue)) {
+        setErrors({ ...errors, email: t("error_email") })
+      } else {
+        setErrors({ ...errors, email: '' })
+      }
+    } else if (inputName == 'phone') {
+      if (inputValue.length != 10 || !/^[0-9]+$/.test(inputValue)) {
 
-  let emailTemplate =(obj:any)=>{
-   return `<div>
-      <div style="display:flex; justify-content:right;"> שם מלא</div><div>${obj.fname} ${obj.lname}</div>
-      <div style="display:flex;justify-content:right;">דוא"ל</div><div>${obj.email}</div>
-      <div style="display:flex; justify-content:right;">חברה</div><div>${obj.company}</div>
-      <div style="display:flex; justify-content:right;">הודעה</div><div>${obj.message}</div>
+        setErrors({ ...errors, phone: t("error_phone") })
+
+      } else {
+        setErrors({ ...errors, phone: '' })
+      }
+    } else if (inputName == 'fname') {
+      if (inputValue.length == 0) {
+        setErrors({ ...errors, fname: t("error_name") })
+      } else {
+        setErrors({ ...errors, fname: '' })
+      }
+    } else if (inputName == 'company') {
+
+      if (inputValue.length == 0) {
+
+        setErrors({ ...errors, company: t("error_company") })
+
+      } else {
+        setErrors({ ...errors, company: '' })
+      }
+    }
+  }
+  let emailTemplate = (obj: any) => {
+    return `<div>
+    <div> name- ${obj.fname} ${obj.lname}<div>
+    <div>email- ${obj.email}<div>
+    <div>company - ${obj.company}<div>
+    <div>message - ${obj.message}<div>
     </div>`
-}
-// emailTemplate(vendorInput)
+  }
+  // emailTemplate(vendorInput)
   return (
     <div>
       <div className='contact-page-bg '>
@@ -65,22 +97,28 @@ const msg=emailTemplate(vendorInput)
             </div>
               <div>
                 <form onSubmit={sendMail} style={{}}>
-                  <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange} required /><div className="input-line"></div></div>
-                  <div className="text-input"><input type="text" id="lname" name="lname" placeholder={t('phone')} value={vendorInput.lname} onChange={handleFormChange} required /><div className="input-line"></div></div>
+                  <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange} required /></div>
+                  <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.fname}</div>
 
-                  <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange} required /><div className="input-line"></div></div>
-                  <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} value={vendorInput.company} onChange={handleFormChange} /><div className="input-line"></div></div>
+                  <div className="text-input"><input type="text" id="lname" name="lname" placeholder={t('phone')} value={vendorInput.lname} onChange={handleFormChange} required /></div>
+                  <div  style={{ color: 'red', fontSize:"0.7rem" }}>{errors.phone}</div>
 
-                  <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /><div className="input-line"></div></div>
+                  <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange} required /></div>
+                  <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.email}</div>
+
+                  <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} value={vendorInput.company} onChange={handleFormChange} /></div>
+                  <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.company}</div>
+
+                  <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div>
                   <div><input type="submit" value={"שליחה"} /></div>
                 </form>
               </div></div>
             <div className="info" >
               <div className='info-details'>
                 <h2 className="contact-title" >{t("contact_info")}</h2>
-                <div style={{ textAlign: "right" }}><Envelope style={{ height: "30px", width: "30px" }} />info@upcapital.io </div>
-                <div style={{ textAlign: "right" }}><Telephone style={{ height: "30px", width: "30px" }} /> 073-7801153</div>
-                <div style={{ textAlign: "right" }}><Waze style={{ height: "30px", width: "30px" }} /> {t("address_text")}</div>
+                <div ><Envelope style={{ height: "30px", width: "30px" }} />info@upcapital.io </div>
+                <div ><Telephone style={{ height: "30px", width: "30px" }} /> 073-7801153</div>
+                <div ><Waze style={{ height: "30px", width: "30px" }} /> {t("address_text")}</div>
               </div>
               <div>
                 <div className="contact-title" style={{ paddingRight: "0" }}>{t("additional_info")}</div>

@@ -21,7 +21,7 @@ const Solution = () => {
             <div className='sol-up'>
                 <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'} mt-5 mb-5`} >
                     <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'} mt-3`}style={{ padding: 0, marginBottom: "1rem" }}>
-                        <h1 style={{ color: "#2f439a", fontSize: "40pt", textAlign: "right" }}>{t('challenges')}<span style={{ color: "red" }}>.</span></h1>
+                        <h1 style={{ color: "#2f439a", fontSize: "40pt"}}>{t('challenges')}<span style={{ color: "red" }}>.</span></h1>
                     </div>
                     <div className="row">
 
@@ -29,17 +29,13 @@ const Solution = () => {
 
                             <div>
                                 <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
-                                    בכל רגע נתון ברחבי העולם, קיימים כ-54 טריליון דולרים ב"שוטף פלוס" כלומר, כסף שנמצא במצב ביניים בין ספקים ללקוחות. רק בישראל הסכום המוערך עומד על למעלה מ-50 מיליארד דולרים.
-                                </p>
+{t('solution_p1')}                                </p>
                                 <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)", fontWeight: "bold" }}>
-                                    מדובר בהון חוזר, לא נגיש, לא נזיל ולא מנוצל.
-                                </p>
+                                {t('solution_p2')}                                 </p>
                                 <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
-                                    נגישות להון הזה תאפשר לייצר מציאות כלכלית חדשה לעסקים, בעיקר קטנים ובינוניים, ותאפשר להם לגדול ולהתפתח, והרי צמיחה של העסקים הקטנים והבינונים אשר נחשבים ל"קטר" של הכלכלה, בכוחה לייצר מציאות כלכלית חדשה למדינה כולה.
-                                </p>
+                                {t('solution_p3')}                                 </p>
                                 <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
-                                    כיום הסיבה המרכזית לחוסר הנגישות נעוצה בכך ששוק האשראי לעסקים עדיין פועל באופן מיושן, עם מעט טכנולוגיה והרבה בירוקרטיה.                    </p>
-                            </div>
+                                {t('solution_p4')}         </p>                    </div>
                             <div style={{ display: useWindowSize() > 767 ? "flex" : 'none', justifyContent: "space-between", marginTop: "2rem" }}>
                                 <div style={{ textAlign: "center" }}><img src={cashflow} width="47px" height="60px" /><p style={{ marginTop: "1rem", color: "#2f439a", fontWeight: "bold" }}>קשיים תזרימיים</p></div>
                                 <div style={{ textAlign: "center" }}><img src={interest} width="59px" height="60px" /><p style={{ marginTop: "1rem", color: "#2f439a", fontWeight: "bold" }}>ריביות גבוהות</p></div>
@@ -63,14 +59,17 @@ const Solution = () => {
                         <div className="mt-3 mb-2" style={{ marginBottom: "1rem !important" }}><h1 style={{ color: "#2f439a", fontSize: "40pt", textAlign: "right" }}>{t('solution_second_title')}<span style={{ color: "red" }}>?</span></h1></div>
 
                         <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
-                            הטכנולוגיה הייחודית שפיתחנו מאפשרת לכל חשבוני מאושרת להפוך למזומן בלחיצת כפתור, ללא חיכוך, בתהליך קל, פשוט ומהיר.
-                            כך אנו מקצרים את זמן ההמתנה של הכסף השוכב ב"שוטף פלוס" ומייצרים דרכי מימון חדשות המאפשרות מימון הון חוזר.
+                        {t('solution_p5')}            
                         </p>
                         <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
-                            אנו פועלים אל מול הגופים הגדולים במשק ומאפשרים לספקים של אותם גופים להתחבר לאפליקציה של Up Capital, לצפות בתשלומים העתידים שלהם ובלחיצת כפתור להפוך אותם להון זמין לשימוש.
+                        {t('solution_p6')}            
                         </p>
                         <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
-                            העסקים יכולים לבחור אילו מהתשלומים ברצונם להפוך לנזילים, הספקים מציעים את הנחת המזומן, הכל באופן שקוף, נגיש ופשוט בעבור שני הצדדים.</p>
+                        {t('solution_p7')}            
+                        </p>
+                        <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
+                        {t('solution_p8')}            
+                            </p>
                         <div className='sol-grid'>
                             <div className='how-grid' ><div><img src={payment} width="60px" height="58px" /></div><div style={{ color: "#2f439a" }}><p style={{ fontWeight: "bold", marginBottom: "0" }}>קבלת מימון מיידי בלחיצת כפתור</p><p style={{ color: "#2f439a" }}>כל חשבונית מאושרת הופכת למזומן בלחיצת כפתור פשוטה</p></div></div>
                             <div className='how-grid' ><div><img src={noBc} width="60px" height="57px" /></div><div style={{ color: "#2f439a" }}><p style={{ fontWeight: "bold", marginBottom: "0" }}>ללא בירוקרטיה</p><p style={{ color: "#2f439a", }}>אין צורך להמתין לאישורים או להמתין לבנק לקבלת תשובה. הכסף מגיע לחשבון הבנק עד 48 שעות.</p></div></div>
