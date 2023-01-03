@@ -14,7 +14,7 @@ import { useState } from "react";
 const Footer = () => {
   const { t } = useTranslation()
 
-  const [vendorInput, setVendorInput] = useState({ fname: '', lname: '', email: '', company: '', message: '' })
+  const [vendorInput, setVendorInput] = useState({ fname: '', phone: '', email: '', company: '', message: '' })
   const handleFormChange = (event) => {
     event.preventDefault()
     console.log("value changed: ", event.target.value)
@@ -84,6 +84,7 @@ const Footer = () => {
     return `<div>
     <div style="display:flex;justify-content:right;"> שם מלא - ${obj.fname} ${obj.lname}div>
     < div style="display:flex;justify-content:right;">דוא"ל - ${obj.email}div>
+    < div style="display:flex;justify-content:right;">דוא"ל - ${obj.phone}div>
     < div style="display:flex; justify-content:right;">חברה - ${obj.company}div>
     < div style="display:flex; justify-content:right;">הודעה - ${obj.message}div>
     </div>`
@@ -106,20 +107,21 @@ const Footer = () => {
             <div style={{ width: "100%", marginLeft: "1rem" }}>
               <div style={{ backgroundColor: "#fff", borderRadius: "1rem", padding: "2rem 2rem 6rem 2rem" }}>
 
-                <form style={{}}>
-                  <div style={{ display: useWindowSize() > 700 ? "flex" : "block" }}>
-                    <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} required /></div>
-                    <div className="text-input"><input type="text" id="lname" name="lname" placeholder={t('phone')} required /></div>
-                  </div>
-                  <div style={{ display: useWindowSize() > 700 ? "flex" : "block" }}>
+              <form onSubmit={sendMail} style={{}}>
+                  <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange} required /></div>
+                  <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.fname}</div>
 
-                    <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} required /></div>
-                    <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} /></div>
-                  </div>
+                  <div className="text-input"><input type="text" id="phone" name="phone" placeholder={t('phone')} value={vendorInput.phone} onChange={handleFormChange} required /></div>
+                  <div  style={{ color: 'red', fontSize:"0.7rem" }}>{errors.phone}</div>
 
-                  <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} /></div>
-                  <input type="submit" value={"שליחה"} />
+                  <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange} required /></div>
+                  <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.email}</div>
 
+                  <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} value={vendorInput.company} onChange={handleFormChange} /></div>
+                  <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.company}</div>
+
+                  <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div>
+                  <div><input type="submit" value={"שליחה"} /></div>
                 </form>
               </div>
             </div>

@@ -10,7 +10,7 @@ import useWindowSize from '../../components/windowSize';
 const ContactUs = () => {
   const { t } = useTranslation()
 
-  const [vendorInput, setVendorInput] = useState({ fname: '', lname: '', email: '', company: '', message: '' })
+  const [vendorInput, setVendorInput] = useState({ fname: '', phone: '', email: '', company: '', message: '' })
   const handleFormChange = (event) => {
     event.preventDefault()
     console.log("value changed: ", event.target.value)
@@ -79,6 +79,7 @@ const ContactUs = () => {
   let emailTemplate = (obj: any) => {
     return `<div>
     <div> name- ${obj.fname} ${obj.lname}<div>
+    <div>email- ${obj.phone}<div>
     <div>email- ${obj.email}<div>
     <div>company - ${obj.company}<div>
     <div>message - ${obj.message}<div>
@@ -100,7 +101,7 @@ const ContactUs = () => {
                   <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange} required /></div>
                   <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.fname}</div>
 
-                  <div className="text-input"><input type="text" id="lname" name="lname" placeholder={t('phone')} value={vendorInput.lname} onChange={handleFormChange} required /></div>
+                  <div className="text-input"><input type="text" id="phone" name="phone" placeholder={t('phone')} value={vendorInput.phone} onChange={handleFormChange} required /></div>
                   <div  style={{ color: 'red', fontSize:"0.7rem" }}>{errors.phone}</div>
 
                   <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange} required /></div>
