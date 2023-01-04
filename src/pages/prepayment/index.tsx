@@ -160,10 +160,16 @@ console.log('vendorInput', vendorInput);
       }
     }
   }
-
+  const [directionValue, setDirectionValue] = useState('')
+  setTimeout(() => {
+      const obj: any = document.getElementById('page')
+      const valueAfterTimeout = getComputedStyle(obj, null).direction
+      setDirectionValue(valueAfterTimeout)
+  }, 100);
+  console.log('direction', directionValue);
   return (
     <div>
-      <div className='prepayment-page-bg '>
+      <div className='prepayment-page-bg ' id='page' style={directionValue=='ltr'?{backgroundImage:'linear-gradient(to left,#fff,#e5e8ff)'}:{backgroundImage:'linear-gradient(to right,#fff,#e5e8ff)'}}>
         <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`}>
           <div><p className="prepayment-page-title" >{t("sign_up_free")}<span style={{ color: 'red' }}>.</span></p></div>
 

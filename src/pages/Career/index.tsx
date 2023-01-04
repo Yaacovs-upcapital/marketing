@@ -15,7 +15,7 @@ const Career = () => {
 
                 <div className="career-content container" style={{ marginTop: "3rem" }}>
                     <div className="text-container" style={{ width: "100%" }}>
-                        <div style={{ display: "flex", justifyContent: "right", lineHeight: 0, marginBottom: "1rem" }} >
+                        <div style={{ display: "flex", lineHeight: 0, marginBottom: "1rem" }} >
                             <h1 className="career-big-title">{t("career")}
                                 <span
                                     style={{ color: 'red' }}>.</span></h1>
@@ -50,7 +50,7 @@ const Career = () => {
                                 <div className="job-details">מספר משרה: 102</div>
                                 <div className="job-details">מיקום המשרה: תל אביב</div>
                                 <div className="job-details">סוג המשרה: מלאה</div>
-                                <div className="job-details">תאריך אחרון להגשת מועמדות: 01/03/2023</div>
+                                <div className="job-details">{t('deadline')}: 01/03/2023</div>
                             </div>
                         </MediaControlCard>
                         <MediaControlCard path="/job-offer/:201/">
@@ -60,7 +60,7 @@ const Career = () => {
                                 <div className="job-details">מספר משרה: 201</div>
                                 <div className="job-details">מיקום המשרה: תל אביב</div>
                                 <div className="job-details">סוג המשרה: מלאה</div>
-                                <div className="job-details">תאריך אחרון להגשת מועמדות: 01/03/2023</div>
+                                <div className="job-details">{t('deadline')}: 01/03/2023</div>
                             </div>
                         </MediaControlCard>
                         <MediaControlCard path="/job-offer/:301/">
@@ -70,7 +70,7 @@ const Career = () => {
                                 <div className="job-details">מספר משרה: 301</div>
                                 <div className="job-details">מיקום המשרה: תל אביב</div>
                                 <div className="job-details">סוג המשרה: מלאה</div>
-                                <div className="job-details">תאריך אחרון להגשת מועמדות: 01/03/2023</div>
+                                <div className="job-details">{t('deadline')}: 01/03/2023</div>
                             </div>
                         </MediaControlCard>
 

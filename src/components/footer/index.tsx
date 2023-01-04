@@ -90,36 +90,40 @@ const Footer = () => {
     </div>`
   }
   return (
-    <div >
+    <div className="footer">
       <div className="contact" id="contact">
 
-        <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`} style={{ display: "flex", justifyContent: "right" }}>
+        <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`} style={{ display: "flex" }}>
           <p className="form-title" style={{ fontSize: "35pt", paddingRight: "12px" }}>{t("contact")}</p>
           <p className="form-title" style={{ color: "red", fontSize: "35pt" }}>.</p>
         </div>
         <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'} row`} style={{ margin: "auto" }}>
-          <div className="col-lg-4 col-md-12 col-sm-12  mt-3 mb-3" style={{ display: useWindowSize() > 700 ? "" : "8rem" }}>
+          <div className="col-lg-4 col-md-12 col-sm-12  mt-3 mb-3" style={{ display: useWindowSize() > 700 ? "" : "8rem", paddingLeft:0 }}>
             <div >
 
               <p className="second-title">{t("contact_form")}:</p>
             </div>
 
-            <div style={{ width: "100%", marginLeft: "1rem" }}>
-              <div style={{ backgroundColor: "#fff", borderRadius: "1rem", padding: "2rem 2rem 6rem 2rem" }}>
+            <div style={{ width: "100%" }}>
+              <div style={{ backgroundColor: "#fff", borderRadius: "1rem", padding: "2rem 2rem 2rem 2rem" }}>
 
-              <form onSubmit={sendMail} style={{}}>
-                  <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange} required /></div>
-                  <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.fname}</div>
+                <form onSubmit={sendMail} style={{}}>
+                  <div style={{ display: useWindowSize() > 700 ? "flex" : "block" }}>
 
-                  <div className="text-input"><input type="text" id="phone" name="phone" placeholder={t('phone')} value={vendorInput.phone} onChange={handleFormChange} required /></div>
-                  <div  style={{ color: 'red', fontSize:"0.7rem" }}>{errors.phone}</div>
+                    <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange} required /></div>
+                    <div style={{ color: 'red', fontSize: "0.7rem" }}>{errors.fname}</div>
 
-                  <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange} required /></div>
-                  <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.email}</div>
+                    <div className="text-input"><input type="text" id="phone" name="phone" placeholder={t('phone')} value={vendorInput.phone} onChange={handleFormChange} required /></div>
+                    <div style={{ color: 'red', fontSize: "0.7rem" }}>{errors.phone}</div>
+                  </div>
+                  <div style={{ display: useWindowSize() > 700 ? "flex" : "block" }}>
 
-                  <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} value={vendorInput.company} onChange={handleFormChange} /></div>
-                  <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.company}</div>
+                    <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange} required /></div>
+                    <div style={{ color: 'red', fontSize: "0.7rem" }}>{errors.email}</div>
 
+                    <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} value={vendorInput.company} onChange={handleFormChange} /></div>
+                    <div style={{ color: 'red', fontSize: "0.7rem" }}>{errors.company}</div>
+                  </div>
                   <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div>
                   <div><input type="submit" value={"שליחה"} /></div>
                 </form>
@@ -130,7 +134,7 @@ const Footer = () => {
           <div className="col-lg-4 col-md-12 col-sm-12  mt-3 mb-3">
             <div className="vl" >
 
-              <div style={{ textAlign: "right" }}>
+              <div style={{  }}>
                 <h2 className="form-title mb-4" >{t("contact_info")}</h2>
                 <div className="detail-wrap" >
                   {/* <div className="detail-name">{t("email")}</div> */}
@@ -155,16 +159,14 @@ const Footer = () => {
           <div className="col-lg-4 col-md-12 col-sm-12 mt-3 mb-3">
             <div style={{ color: "white" }}>
               <div className="form-title" style={{ paddingRight: "0" }}>{t("additional_info")}</div>
-              <div className="contact-detail" style={{ paddingRight: "0" }}><NavLink style={{ textDecoration: "none", color: "#fff" }} to={"/terms-of-use/"} >{t("terms")}</NavLink></div>
-              <div className="contact-detail" style={{ paddingRight: "0" }}><NavLink style={{ textDecoration: "none", color: "#fff" }} to={"/privacy-policy/"} >{t("policy")}</NavLink></div>
+              <div className="contact-detail" style={{ paddingRight: "0" }}><NavLink className="link1" style={{ textDecoration: "none", color: "#fff" }} to={"/terms-of-use/"} >{t("terms")}</NavLink></div>
+              <div className="contact-detail" style={{ paddingRight: "0" }}><NavLink className="link2" style={{ textDecoration: "none", color: "#fff" }} to={"/privacy-policy/"} >{t("policy")}</NavLink></div>
               <div className="contact-detail" style={{ paddingRight: "0" }}>{t("accessibility")}</div>
-              <div>
+              <div >
                 <div className="mt-4" style={{ display: "flex", alignItems: "center" }}>
 
                   <a href="https://www.dnb.com/" target="blank"> <img style={{ width: "110px", height: "auto", margin: "10px" }} src={dunBradstreet} /></a>
                   <a href="https://www.iso.org/isoiec-27001-information-security.html" target="blank"><img style={{ width: "116px", height: "auto", margin: "10px" }} src={iso} /></a>
-
-
 
                 </div>
 
@@ -172,15 +174,9 @@ const Footer = () => {
             </div>
           </div>
 
-
         </div>
 
-
-
         <div className="contact-parent" >
-
-
-
 
         </div>
 

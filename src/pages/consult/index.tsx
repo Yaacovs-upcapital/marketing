@@ -84,9 +84,16 @@ let emailTemplate = (obj: any) => {
   </div>`
 }
 // emailTemplate(vendorInput)
+const [directionValue, setDirectionValue] = useState('')
+setTimeout(() => {
+    const obj: any = document.getElementById('page')
+    const valueAfterTimeout = getComputedStyle(obj, null).direction
+    setDirectionValue(valueAfterTimeout)
+}, 100);
+console.log('direction', directionValue);
 return (
   <div>
-    <div className='contact-page-bg '>
+    <div className='contact-page-bg ' id='page' style={directionValue=='ltr'?{backgroundImage:'linear-gradient(to left,#fff,#e5e8ff)'}:{backgroundImage:'linear-gradient(to right,#fff,#e5e8ff)'}}>
       <div className={`${useWindowSize() > 1550 ? 'container-contact' : 'container'}`}>
         <div><p className="consult-page-title" >{t("consult")}<span style={{ color: 'red' }}>.</span></p></div>
 

@@ -92,7 +92,7 @@ const About = () => {
 
 
 						<div className=" container mt-3" style={{ width: useWindowSize() > 500 ? "74rem" : "", margin: "auto" }}>
-							<h1 style={{ color: "#2f439a", fontSize: "40pt", textAlign: "right" }}>הצוות<span style={{ color: "red" }}>.</span></h1>
+							<h1 style={{ color: "#2f439a", fontSize: "40pt" }}>{t('team')}<span style={{ color: "red" }}>.</span></h1>
 						</div>
 
 						<div className="team-container container mt-5">

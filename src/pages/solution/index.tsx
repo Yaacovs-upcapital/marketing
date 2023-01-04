@@ -56,7 +56,7 @@ const Solution = () => {
             <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'} mt-5 mb-5`}>
                 <div className='row how'>
                     <div className='col-lg-8 col-md-12 col-sm-12' style={{ paddingLeft: "10px", fontWeight: "600", marginBottom: "1rem" }}>
-                        <div className="mt-3 mb-2" style={{ marginBottom: "1rem !important" }}><h1 style={{ color: "#2f439a", fontSize: "40pt", textAlign: "right" }}>{t('solution_second_title')}<span style={{ color: "red" }}>?</span></h1></div>
+                        <div className="mt-3 mb-2" style={{ marginBottom: "1rem !important" }}><h1 style={{ color: "#2f439a", fontSize: "40pt" }}>{t('solution_second_title')}<span style={{ color: "red" }}>?</span></h1></div>
 
                         <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
                         {t('solution_p5')}            

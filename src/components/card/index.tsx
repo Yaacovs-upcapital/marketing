@@ -37,7 +37,6 @@ export default function MediaControlCard(props: any) {
         style={{
           width: "100%",
           padding: props.image ? "10px 10px" : "30px 30px",
-          direction: "rtl",
 
         }}
       >

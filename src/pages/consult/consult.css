@@ -8,7 +8,7 @@
 }
 
 .consult-page-title{
-  text-align: right;
+  
   font-size: 3rem;
   font-weight: bold;
   font-family: "LeonRegular";
@@ -52,7 +52,7 @@ padding: 2rem;
   .info {
     padding-top: 2rem;
     width: 100%;
-    text-align: right;
+    
   }
   
   .info {

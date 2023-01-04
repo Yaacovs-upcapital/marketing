@@ -1,5 +1,7 @@
 
-
+.footer{
+  margin-top: 10rem;
+}
 .form-title,
 .second-title {
   color: white;
@@ -9,7 +11,7 @@
   margin:auto
 }
 .form-title {
-  text-align: right;
+  
   margin-bottom: 0;
   font-size: 1.48em;
 
@@ -17,7 +19,7 @@
 
 .second-title {
   font-size: 19.8px;
-  text-align: right;
+  
   font-family: "LeonBold";
 }
 
@@ -95,7 +97,11 @@ textarea {
 ::placeholder {
   color: #2f439a;
 }
-
+.link1 .active, .link2 .active{
+  text-decoration: none !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+}
 @media (max-width: 767px) {
   .vl {
     border-left: 0px;

@@ -1,0 +1,12 @@
+.policy-title{
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 7rem;
+    font-size: 3rem ;
+    font-weight: bold;
+    color: #2f439a;
+}

@@ -1,7 +1,10 @@
 * {
   box-sizing: border-box;
 }
+.page-container-en{
+  margin-bottom: 10rem;
 
+}
 .container {
   max-width: 67rem;
   margin: auto !important;
@@ -74,7 +77,6 @@
 .home-btns {
   left: calc(-50vw + 50%);
   display: flex;
-  justify-content: right;
   padding: 0;
   /* flex-basis:20rem; */
 }
@@ -95,7 +97,14 @@
   padding: 0.6rem 1.5rem 0.6rem 1.5rem;
   margin-top: 1rem;
   width: 13rem;
+}
 
+.home-jumbotron-en .img-fluid {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  margin-top: 3%;
+  margin-right: -6%;
+  max-height: 51rem;
 }
 
 .about-btn a,
@@ -111,11 +120,12 @@
   box-shadow: 0 0 10px #aaaaaa;
 }
 
-.consult-btn, .prepayment-btn{
-flex-basis: 8rem;
-/* max-width: 8rem; */
-flex-grow: 1;
-height: auto !important;
+.consult-btn,
+.prepayment-btn {
+  flex-basis: 8rem;
+  max-width: fit-content;
+  flex-grow: 1;
+  height: auto !important;
 }
 .career-btn {
   border-radius: 0.5em;
@@ -153,10 +163,8 @@ height: auto !important;
   position: relative;
 }
 .about-desc .plus-img {
-  position: absolute;
-  top: -5rem;
-  right: 4rem;
   cursor: pointer;
+  margin-top: -4rem;
 }
 
 .home-jumbotron .img-fluid {
@@ -165,12 +173,25 @@ height: auto !important;
   max-height: 51rem;
 }
 
+.arrow-img {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: -40px;
+  z-index: 500;
+  position: relative;
+}
 .advantages-image {
   height: 55px;
   width: 55px;
   margin-right: 10px;
 }
 .advantages-rectangle {
+  width: 70%;
+  font-size: 20px;
+  margin-right: 20px;
+}
+.advantages-rectangle-en {
   width: 70%;
   font-size: 20px;
   margin-right: 20px;
@@ -186,6 +207,18 @@ height: auto !important;
 }
 @media screen and (max-width: 991px) {
   .home-jumbotron {
+    background-image: url(../../assets/images/bg-1.png);
+    background-repeat: no-repeat;
+    /* background-size: 100%; */
+    height: 940px;
+    padding-top: 2rem;
+    padding-bottom: 9rem;
+    margin-left: -6rem;
+    margin-right: -6rem;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .home-jumbotron-en {
     background-image: url(../../assets/images/bg-1.png);
     background-repeat: no-repeat;
     /* background-size: 100%; */
@@ -249,6 +282,19 @@ height: auto !important;
     z-index: -1;
     transform: rotate(31deg);
   }
+
+  /* .bg-pointer2-en {
+    position: relative;
+    top: 167px;
+    right: 175px !important;
+    height: 100px;
+    z-index: -1;
+    transform: rotate(31deg);
+   
+  } */
+
+  /*  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); */
   .product {
     background-image: url(../../assets/images/home-upz.png);
     background-repeat: no-repeat;
@@ -272,6 +318,13 @@ height: auto !important;
     margin-top: 100px;
     margin-right: 100px;
   }
+  .process {
+    background-image: url("../../assets/images/process-bgm.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 1200px; */
+    padding-bottom: 6rem;
+  }
 }
 @media screen and (min-width: 991px) {
   .home-jumbotron {
@@ -283,6 +336,16 @@ height: auto !important;
     margin-left: -6rem;
     margin-right: -6rem;
     padding-right: 100px;
+  }
+  .home-jumbotron-en {
+    background-image: url(../../assets/images/bg-1.png) !important;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 1291px;
+    padding-top: 2rem;
+    margin-left: -6rem;
+    margin-right: -6rem;
+    padding-left: 100px;
   }
 
   .techBlue {
@@ -308,6 +371,45 @@ height: auto !important;
     background-size: 95rem 30rem;
     padding-bottom: 6rem;
     height: 1400px;
+  }
+  .techBgImg {
+    display: none;
+  }
+  .product {
+    background-image: url(../../assets/images/home-upz.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 695px;
+    padding-top: min(12rem);
+    padding-bottom: 2rem;
+    /* margin-left: -6rem; */
+    margin-right: -6rem;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: min(-48rem);
+    margin-bottom: -7rem;
+  }
+
+  .product-en {
+    background-image: url(../../assets/images/home-upz.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 695px;
+    padding-top: min(12rem);
+    padding-bottom: 2rem;
+    /* margin-left: -6rem; */
+    margin-right: -6rem;
+    /* padding-left: 100px; */
+    padding-right: 100px;
+    margin-top: min(-48rem);
+    margin-bottom: -7rem;
+  }
+  .process {
+    background-image: url("../../assets/images/process-bgs.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 750px;
+    padding-bottom: 6rem;
   }
 }
 
@@ -344,9 +446,9 @@ height: auto !important;
     padding-bottom: 14rem;
     /* margin-bottom: 33rem; */
   }
-.product{
-  margin-top: -28rem;
-}
+  .product {
+    margin-top: -28rem;
+  }
   .tech-bg {
     background-image: url("../../assets/images/red-curl4.png");
     background-repeat: no-repeat;
@@ -509,7 +611,7 @@ height: auto !important;
   .career-title {
     margin-top: 80px;
   }
-  
+
   .career-title,
   .icon-title,
   .tech,
@@ -559,26 +661,8 @@ height: auto !important;
     height: auto !important;
     margin: 0px !important;
   }
-  .partners-title{
-    font-size: 2.8rem !important; 
-  }
-}
-
-@media screen and (min-width: 991px) {
-  .product {
-    background-image: url(../../assets/images/home-upz.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 695px;
-    padding-top: min(12rem);
-    padding-bottom: 2rem;
-    /* margin-left: -6rem; */
-    margin-right: -6rem;
-    padding-left: 100px;
-    padding-right: 100px;
-    margin-top: min(-48rem);
-    margin-bottom: -7rem;
-
+  .partners-title {
+    font-size: 2.8rem !important;
   }
 }
 
@@ -618,7 +702,6 @@ height: auto !important;
   font-weight: 400;
   line-height: 1.2em;
   text-align: justify;
-  direction: rtl;
 }
 
 .parent,
@@ -672,6 +755,17 @@ height: auto !important;
   z-index: -1;
 }
 
+.bg-pointer2-en {
+  position: relative;
+  top: 167px;
+  left: 270px;
+  height: 100px;
+  z-index: -1;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+
 .flow-circle,
 .flow-circle-no-red {
   box-shadow: 0px 0px 5px #aaaaaa;
@@ -697,30 +791,13 @@ height: auto !important;
   font-family: "RAG-Sans1.0-Regular";
   font-size: 1.2rem;
 }
-
+.product-circle-text-en {
+  font-family: "RAG-Sans1.0-Regular";
+  font-size: 1.1rem;
+}
 .process-step {
   color: #2f439a;
   font-family: "RAG-Sans1.0-Regular";
-}
-
-@media screen and (min-width: 991px) {
-  .process {
-    background-image: url("../../assets/images/process-bgs.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 750px;
-    padding-bottom: 6rem;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .process {
-    background-image: url("../../assets/images/process-bgm.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* height: 1200px; */
-    padding-bottom: 6rem;
-  }
 }
 
 .process-header {
@@ -749,11 +826,11 @@ height: auto !important;
 
 .process-item {
   width: 11rem;
-  text-align: right;
 }
 .process-img {
-  padding: 0;
-}
+  position: absolute;
+  top: 7%;
+  right: -7%;}
 .num {
   color: #ffffff;
   font-weight: bold;
@@ -795,6 +872,15 @@ height: auto !important;
   font-family: "RAG-Sans1.0-Regular";
   font-size: 1.3em;
 }
+.circle-tech-en {
+  width: 8rem;
+  height: 8rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  display: flex;
+  font-family: "RAG-Sans1.0-Regular";
+  font-size: 1.2em;
+}
 .partners-title,
 .career-title,
 .icon-title,
@@ -822,7 +908,10 @@ height: auto !important;
   color: #2f439a !important;
   font-size: 3rem !important;
   width: 100% !important;
-  padding-left: 10px !important;
+  padding-left: 0 !important;
+  font-family: "RAG-Sans1.0-Regular";
+
+  margin-top: 0;
 }
 
 .partners-title {
@@ -895,12 +984,6 @@ height: auto !important;
   margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 991px) {
-  .techBgImg {
-    display: none;
-  }
-}
-
 .tech-circle {
   position: relative;
 }
@@ -936,7 +1019,6 @@ height: auto !important;
   font-family: "RAG-Sans1.0-Bold";
   font-size: 1.8rem;
   margin-top: 0;
-  padding-left: 3rem;
 }
 
 .advantages-wrap {
@@ -949,13 +1031,7 @@ height: auto !important;
   margin-top: 0;
 }
 
-.about-text {
-  font-family: "RAG-Sans1.0-Regular";
-  width: 45%;
-  font-size: 1.5rem;
-  padding-left: 3rem;
-  margin-top: 0;
-}
+
 
 .about-content {
   display: flex;
@@ -968,11 +1044,11 @@ height: auto !important;
 
 .about-name {
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: -2rem;
 }
 .about-name,
 .about-title {
-  padding-top: 0.5rem;
+  padding-top: 0px;
   font-family: "RAG-Sans1.0-Regular";
   font-size: 1.4rem;
 }
@@ -1194,12 +1270,25 @@ height: auto !important;
     padding-bottom: 6rem;
     margin: auto;
   }
+  .home-jumbotron-en {
+    /* background-image: url(http://localhost:3005/static/media/bg-1.a696599….png); */
+    /* background-repeat: no-repeat; */
+    /* background-size: 100%; */
+    height: 1291px;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+    margin: auto;
+  }
   .home-jumbotron .img-fluid {
     height: auto !important;
     margin-top: 9%;
     margin-left: 1%;
   }
-
+  .home-jumbotron-en .img-fluid {
+    height: auto !important;
+    margin-top: 9%;
+    margin-right: 1%;
+  }
   .home-title {
     margin-top: 17rem;
   }
@@ -1216,7 +1305,12 @@ height: auto !important;
   .product {
     margin-top: -36rem;
     height: 800px;
-    padding-top: 18rem;
+    padding-top: 14rem;
+  }
+  .product-en {
+    margin-top: -36rem;
+    height: 800px;
+    padding-top: 11rem;
   }
 
   .product-title {
@@ -1241,11 +1335,20 @@ height: auto !important;
     height: 20rem;
     border-radius: 11rem;
   }
+  .bg-pointer2-en {
+    top: 208px;
+    left: 350px;
+  }
   .bg-pointer2 {
     top: 208px;
     right: 290px;
   }
+  /* -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);  */
   .product-circle-text {
+    font-size: 1.4rem;
+  }
+  .product-circle-text-en {
     font-size: 1.4rem;
   }
 
@@ -1287,6 +1390,10 @@ height: auto !important;
     width: 12rem;
     font-size: 1.7em;
   }
+  .circle-tech-en {
+    width: 12rem;
+    font-size: 1.6em;
+  }
   .advantages {
     font-size: 4rem;
     padding-bottom: 2rem;
@@ -1304,6 +1411,9 @@ height: auto !important;
   }
   .advantages-rectangle {
     font-size: 25px;
+  }
+  .advantages-rectangle-en {
+    font-size: 22px;
   }
   .about-btn {
     font-size: 27px;
@@ -1343,10 +1453,14 @@ height: auto !important;
     font-family: "LeonRegular";
     font-size: 4rem;
   }
+  .page-container-en{
+    margin-bottom: 21rem;
+  
+  }
 }
 
 @media screen and (min-width: 1750px) {
-  .product{
+  .product {
     height: 1100px;
   }
 }
@@ -1362,7 +1476,7 @@ height: auto !important;
     flex-direction: column;
     margin-right: 158%;
   }
-  .product{
+  .product {
     margin-top: -35rem;
   }
 }
