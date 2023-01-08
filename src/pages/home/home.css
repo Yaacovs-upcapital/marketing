@@ -193,7 +193,7 @@
 }
 .advantages-rectangle-en {
   width: 70%;
-  font-size: 20px;
+  font-size: 18px;
   margin-right: 20px;
 }
 .image-flex {
@@ -273,14 +273,28 @@
     margin-left: 29rem;
     margin-bottom: 2.6rem;
   }
-
+  .bg-pointer-en{
+    display: flex;
+    justify-content: center;
+    margin-right: 29rem;
+    margin-bottom: 2.6rem;
+  }
   .bg-pointer2 {
+    position: relative;
+    top: 167px;
+    right: 175px !important;
+    height: 100px;  
+    z-index: -1;
+    transform: rotate(31deg);
+  }
+  .bg-pointer2-en {
     position: relative;
     top: 167px;
     right: 175px !important;
     height: 100px;
     z-index: -1;
-    transform: rotate(31deg);
+    transform: rotate(31deg) !important;
+    -webkit-transform: none;
   }
 
   /* .bg-pointer2-en {
@@ -296,6 +310,21 @@
   /*  -webkit-transform: scaleX(-1);
   transform: scaleX(-1); */
   .product {
+    background-image: url(../../assets/images/home-upz.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 24rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 12rem;
+    margin-left: -6rem;
+    margin-right: -6rem;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: -22rem;
+  }
+
+  .product-en {
     background-image: url(../../assets/images/home-upz.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -976,13 +1005,14 @@
   margin-bottom: 1rem;
 }
 
-.tech-circular {
-  background-image: url("../../assets/images/red-curl.png");
+.tech-bg-en {
+  background-image: url("../../assets/images/red-curl-en.png");
   background-repeat: no-repeat;
   background-position: 50% 70%;
   background-size: 51rem;
   margin-bottom: 1rem;
 }
+
 
 .tech-circle {
   position: relative;
@@ -1308,9 +1338,10 @@
     padding-top: 14rem;
   }
   .product-en {
-    margin-top: -36rem;
-    height: 800px;
-    padding-top: 11rem;
+    margin-top: -33rem;
+    height: 815px;
+    padding-top: 17rem;
+    margin-bottom: -4rem;
   }
 
   .product-title {
@@ -1382,10 +1413,14 @@
     display: flex;
     padding-top: 5.5rem;
   }
-  .tech-circular {
+  .tech-bg {
     background-position: 54% 58%;
     background-size: 65rem;
   }
+  .tech-bg-en {
+    background-position: 54% 58%;
+    background-size: 65rem;
+}
   .circle-tech {
     width: 12rem;
     font-size: 1.7em;

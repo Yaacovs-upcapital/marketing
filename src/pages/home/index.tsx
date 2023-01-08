@@ -160,7 +160,7 @@ localStorage.setItem('direction',directionValue)
 
                             <div className="circle-wrap">
 
-                                <div style={useWindowSize() > 1550 ? (directionValue == 'ltr' ? { marginTop: "-6.5rem", marginLeft: "-14.5rem" } : { marginTop: "-6.5rem", marginRight: "-14.5rem" }) : (directionValue == 'ltr' ? { marginTop: "-5.2rem", marginLeft: "-11.5rem" } : { marginTop: "-4.2rem", marginRight: "-11.5rem" })}>
+                                <div style={useWindowSize() > 1550 ? (directionValue == 'ltr' ? { marginTop: "-6rem", marginLeft: "-14.5rem" } : { marginTop: "-6.5rem", marginRight: "-14.5rem" }) : (directionValue == 'ltr' ? { marginTop: "-5.2rem", marginLeft: "-11.5rem" } : { marginTop: "-4.2rem", marginRight: "-11.5rem" })}>
                                     <Plus height={useWindowSize() > 1550 ? "12rem" : "9rem"} width={useWindowSize() > 1550 ? "12rem" : "9rem"} /></div>
 
                                 <h3 className={`${directionValue == 'ltr' ? "product-circle-text-en" : "product-circle-text"}`} style={{ marginBottom: 0, marginTop:directionValue=='ltr'?"-5rem" :"-3rem", fontWeight: "bold" }}>
@@ -190,7 +190,7 @@ localStorage.setItem('direction',directionValue)
                         <img className={`${directionValue=='ltr'?'bg-pointer2-en':"bg-pointer2"}`} src={pointerImage} alt="..." />
                         <div className="flow-circle">
                             <div className="circle-wrap">
-                                <div style={useWindowSize() > 1550 ? (directionValue == 'ltr' ? { marginTop: "-8rem", marginLeft: "-14.5rem" } : { marginTop: "-8rem", marginRight: "-14.5rem" }) : (directionValue == 'ltr' ? { marginTop: "-5.2rem", marginLeft: "-11.5rem" } : { marginTop: "-5.2rem", marginRight: "-11.5rem" })}>
+                                <div style={useWindowSize() > 1550 ? (directionValue == 'ltr' ? { marginTop: "-6rem", marginLeft: "-14.5rem" } : { marginTop: "-8rem", marginRight: "-14.5rem" }) : (directionValue == 'ltr' ? { marginTop: "-5.2rem", marginLeft: "-11.5rem" } : { marginTop: "-5.2rem", marginRight: "-11.5rem" })}>
                                     <Plus height={useWindowSize() > 1550 ? "12rem" : "9rem"} width={useWindowSize() > 1550 ? "12rem" : "9rem"} />
 
                                 </div>
@@ -275,7 +275,7 @@ localStorage.setItem('direction',directionValue)
             </div>
 
 
-            <div className={`tech-bg mt-5 mb-5 tech-circular ${useWindowSize() > 1550 ? 'container-big' : 'container'}`} style={{ marginRight: useWindowSize() > 500 ? "" : "16%" }} >
+            <div className={`${window.innerWidth>992?(directionValue=='ltr'?'tech-bg-en':'tech-bg'):'tech-bg'} mt-5 mb-5 ${useWindowSize() > 1550 ? 'container-big' : 'container'}`} style={{ marginRight: useWindowSize() > 500 ? "" : "16%" }} >
 
                 <div style={{ display: "flex", marginBottom: "2rem", marginRight: useWindowSize() > 500 ? "" : "-31px" }}>
                     <h1 className="tech">{t('tech')}</h1><h1 className="tech" style={{ color: "red" }}>.</h1>
@@ -286,7 +286,7 @@ localStorage.setItem('direction',directionValue)
 
                 <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`}>
 
-                    <div className="row" style={{ margin: "auto" }} >
+                    <div className="row" style={window.innerWidth>991?{ margin: "auto" }:(directionValue=='ltr'?{marginRight:'7rem'}:{margin:"auto"})} >
 
                         <div className="col-lg-3 col-md-12 col-sm-12 " style={{ display: "flex", justifyContent: "center" }}>
 

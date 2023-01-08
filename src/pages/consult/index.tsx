@@ -116,7 +116,7 @@ return (
                 <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.company}</div>
 
                 <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div>
-                <div><input type="submit" value={"שליחה"} /></div>
+                <div><input type="submit" value={t('send')} /></div>
               </form>
             </div></div>
           <div className="info" >

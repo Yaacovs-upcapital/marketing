@@ -108,24 +108,24 @@ const Footer = () => {
               <div style={{ backgroundColor: "#fff", borderRadius: "1rem", padding: "2rem 2rem 2rem 2rem" }}>
 
                 <form onSubmit={sendMail} style={{}}>
-                  <div style={{ display: useWindowSize() > 700 ? "flex" : "block" }}>
+                  <div style={{ display: useWindowSize() > 700 ? "flex" : "block",  justifyContent:"space-between" }}>
 
-                    <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange} required /></div>
+                    <div className="text-input-footer"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange} required /></div>
                     <div style={{ color: 'red', fontSize: "0.7rem" }}>{errors.fname}</div>
 
-                    <div className="text-input"><input type="text" id="phone" name="phone" placeholder={t('phone')} value={vendorInput.phone} onChange={handleFormChange} required /></div>
+                    <div className="text-input-footer"><input type="text" id="phone" name="phone" placeholder={t('phone')} value={vendorInput.phone} onChange={handleFormChange} required /></div>
                     <div style={{ color: 'red', fontSize: "0.7rem" }}>{errors.phone}</div>
                   </div>
-                  <div style={{ display: useWindowSize() > 700 ? "flex" : "block" }}>
+                  <div style={{ display: useWindowSize() > 700 ? "flex" : "block", justifyContent:"space-between" }}>
 
-                    <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange} required /></div>
+                    <div className="text-input-footer"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange} required /></div>
                     <div style={{ color: 'red', fontSize: "0.7rem" }}>{errors.email}</div>
 
-                    <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} value={vendorInput.company} onChange={handleFormChange} /></div>
+                    <div className="text-input-footer"><input type="text" id="company" name="company" placeholder={t("company")} value={vendorInput.company} onChange={handleFormChange} /></div>
                     <div style={{ color: 'red', fontSize: "0.7rem" }}>{errors.company}</div>
                   </div>
-                  <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div>
-                  <div><input type="submit" value={"שליחה"} /></div>
+                  <div className="text-input-footer"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div>
+                  <div><input type="submit" value={t('send')} /></div>
                 </form>
               </div>
             </div>
@@ -158,10 +158,10 @@ const Footer = () => {
 
           <div className="col-lg-4 col-md-12 col-sm-12 mt-3 mb-3">
             <div style={{ color: "white" }}>
-              <div className="form-title" style={{ paddingRight: "0" }}>{t("additional_info")}</div>
-              <div className="contact-detail" style={{ paddingRight: "0" }}><NavLink className="link1" style={{ textDecoration: "none", color: "#fff" }} to={"/terms-of-use/"} >{t("terms")}</NavLink></div>
-              <div className="contact-detail" style={{ paddingRight: "0" }}><NavLink className="link2" style={{ textDecoration: "none", color: "#fff" }} to={"/privacy-policy/"} >{t("policy")}</NavLink></div>
-              <div className="contact-detail" style={{ paddingRight: "0" }}>{t("accessibility")}</div>
+              <div className="form-title" style={{ padding: "auto 0"}}>{t("additional_info")}</div>
+              <div className="contact-detail" style={{padding: "auto 0" }}><NavLink className="link1" style={{ textDecoration: "none", color: "#fff" }} to={"/terms-of-use/"} >{t("terms")}</NavLink></div>
+              <div className="contact-detail" style={{padding: "auto 0" }}><NavLink className="link2" style={{ textDecoration: "none", color: "#fff" }} to={"/privacy-policy/"} >{t("policy")}</NavLink></div>
+              <div className="contact-detail" style={{ padding: "auto 0"}}>{t("accessibility")}</div>
               <div >
                 <div className="mt-4" style={{ display: "flex", alignItems: "center" }}>
 

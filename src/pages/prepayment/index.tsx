@@ -223,7 +223,7 @@ console.log('vendorInput', vendorInput);
                 <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.customers}</div>
 
                 {/* <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div> */}
-                <div><input disabled={!(errors.email == '' && errors.company == '' && errors.phone == '' && vendorInput.fname != '')} type="submit" value={"שליחה"} /></div>
+                <div><input disabled={!(errors.email == '' && errors.company == '' && errors.phone == '' && vendorInput.fname != '')} type="submit" value={t('send')} /></div>
               </form>
             </div>
 

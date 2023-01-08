@@ -3,8 +3,10 @@ import { jobOffers } from "../../data/jobOffer"
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import useWindowSize from "../../components/windowSize";
+import { useTranslation } from "react-i18next";
 
 const JobOffer = () => {
+    const { t } = useTranslation();
 
     const jobParams = useParams();
     console.log(">>>>>", jobParams.id);
@@ -54,7 +56,7 @@ const JobOffer = () => {
                         <div className="detail-input"><input type="email" id="email" name="email" placeholder='דוא"ל' required /></div>
                         <div className="detail-input"><div className='upload' ><div className='upload-title'>העלאת קורות חיים</div><input  type="file" id="myFile" name="filename" required /></div></div>
                         <div className="detail-input"><textarea name="textarea" id="" placeholder="הערות נוספות"></textarea></div>
-                        <input type="submit" value={"שליחה"} />
+                        <input type="submit" value={t('send')} />
                     </form>
                 </div>
             </div>

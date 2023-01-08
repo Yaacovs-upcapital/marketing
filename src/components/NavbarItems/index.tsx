@@ -137,17 +137,16 @@ const NavbarItems = (props) => {
   }
 
 
-  const directionValue=localStorage.getItem('direction')
-  console.log('direction', directionValue);
+
   return (
     <>
-      <nav className={"navbar fixed-top navbar-expand-xl "} id='nav' style={{backgroundImage: useWindowSize() > 990 ? `url(${bg1})` : `url(${collapseNav})`, backgroundRepeat: 'noRepeat', backgroundSize: "cover", }}>
-        <div className={`container-fluid ${directionValue=='ltr'?'eng':''}`}>
+      <nav className={`navbar fixed-top navbar-expand-xl ${language=='he'?'up-nav':'up-nav-en'}`} id='nav' >
+        <div className={`container-fluid`}>
 
           <NavLink className="navbar-brand" to={"/"}> <LogoBlue className='brnd' /> </NavLink>
-          <a href='https://vendors.upcapital.io/' ref={avatarBrandRef} className="navbar-brand avatar_brand"><img src={avatar} className="avatar" /></a>
+          <a href='https://vendors.upcapital.io/' ref={avatarBrandRef} className="navbar-brand avatar_brand"><img src={avatar} className={`${language=='he'?'avatar':"avatar-en"}`} /></a>
 
-          <div className='langSetting' ref={langBrandRef} >
+          <div className={`${language=='he'?'langSetting':"langSetting-en"}`} ref={langBrandRef} >
 
             <button
               value='en'
@@ -167,21 +166,21 @@ const NavbarItems = (props) => {
             </button>
           </div>
 
-          <a href={"https://vendors.upcapital.io/"} className="vendors_login_lg" >{t("vendors_login")}</a>
+          <a href={"https://vendors.upcapital.io/"} className={`${language=='he'?'vendors_login_lg':"vendors_login_lg_en"}`} >{t("vendors_login")}</a>
 
 
-          <button className="navbar-toggler" style={{ position: "fixed", right: "10px", top: "19px" }} type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <button className="navbar-toggler" style={{ position: "fixed", right:language=='he'?"10px":'',left:language=='he'?"":'10px', top: "19px" }} type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" onClick={handleNavbar}></span>
           </button>
           <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarTogglerDemo02" style={{ padding: useWindowSize() > 500 ? "" : "0 1rem 0 1rem" }}>
 
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" style={{ display: useWindowSize() > 1200 ? 'flex' : 'inherit', flexDirection: useWindowSize() > 1200 ?(directionValue=='ltr'?'row-reverse': "row" ): 'inherit', width: useWindowSize() > 1300 ? 810 : 'inherit' }}>
-              <li className="nav-item " style={{ textAlign: "right" }}><NavLink to={"/"} className="nav-link" onClick={handleNavCollapse}>{t("home")}</NavLink></li>
-              <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/our-solution/"} className="nav-link" onClick={handleNavCollapse}>{t('solution')}</NavLink></li>
-              <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/about-us/"} className="nav-link" onClick={handleNavCollapse}>{t('about')}</NavLink></li>
-              <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/blog/"} className="nav-link" onClick={handleNavCollapse}>{t("blog")}</NavLink></li>
-              <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/career/"} className="nav-link" onClick={handleNavCollapse}>{t("career")}</NavLink></li>
-              <li className="nav-item" style={{ textAlign: "right" }}><NavLink to={"/contact-us/"} className="nav-link" onClick={handleNavCollapse}>{t("contact")}</NavLink></li>
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" style={{ display: useWindowSize() > 1200 ? 'flex' : 'inherit', flexDirection: "row-reverse", width: useWindowSize() > 1300 ? 810 : 'inherit' }}>
+              <li className="nav-item " style={{ textAlign:language=="he"?"right":"left" }}><NavLink to={"/"} className="nav-link" onClick={handleNavCollapse}>{t("home")}</NavLink></li>
+              <li className="nav-item" style={{ textAlign: language=="he"?"right":"left" }}><NavLink to={"/our-solution/"} className="nav-link" onClick={handleNavCollapse}>{t('solution')}</NavLink></li>
+              <li className="nav-item" style={{ textAlign: language=="he"?"right":"left" }}><NavLink to={"/about-us/"} className="nav-link" onClick={handleNavCollapse}>{t('about')}</NavLink></li>
+              <li className="nav-item" style={{ textAlign: language=="he"?"right":"left"}}><NavLink to={"/blog/"} className="nav-link" onClick={handleNavCollapse}>{t("blog")}</NavLink></li>
+              <li className="nav-item" style={{ textAlign: language=="he"?"right":"left" }}><NavLink to={"/career/"} className="nav-link" onClick={handleNavCollapse}>{t("career")}</NavLink></li>
+              <li className="nav-item" style={{ textAlign: language=="he"?"right":"left" }}><NavLink to={"/contact-us/"} className="nav-link" onClick={handleNavCollapse}>{t("contact")}</NavLink></li>
                 {/* <div onClick={() => {
                 let offsetTop = (document.getElementById("contact") as HTMLElement).offsetTop;
                 window.scrollTo({
@@ -198,11 +197,11 @@ const NavbarItems = (props) => {
             </ul>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" style={{ marginTop: "2rem" }}>
               <li className="nav-item">
-                <a href='https://vendors.upcapital.io/' className="nav-link vendors_login_sm">{t("vendors_login")} <img src={avatar} className="avatar2" /></a>
+                <a href='https://vendors.upcapital.io/' className={`nav-link ${language=='he'?"vendors_login_sm":"vendors_login_sm_en"}`}>{t("vendors_login")} <img src={avatar} className={`${language=='he'?"avatar2":"avatar2-en"}`} /></a>
 
               </li>
               <li className="nav-item">
-                <div className='langSetting2'>
+                <div className={`${language=='he'?'langSetting2':"langSetting2-en"}`}>
                   <button
                     value='en'
 

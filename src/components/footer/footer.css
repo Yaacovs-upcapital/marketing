@@ -102,10 +102,15 @@ textarea {
   color: #fff !important;
   font-weight: 600 !important;
 }
+.text-input-footer{
+  margin: 1rem 0.3rem;
+  width: -webkit-fill-available;
+
+
+}
 @media (max-width: 767px) {
   .vl {
     border-left: 0px;
-    text-align: center;
     padding-left: 0;
     margin-right: 0;
   }
