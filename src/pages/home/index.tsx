@@ -152,10 +152,10 @@ localStorage.setItem('direction',directionValue)
 
             </div>
             <div className="parent-wrap2">
-                <div className="flow-chart" >
+                <div className={directionValue=='ltr'?"flow-chart-en":"flow-chart"} >
 
-                    <div className="bg-pointer ">
-                        <img className={`${window.innerWidth>991?(directionValue=='ltr'?'bg-pointer2-en':"bg-pointer2"):"bg-pointer2"}`} src={pointerImage} alt="..." />
+                    <div className={directionValue=='ltr'?"bg-pointer-en":"bg-pointer "}>
+                        <img className={`${directionValue=='ltr'?'bg-pointer2-en':"bg-pointer2"}`} src={pointerImage} alt="..." />
                         <div className="flow-circle ">
 
                             <div className="circle-wrap">
@@ -171,7 +171,7 @@ localStorage.setItem('direction',directionValue)
                         </div>
                     </div>
 
-                    <div className="bg-pointer ">
+                    <div className={directionValue=='ltr'?"bg-pointer-en":"bg-pointer "}>
                         <img className={`${directionValue=='ltr'?'bg-pointer2-en':"bg-pointer2"}`} src={pointerImage} alt="..." />
                         <div className="flow-circle">
                             <div className="circle-wrap">
@@ -186,7 +186,7 @@ localStorage.setItem('direction',directionValue)
                     </div >
 
 
-                    <div className="bg-pointer ">
+                    <div className={directionValue=='ltr'?"bg-pointer-en":"bg-pointer "}>
                         <img className={`${directionValue=='ltr'?'bg-pointer2-en':"bg-pointer2"}`} src={pointerImage} alt="..." />
                         <div className="flow-circle">
                             <div className="circle-wrap">
@@ -204,7 +204,7 @@ localStorage.setItem('direction',directionValue)
                         </div>
                     </div>
 
-                    <div className="bg-pointer ">
+                    <div className={directionValue=='ltr'?"bg-pointer-en":"bg-pointer "}>
                         <img className={`${directionValue=='ltr'?'bg-pointer2-en':"bg-pointer2"}`} src={pointerImage} alt="..." style={{ opacity: "0" }} />
                         <div className="flow-circle">
                             <div className="circle-wrap">
@@ -456,9 +456,6 @@ localStorage.setItem('direction',directionValue)
                             <div className="col-lg-6 col-md-12 col-sm-12">
                                 <div className="about-images">
 
-
-
-
                                     <div className="image-flex">
                                         <div className="">
                                             <div style={{ textAlign: "center" }}>
@@ -500,7 +497,7 @@ localStorage.setItem('direction',directionValue)
                 <div style={{ marginBottom: "6rem", marginTop: "10rem" }}>
 
                     <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`} >
-                        <div style={{ display: "flex", justifyContent: "right", marginBottom: "2.5rem" }}><h2 className="partners-title">{t("partners")}</h2><h2 className="partners-title" style={{ color: "red" }}>.</h2></div>
+                        <div style={{ display: "flex", marginBottom: "2.5rem" }}><h2 className="partners-title">{t("partners")}</h2><h2 className="partners-title" style={{ color: "red" }}>.</h2></div>
 
                         {useWindowSize() <= 767 ?
                             <div >

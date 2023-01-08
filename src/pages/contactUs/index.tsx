@@ -38,6 +38,9 @@ const ContactUs = () => {
     }
     console.log(reqop.body);
 
+
+
+    
     // await fetch("http://localhost:3500/api/mailer", reqop)
     await fetch("https://app.upcapital.io/node//mailer", reqop)
       .then(res => console.log(res))
@@ -47,12 +50,13 @@ const ContactUs = () => {
   const validate = (inputName, inputValue) => {
     if (inputName == 'email') {
       if (!/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(inputValue)) {
-        setErrors({ ...errors, email: t("error_email") })
-      } else {
+        setErrors({ ...errors, email: t("error_email") })      
+      }else{
         setErrors({ ...errors, email: '' })
+
       }
     } else if (inputName == 'phone') {
-      if (inputValue.length != 10 || !/^[0-9]+$/.test(inputValue)) {
+      if (!/^\+?(972|0)(\-)?0?(([23489]{1}\d{7})|([71,72,73,74,75,76,77]{2}\d{7})|[5]{1}\d{8})$/.test(inputValue)) {
 
         setErrors({ ...errors, phone: t("error_phone") })
 
@@ -78,7 +82,7 @@ const ContactUs = () => {
   }
   let emailTemplate = (obj: any) => {
     return `<div>
-    <div> name- ${obj.fname} ${obj.lname}<div>
+    <div> name- ${obj.fname}<div>
     <div>email- ${obj.phone}<div>
     <div>email- ${obj.email}<div>
     <div>company - ${obj.company}<div>
@@ -86,16 +90,22 @@ const ContactUs = () => {
     </div>`
   }
   // emailTemplate(vendorInput)
+
+
+
+
+
+  
   const [directionValue, setDirectionValue] = useState('')
   setTimeout(() => {
-      const obj: any = document.getElementById('page')
-      const valueAfterTimeout = getComputedStyle(obj, null).direction
-      setDirectionValue(valueAfterTimeout)
+    const obj: any = document.getElementById('page')
+    const valueAfterTimeout = getComputedStyle(obj, null).direction
+    setDirectionValue(valueAfterTimeout)
   }, 100);
   console.log('direction', directionValue);
   return (
     <div>
-      <div className='contact-page-bg ' id="page" style={directionValue=='ltr'?{backgroundImage:'linear-gradient(to left,#fff,#e5e8ff)'}:{backgroundImage:'linear-gradient(to right,#fff,#e5e8ff)'}}>
+      <div className='contact-page-bg ' id="page" style={directionValue == 'ltr' ? { backgroundImage: 'linear-gradient(to left,#fff,#e5e8ff)' } : { backgroundImage: 'linear-gradient(to right,#fff,#e5e8ff)' }}>
         <div className={`${useWindowSize() > 1550 ? 'container-contact' : 'container'}`}>
           <div><p className="contact-page-title" >{t("contact")}<span style={{ color: 'red' }}>.</span></p></div>
 
@@ -106,16 +116,16 @@ const ContactUs = () => {
               <div>
                 <form onSubmit={sendMail} style={{}}>
                   <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange} required /></div>
-                  <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.fname}</div>
+                  <div style={{ color: 'red', fontSize: "0.7rem" }}>{!vendorInput.fname?'':errors.fname}</div>
 
                   <div className="text-input"><input type="text" id="phone" name="phone" placeholder={t('phone')} value={vendorInput.phone} onChange={handleFormChange} required /></div>
-                  <div  style={{ color: 'red', fontSize:"0.7rem" }}>{errors.phone}</div>
+                  <div style={{ color: 'red', fontSize: "0.7rem" }}>{!vendorInput.phone?'':errors.phone}</div>
 
                   <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange} required /></div>
-                  <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.email}</div>
+                  <div style={{ color: 'red', fontSize: "0.7rem" }}>{!vendorInput.email?'':errors.email }</div>
 
                   <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} value={vendorInput.company} onChange={handleFormChange} /></div>
-                  <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.company}</div>
+                  <div style={{ color: 'red', fontSize: "0.7rem" }}>{!vendorInput.company?'':errors.company}</div>
 
                   <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div>
                   <div><input type="submit" value={t('send')} /></div>

@@ -205,7 +205,7 @@ const NavbarItems = (props) => {
                   <button
                     value='en'
 
-                    onClick={(e) => handleOnclick(e)}
+                    onClick={(e) =>{ handleOnclick(e); handleNavCollapse()}}
                   >
                     {t('en')}
                   </button>
@@ -214,7 +214,7 @@ const NavbarItems = (props) => {
 
                     value='he'
 
-                    onClick={(e) => handleOnclick(e)}
+                    onClick={(e) => {handleOnclick(e);handleNavCollapse()}}
                   >
                     {t('he')}
                   </button>

@@ -9,7 +9,7 @@ import iso from "../../assets/images/iso.png";
 import useWindowSize from '../../components/windowSize';
 const Consult = () => {  const { t } = useTranslation()
 
-const [vendorInput, setVendorInput] = useState({ fname: '', lname: '', email: '', company: '', message: '' })
+const [vendorInput, setVendorInput] = useState({ fname: '', phone: '', email: '', company: '', message: '' })
 const handleFormChange = (event) => {
   event.preventDefault()
   console.log("value changed: ", event.target.value)
@@ -51,7 +51,7 @@ const validate = (inputName, inputValue) => {
       setErrors({ ...errors, email: '' })
     }
   } else if (inputName == 'phone') {
-    if (inputValue.length != 10 || !/^[0-9]+$/.test(inputValue)) {
+    if (!/^\+?(972|0)(\-)?0?(([23489]{1}\d{7})|([71,72,73,74,75,76,77]{2}\d{7})|[5]{1}\d{8})$/.test(inputValue)) {
 
       setErrors({ ...errors, phone: t("error_phone") })
 
@@ -77,7 +77,8 @@ const validate = (inputName, inputValue) => {
 }
 let emailTemplate = (obj: any) => {
   return `<div>
-  <div> name- ${obj.fname} ${obj.lname}<div>
+  <div> name- ${obj.fname}<div>
+  <div> name- ${obj.phone}<div>
   <div>email- ${obj.email}<div>
   <div>company - ${obj.company}<div>
   <div>message - ${obj.message}<div>
@@ -104,16 +105,16 @@ return (
             <div>
               <form onSubmit={sendMail} style={{}}>
                 <div className="text-input"><input type="text" id="fname" name="fname" placeholder={t("full_name")} value={vendorInput.fname} onChange={handleFormChange} required /></div>
-                <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.fname}</div>
+                <div style={{ color: 'red', fontSize:"0.7rem" }}>{!vendorInput.fname?'':errors.fname}</div>
 
-                <div className="text-input"><input type="text" id="lname" name="lname" placeholder={t('phone')} value={vendorInput.lname} onChange={handleFormChange} required /></div>
-                <div  style={{ color: 'red', fontSize:"0.7rem" }}>{errors.phone}</div>
+                <div className="text-input"><input type="text" id="phone" name="phone" placeholder={t('phone')} value={vendorInput.phone} onChange={handleFormChange} required /></div>
+                <div  style={{ color: 'red', fontSize:"0.7rem" }}>{!vendorInput.phone?'':errors.phone}</div>
 
                 <div className="text-input"><input type="text" id="email" name="email" placeholder={t("email")} value={vendorInput.email} onChange={handleFormChange} required /></div>
-                <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.email}</div>
+                <div style={{ color: 'red', fontSize:"0.7rem" }}>{!vendorInput.email?'':errors.email}</div>
 
                 <div className="text-input"><input type="text" id="company" name="company" placeholder={t("company")} value={vendorInput.company} onChange={handleFormChange} /></div>
-                <div style={{ color: 'red', fontSize:"0.7rem" }}>{errors.company}</div>
+                <div style={{ color: 'red', fontSize:"0.7rem" }}>{!vendorInput.company?'':errors.company}</div>
 
                 <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div>
                 <div><input type="submit" value={t('send')} /></div>

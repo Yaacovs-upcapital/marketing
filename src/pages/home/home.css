@@ -1,9 +1,8 @@
 * {
   box-sizing: border-box;
 }
-.page-container-en{
+.page-container-en {
   margin-bottom: 10rem;
-
 }
 .container {
   max-width: 67rem;
@@ -81,6 +80,12 @@
   /* flex-basis:20rem; */
 }
 .flow-chart {
+  display: flex;
+  justify-content: center;
+  width: 70rem;
+}
+
+.flow-chart-en {
   display: flex;
   justify-content: center;
   width: 70rem;
@@ -266,6 +271,9 @@
   .flow-chart {
     flex-direction: column;
   }
+  .flow-chart-en {
+    flex-direction: column;
+  }
 
   .bg-pointer {
     display: flex;
@@ -273,7 +281,7 @@
     margin-left: 29rem;
     margin-bottom: 2.6rem;
   }
-  .bg-pointer-en{
+  .bg-pointer-en {
     display: flex;
     justify-content: center;
     margin-right: 29rem;
@@ -283,14 +291,14 @@
     position: relative;
     top: 167px;
     right: 175px !important;
-    height: 100px;  
+    height: 100px;
     z-index: -1;
     transform: rotate(31deg);
   }
   .bg-pointer2-en {
     position: relative;
     top: 167px;
-    right: 175px !important;
+    left: 208px !important;
     height: 100px;
     z-index: -1;
     transform: rotate(31deg) !important;
@@ -492,6 +500,13 @@
     margin-right: 7rem;
     margin-bottom: 2.6rem;
   }
+
+  .bg-pointer-en {
+    display: flex;
+    justify-content: unset;
+    margin-left: 7rem;
+    margin-bottom: 2.6rem;
+  }
   .tech-bg1 {
     position: relative !important;
     left: 68px;
@@ -507,6 +522,9 @@
     flex-direction: column;
   }
   .flow-chart {
+    flex-direction: column;
+  }
+  .flow-chart-en {
     flex-direction: column;
   }
   .jumbotron-content h1 {
@@ -658,7 +676,12 @@
     margin-left: 41rem;
     margin-right: auto;
     margin-bottom: 2.6rem;
-    float: right;
+  }
+  .bg-pointer-en {
+    display: flex;
+    margin-right: 41rem;
+    margin-left: auto;
+    margin-bottom: 2.6rem;
   }
 }
 @media screen and (max-width: 400px) {
@@ -794,7 +817,6 @@
   transform: scaleX(-1);
 }
 
-
 .flow-circle,
 .flow-circle-no-red {
   box-shadow: 0px 0px 5px #aaaaaa;
@@ -859,7 +881,8 @@
 .process-img {
   position: absolute;
   top: 7%;
-  right: -7%;}
+  right: -7%;
+}
 .num {
   color: #ffffff;
   font-weight: bold;
@@ -1008,11 +1031,10 @@
 .tech-bg-en {
   background-image: url("../../assets/images/red-curl-en.png");
   background-repeat: no-repeat;
-  background-position: 50% 70%;
+  background-position: 59% 65%;
   background-size: 51rem;
   margin-bottom: 1rem;
 }
-
 
 .tech-circle {
   position: relative;
@@ -1060,8 +1082,6 @@
   font-size: 1.3rem;
   margin-top: 0;
 }
-
-
 
 .about-content {
   display: flex;
@@ -1420,7 +1440,7 @@
   .tech-bg-en {
     background-position: 54% 58%;
     background-size: 65rem;
-}
+  }
   .circle-tech {
     width: 12rem;
     font-size: 1.7em;
@@ -1488,9 +1508,8 @@
     font-family: "LeonRegular";
     font-size: 4rem;
   }
-  .page-container-en{
+  .page-container-en {
     margin-bottom: 21rem;
-  
   }
 }
 
@@ -1504,6 +1523,11 @@
     flex-direction: column;
     margin-right: -4%;
   }
+
+  .flow-chart-en {
+    flex-direction: column;
+    margin-left: -13%;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -1511,7 +1535,19 @@
     flex-direction: column;
     margin-right: 158%;
   }
+  .flow-chart-en {
+    flex-direction: column;
+    margin-left: 120%;
+  }
   .product {
     margin-top: -35rem;
   }
+}
+@media screen and (max-width: 400px) {
+
+  .flow-chart-en {
+    flex-direction: column;
+    margin-left: 133%;
+  }
+ 
 }

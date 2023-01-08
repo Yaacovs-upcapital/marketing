@@ -37,10 +37,10 @@ const Solution = () => {
                                 <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
                                 {t('solution_p4')}         </p>                    </div>
                             <div style={{ display: useWindowSize() > 767 ? "flex" : 'none', justifyContent: "space-between", marginTop: "2rem" }}>
-                                <div style={{ textAlign: "center" }}><img src={cashflow} width="47px" height="60px" /><p style={{ marginTop: "1rem", color: "#2f439a", fontWeight: "bold" }}>קשיים תזרימיים</p></div>
-                                <div style={{ textAlign: "center" }}><img src={interest} width="59px" height="60px" /><p style={{ marginTop: "1rem", color: "#2f439a", fontWeight: "bold" }}>ריביות גבוהות</p></div>
-                                <div style={{ textAlign: "center" }}><img src={bureaucracy} width="58px" height="59px" /><p style={{ marginTop: "1rem", color: "#2f439a", fontWeight: "bold" }}>בירוקרטיה מורכבת</p></div>
-                                <div style={{ textAlign: "center" }}><img src={noFunds} width="49px" height="60px" /><p style={{ marginTop: "1rem", color: "#2f439a", fontWeight: "bold" }}>קושי בקבלת מימון</p></div>
+                                <div style={{ textAlign: "center" }}><img src={cashflow} width="47px" height="60px" /><p style={{ marginTop: "1rem", color: "#2f439a", fontWeight: "bold" }}>{t('flow_diff')}</p></div>
+                                <div style={{ textAlign: "center" }}><img src={interest} width="59px" height="60px" /><p style={{ marginTop: "1rem", color: "#2f439a", fontWeight: "bold" }}>{t('high_interest')}</p></div>
+                                <div style={{ textAlign: "center" }}><img src={bureaucracy} width="58px" height="59px" /><p style={{ marginTop: "1rem", color: "#2f439a", fontWeight: "bold" }}>{t('complex')}</p></div>
+                                <div style={{ textAlign: "center" }}><img src={noFunds} width="49px" height="60px" /><p style={{ marginTop: "1rem", color: "#2f439a", fontWeight: "bold" }}>{t('difficult')}</p></div>
 
                             </div>
                         </div>
@@ -48,7 +48,7 @@ const Solution = () => {
                         <div className="col-lg-4 col-md-12 col-sm-12" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
                             <img className="img3-fluid" src={solutionleft} alt="..." />
                         </div>
-                        <div className="mt-3"><h1 style={{ color: "red", fontWeight: "bold", fontSize: useWindowSize() > 500 ? "24pt" : "18pt", textAlign: "center", width: useWindowSize() > 500 ? "55vw" : '', margin: "4rem auto auto auto" }}>החברה פיתחה פיתרון מהפכני המאפשר לכל הצדדים ליהנות מעסקת מזומן תוך מקסום התועלות של כל צד וצד.</h1></div>
+                        <div className="mt-3"><h1 style={{ color: "red", fontWeight: "bold", fontSize: useWindowSize() > 500 ? "24pt" : "18pt", textAlign: "center", width: useWindowSize() > 500 ? "55vw" : '', margin: "4rem auto auto auto" }}>{t('solustion_red_text')}</h1></div>
                     </div>
                 </div>
             </div>

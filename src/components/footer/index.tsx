@@ -56,8 +56,7 @@ const Footer = () => {
         setErrors({ ...errors, email: '' })
       }
     } else if (inputName == 'phone') {
-      if (inputValue.length != 10 || !/^[0-9]+$/.test(inputValue)) {
-
+      if (!/^\+?(972|0)(\-)?0?(([23489]{1}\d{7})|([71,72,73,74,75,76,77]{2}\d{7})|[5]{1}\d{8})$/.test(inputValue)) {
         setErrors({ ...errors, phone: t("error_phone") })
 
       } else {

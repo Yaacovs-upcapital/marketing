@@ -44,32 +44,32 @@ const Career = () => {
                     </div>
                     <div className="job-offers">
                         <MediaControlCard path="/job-offer/:102/">
-                            <div className="job-card-title">נציג/ת תפעול ושירות לקוחות</div>
-                            <div className="job-card-text">מתן שירות ומענה ללקוחות עסקיים במגוון נושאים פיננסיים, שיחות נכנסות ויוצאות במטרה להעמיק את הקשרים עם הלקוח, תמיכה וטיפול בתהליכים תפעוליים.</div>
+                            <div className="job-card-title">{t('customer_service')}</div>
+                            <div className="job-card-text">{t('cs_description')}</div>
                             <div className="job-details-wrap">
-                                <div className="job-details">מספר משרה: 102</div>
-                                <div className="job-details">מיקום המשרה: תל אביב</div>
-                                <div className="job-details">סוג המשרה: מלאה</div>
+                                <div className="job-details">{t('position_no')}: 102</div>
+                                <div className="job-details">{t('location')}: {t('telaviv')}</div>
+                                <div className="job-details">{t('position_type')}: {t('fulltime')}</div>
                                 <div className="job-details">{t('deadline')}: 01/03/2023</div>
                             </div>
                         </MediaControlCard>
                         <MediaControlCard path="/job-offer/:201/">
-                            <div className="job-card-title">פקיד/ת הנהלת חשבונות</div>
-                            <div className="job-card-text">תפקיד כולל קליטת פקודות יומן ושקים כרטיסים, התאמות, תיוקים, קליטת חשבוניות, תשלומי חשבוניות לספקים, הכנת הוראות תשלום.</div>
+                            <div className="job-card-title">{t('clerk')}</div>
+                            <div className="job-card-text">{t("clerk_description")}</div>
                             <div className="job-details-wrap">
-                                <div className="job-details">מספר משרה: 201</div>
-                                <div className="job-details">מיקום המשרה: תל אביב</div>
-                                <div className="job-details">סוג המשרה: מלאה</div>
+                                <div className="job-details">{t('position_no')}: 201</div>
+                                <div className="job-details">{t('location')}: {t('telaviv')}</div>
+                                <div className="job-details">{t('position_type')}: {t('fulltime')}</div>
                                 <div className="job-details">{t('deadline')}: 01/03/2023</div>
                             </div>
                         </MediaControlCard>
                         <MediaControlCard path="/job-offer/:301/">
-                            <div className="job-card-title">מנהל/ת דיגיטל</div>
-                            <div className="job-card-text">בניית מענה דיגיטלי שיתמוך בניהול דיאלוג מדויק ומבוסס נתונים עם מגוון סוגי הלקוחות, לאורך כל מסע הלקוח.</div>
+                            <div className="job-card-title">{t('digital_manager')}</div>
+                            <div className="job-card-text">{t('digital_description')}</div>
                             <div className="job-details-wrap">
-                                <div className="job-details">מספר משרה: 301</div>
-                                <div className="job-details">מיקום המשרה: תל אביב</div>
-                                <div className="job-details">סוג המשרה: מלאה</div>
+                                <div className="job-details">{t('position_no')}: 301</div>
+                                <div className="job-details">{t('location')}: {t('telaviv')}</div>
+                                <div className="job-details">{t('position_type')}: {t('fulltime')}</div>
                                 <div className="job-details">{t('deadline')}: 01/03/2023</div>
                             </div>
                         </MediaControlCard>
