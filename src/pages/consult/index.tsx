@@ -92,6 +92,13 @@ setTimeout(() => {
     setDirectionValue(valueAfterTimeout)
 }, 100);
 console.log('direction', directionValue);
+const isEmpty = (obj) => {
+  for (var key in obj) {
+    if (obj[key] !== null && obj[key] != "")
+      return false;
+  }
+  return true;
+}
 return (
   <div>
     <div className='contact-page-bg ' id='page' style={directionValue=='ltr'?{backgroundImage:'linear-gradient(to left,#fff,#e5e8ff)'}:{backgroundImage:'linear-gradient(to right,#fff,#e5e8ff)'}}>
@@ -117,7 +124,7 @@ return (
                 <div style={{ color: 'red', fontSize:"0.7rem" }}>{!vendorInput.company?'':errors.company}</div>
 
                 <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div>
-                <div><input type="submit" value={t('send')} /></div>
+                <div><input disabled={!(errors.email == '' && errors.company == '' && errors.phone == '' && !isEmpty(vendorInput))} type="submit" value={t('send')} /></div>
               </form>
             </div></div>
           <div className="info" >

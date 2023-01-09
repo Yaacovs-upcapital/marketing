@@ -169,12 +169,12 @@ const NavbarItems = (props) => {
           <a href={"https://vendors.upcapital.io/"} className={`${language=='he'?'vendors_login_lg':"vendors_login_lg_en"}`} >{t("vendors_login")}</a>
 
 
-          <button className="navbar-toggler" style={{ position: "fixed", right:language=='he'?"10px":'',left:language=='he'?"":'10px', top: "19px" }} type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <button className="navbar-toggler" style={{ position: "fixed", left:language=='he'?"10px":'',right:language=='he'?"":'10px', top: "19px" }} type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" onClick={handleNavbar}></span>
           </button>
           <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarTogglerDemo02" style={{ padding: useWindowSize() > 500 ? "" : "0 1rem 0 1rem" }}>
 
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" style={{ display: useWindowSize() > 1200 ? 'flex' : 'inherit', flexDirection: "row-reverse", width: useWindowSize() > 1300 ? 810 : 'inherit' }}>
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" style={{ display: useWindowSize() > 1200 ? 'flex' : 'inherit', flexDirection: "row", width: useWindowSize() > 1300 ? 810 : 'inherit' }}>
               <li className="nav-item " style={{ textAlign:language=="he"?"right":"left" }}><NavLink to={"/"} className="nav-link" onClick={handleNavCollapse}>{t("home")}</NavLink></li>
               <li className="nav-item" style={{ textAlign: language=="he"?"right":"left" }}><NavLink to={"/our-solution/"} className="nav-link" onClick={handleNavCollapse}>{t('solution')}</NavLink></li>
               <li className="nav-item" style={{ textAlign: language=="he"?"right":"left" }}><NavLink to={"/about-us/"} className="nav-link" onClick={handleNavCollapse}>{t('about')}</NavLink></li>
@@ -197,7 +197,7 @@ const NavbarItems = (props) => {
             </ul>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" style={{ marginTop: "2rem" }}>
               <li className="nav-item">
-                <a href='https://vendors.upcapital.io/' className={`nav-link ${language=='he'?"vendors_login_sm":"vendors_login_sm_en"}`}>{t("vendors_login")} <img src={avatar} className={`${language=='he'?"avatar2":"avatar2-en"}`} /></a>
+                <a href='https://vendors.upcapital.io/' className={`nav-link ${language=='he'?"vendors_login_sm":"vendors_login_sm_en"}`}> <img src={avatar} className={`${language=='he'?"avatar2":"avatar2-en"}`} />{t("vendors_login")}</a>
 
               </li>
               <li className="nav-item">

@@ -88,6 +88,15 @@ const Footer = () => {
     < div style="display:flex; justify-content:right;">הודעה - ${obj.message}div>
     </div>`
   }
+
+  const isEmpty = (obj) => {
+    for (var key in obj) {
+      if (obj[key] !== null && obj[key] != "")
+        return false;
+    }
+    return true;
+  }
+
   return (
     <div className="footer">
       <div className="contact" id="contact">
@@ -124,7 +133,7 @@ const Footer = () => {
                     <div style={{ color: 'red', fontSize: "0.7rem" }}>{errors.company}</div>
                   </div>
                   <div className="text-input-footer"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div>
-                  <div><input type="submit" value={t('send')} /></div>
+                  <div><input disabled={!(errors.email == '' && errors.company == '' && errors.phone == '' && !isEmpty(vendorInput))} type="submit" value={t('send')} /></div>
                 </form>
               </div>
             </div>

@@ -12,13 +12,13 @@
   background-image: url(../../assets/images/bg-1.png);
   background-repeat: no-repeat;
   background-size: cover;
-  direction: ltr !important;
+  direction: rtl !important;
 }
 .up-nav-en {
   background-image: url(../../assets/images/bg-1.png);
   background-repeat: no-repeat;
   background-size: cover;
-  direction: rtl !important;
+  direction: ltr !important;
 }
 /* style={{backgroundImage: useWindowSize() > 990 ? `url(${bg1})` : `url(${collapseNav})`, backgroundRepeat: 'noRepeat', backgroundSize: "cover",direction:language=='he'?'rtl':'ltr' }} */
 @media screen and (min-width: 500px) {
@@ -29,14 +29,14 @@
 @media screen and (max-width: 1200px) {
   .avatar {
     position: absolute;
-    right: 70px;
+    left: 57px;
     top: 19px;
     height: 38px;
     width: 38px;
   }
   .avatar-en {
     position: absolute;
-    left: 77px;
+    right: 77px;
     top: 19px;
     height: 38px;
     width: 38px;
@@ -45,22 +45,22 @@
     background-image: url(../../assets/images/collapse-nav.png);
     background-repeat: no-repeat;
     background-size: cover;
-    direction: ltr !important;
+    direction: rtl !important;
   }
   .up-nav-en {
     background-image: url(../../assets/images/collapse-nav.png);
     background-repeat: no-repeat;
     background-size: cover;
-    direction: rtl !important;
+    direction: ltr !important;
   }
   .langSetting {
     position: absolute;
-    right: 120px;
+    left: 120px;
     top: 20px;
   }
   .langSetting-en {
     position: absolute;
-    left: 120px;
+    right: 120px;
     top: 20px;
   }
   .langSetting > button {
@@ -119,7 +119,7 @@
     display: flex;
     list-style-type: none;
     padding: 0;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: center;
   }
 
@@ -139,26 +139,26 @@
 @media screen and (min-width: 1200px) {
   .avatar {
     position: absolute;
-    right: 24px;
+    left: 148px;
     top: 23px;
     height: 38px;
     width: 38px;
   }
   .avatar-en {
     position: absolute;
-    left: 24px;
+    right: 172px;
     top: 23px;
     height: 38px;
     width: 38px;
 }
   .langSetting {
     position: absolute;
-    right: 220px;
+    left: 213px;
     top: 24px;
   }
   .langSetting-en {
     position: absolute;
-    left: 240px;
+    right: 213px;
     top: 24px;
   }
   .langSetting > button {
@@ -168,6 +168,7 @@
     color: #2f439a;
     font-weight: 500;
   }
+
   .langSetting-en > button {
     border: none;
     background: none;
@@ -194,7 +195,7 @@
   }
   .vendors_login_lg {
     position: absolute;
-    right: 70px;
+    left: 34px;
     top: 25px;
     text-decoration: none;
     font-size: 20px;
@@ -203,7 +204,7 @@
   }
   .vendors_login_lg_en {
     position: absolute;
-    left: 70px;
+    right:34px;
     top: 25px;
     text-decoration: none;
     font-size: 20px;
@@ -229,7 +230,7 @@
   }
 
   .navbar-nav {
-    margin-left: 12% !important;
+    margin-left: 7% !important;
   }
 }
 

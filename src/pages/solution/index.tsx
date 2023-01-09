@@ -71,11 +71,11 @@ const Solution = () => {
                         {t('solution_p8')}            
                             </p>
                         <div className='sol-grid'>
-                            <div className='how-grid' ><div><img src={payment} width="60px" height="58px" /></div><div style={{ color: "#2f439a" }}><p style={{ fontWeight: "bold", marginBottom: "0" }}>קבלת מימון מיידי בלחיצת כפתור</p><p style={{ color: "#2f439a" }}>כל חשבונית מאושרת הופכת למזומן בלחיצת כפתור פשוטה</p></div></div>
-                            <div className='how-grid' ><div><img src={noBc} width="60px" height="57px" /></div><div style={{ color: "#2f439a" }}><p style={{ fontWeight: "bold", marginBottom: "0" }}>ללא בירוקרטיה</p><p style={{ color: "#2f439a", }}>אין צורך להמתין לאישורים או להמתין לבנק לקבלת תשובה. הכסף מגיע לחשבון הבנק עד 48 שעות.</p></div></div>
+                            <div className='how-grid' ><div><img src={payment} width="60px" height="58px" /></div><div style={{ color: "#2f439a" }}><p style={{ fontWeight: "bold", marginBottom: "0" }}>{t('recieve')}</p><p style={{ color: "#2f439a" }}>{t('recieve_text')}</p></div></div>
+                            <div className='how-grid' ><div><img src={noBc} width="60px" height="57px" /></div><div style={{ color: "#2f439a" }}><p style={{ fontWeight: "bold", marginBottom: "0" }}>{t('no_bc')}</p><p style={{ color: "#2f439a", }}>{t('no_bc_text')}</p></div></div>
 
-                            <div className='how-grid'><div><img src={certain} width="53px" height="58px" /></div><div style={{ color: "#2f439a" }}><p style={{ fontWeight: "bold", marginBottom: "0" }}>וודאות תזרימית</p><p style={{ color: "#2f439a" }}>ראש שקט וגמישות מיטבית, הקדמת התשלום נתונה לשליטתך, בכל רגע ובכל שעה של היום.</p></div></div>
-                            <div className='how-grid' ><div><img src={lowCost} width="59px" height="55px" /></div><div style={{ color: "#2f439a" }}><p style={{ fontWeight: "bold", marginBottom: "0" }}>עלות נמוכה</p><p style={{ color: "#2f439a" }}>עמלת הקדמה נמוכה שלא תופסת מסגרות אשראי</p></div></div>
+                            <div className='how-grid'><div><img src={certain} width="53px" height="58px" /></div><div style={{ color: "#2f439a" }}><p style={{ fontWeight: "bold", marginBottom: "0" }}>{t('flow_certain')}</p><p style={{ color: "#2f439a" }}>{t('flow_certain_text')}</p></div></div>
+                            <div className='how-grid' ><div><img src={lowCost} width="59px" height="55px" /></div><div style={{ color: "#2f439a" }}><p style={{ fontWeight: "bold", marginBottom: "0" }}>{t('low_cost')}</p><p style={{ color: "#2f439a" }}>{t('low_cost_text')}</p></div></div>
 
                         </div>
                     </div>

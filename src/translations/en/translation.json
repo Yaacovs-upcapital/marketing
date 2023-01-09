@@ -25,7 +25,7 @@
     "about": "About Us",
     "career": "Careers",
     "contact": "Contact us",
-    "vendors_login": "Login for vendors",
+    "vendors_login": "Vendors' login",
     "vendors": "Vendors",
     "buyers": "קניינים",
     "career_up": "A career at Up Capital",
@@ -246,5 +246,14 @@
 "complex":"Complex bureaucracy",
 "high_interest":"High interest rates",
 "flow_diff":"Flow difficulties",
-"error_customers":"Add customer please"
+"error_customers":"Add customer please",
+"no_bc":"No bureaucracy",
+"no_bc_text":"There is no need to wait for approvals nor wait for an answer from the bank. The money is transferred to the bank account within 48 hours.",
+"recieve":"Getting immediate funding at the click of a button",
+"recieve_text":"Each approved invoice becomes cash with a simple click of a button",
+"low_cost":"Low cost",
+"low_cost_text":"Low advance fee that does not take up credit facilities",
+"flow_certain":"Flow certainty",
+"flow_certain_text":"Peace of mind and optimal flexibility, the payment advance is under your control, at any moment and at any hour of the day.",
+"required":"Required field!"
 }
