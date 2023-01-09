@@ -30,7 +30,7 @@ const ContactUs = () => {
       body: JSON.stringify({
         message2: msg,
         subject: 'Vendor Info',
-        email: "yaacovs@upcapital.io"
+        email: "mariano@upcapital.io"
       }),
       headers: {
         'Content-Type': 'application/json',

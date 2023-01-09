@@ -29,7 +29,7 @@ const sendMail = async (event) => {
     body: JSON.stringify({
       message2: msg,
       subject: t('consult'),
-      email: "yaacovs@upcapital.io"
+      email: "mariano@upcapital.io"
     }),
     headers: {
       'Content-Type': 'application/json',
