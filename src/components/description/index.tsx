@@ -24,7 +24,7 @@ const Description = (props) => {
                         backgroundColor: "white",
                         textAlign: 'justify',
                         fontFamily: "RAG-Sans1.0-Regular",
-                        direction: "rtl",
+                        // direction: "rtl",
                         // boxShadow: " 0px 0px 50px -15px rgb(0 0 0 / 30%)",
                         filter: "drop-shadow(0px 0px 5px rgba(0, 0, 0, .5))",
 
@@ -63,6 +63,7 @@ const Description = (props) => {
     const handleOpen = () => {
         setOpen(true);
     };
+
     return (
         <div className='plus-img' >
             <ThemeProvider theme={theme} >
