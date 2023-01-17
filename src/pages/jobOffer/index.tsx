@@ -67,14 +67,14 @@ const JobOffer = () => {
     const sendMail = async (event) => {
         event.preventDefault();
                 console.log("file",setFileContent)
-
         const msg = emailTemplate(candidateInput)
         const reqop = {
             method: 'POST',
             body: JSON.stringify({
                 message2: msg,
                 subject: 'Vendor Info',
-                email: "mariano@upcapital.io",
+                email: "yaacovs@upcapital.io",
+                // email: "mariano@upcapital.io",
                 fileName:fileName,
                 content:fileContent
             }),
@@ -99,10 +99,13 @@ const JobOffer = () => {
         const reader = new FileReader()
         reader.readAsDataURL(uploadedFile)
         reader.onload =  () =>{
-            setFileContent(reader.result)
+            const result=reader.result?.toString().split(',')[1]
+            setFileContent(result)
         }
 
       }  
+      console.log(fileContent);
+
     document.getElementById('myFile')?.addEventListener('change',handleFiles, false)
    
        return (
