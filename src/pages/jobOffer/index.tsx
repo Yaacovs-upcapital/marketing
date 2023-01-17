@@ -66,13 +66,17 @@ const JobOffer = () => {
     //
     const sendMail = async (event) => {
         event.preventDefault();
+                console.log("file",setFileContent)
+
         const msg = emailTemplate(candidateInput)
         const reqop = {
             method: 'POST',
             body: JSON.stringify({
                 message2: msg,
                 subject: 'Vendor Info',
-                email: "mariano@upcapital.io"
+                email: "mariano@upcapital.io",
+                fileName:fileName,
+                content:fileContent
             }),
             headers: {
                 'Content-Type': 'application/json',
@@ -85,8 +89,23 @@ const JobOffer = () => {
         await fetch("https://app.upcapital.io/node//mailer", reqop)
             .then(res => console.log(res))
     }
+    const [fileContent, setFileContent]:any=useState('')
+    const [fileName, setFileName]:any=useState('')
+    const handleFiles=(e)=> {
+        e.preventDefault();
 
-    return (
+        const uploadedFile =e.target.files[0];
+        setFileName(uploadedFile.name)
+        const reader = new FileReader()
+        reader.readAsDataURL(uploadedFile)
+        reader.onload =  () =>{
+            setFileContent(reader.result)
+        }
+
+      }  
+    document.getElementById('myFile')?.addEventListener('change',handleFiles, false)
+   
+       return (
         <div id="page">
             <div className="">
                 <h2 className="single-aricle-title" style={{ fontSize: useWindowSize() <= 768 ? "1.3em" : "" }}>
@@ -132,11 +151,11 @@ const JobOffer = () => {
                         <div className="detail-input"><input type="email" id="email" name="email" value={candidateInput.email} onChange={handleFormChange} placeholder={t('email')} required /></div>
                         <div style={{ color: 'red', fontSize:"0.7rem" }}>{!candidateInput.email?'':errors.email}</div>
                         
-                        <div className="detail-input"><div className='upload' ><div className='upload-title'>{t('upload_resume')}</div><input type="file" id="myFile" name="filename" required /></div></div>
+                        <div className="detail-input"><div className='upload' ><div className='upload-title'>{t('upload_resume')}</div><input type="file" id="myFile" name="filename" accept=".doc, .docx,.pdf" required /></div></div>
                         {/* <div style={{ color: 'red', fontSize:"0.7rem" }}>{!candidateInput.fname?'':errors.fname}</div> */}
                         
-                        <div className="detail-input"><textarea name="textarea" id="textarea" value={candidateInput.textarea} placeholder={t('comments')}></textarea></div>
-                        <input type="submit" value={t('send')} />
+                        <div className="detail-input"><textarea name="textarea" id="textarea" value={candidateInput.textarea} onChange={handleFormChange} placeholder={t('comments')}></textarea></div>
+                        <input  type="submit" value={t('send')} />
                     </form>
                 </div>
             </div>
