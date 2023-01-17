@@ -28,13 +28,13 @@ const Solution = () => {
                         <div className="col-lg-8 col-md-12 col-sm-12 solution-text" style={{ paddingLeft: "10px", fontWeight: "600" }}>
 
                             <div>
-                                <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
+                                <p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)" }}>
 {t('solution_p1')}                                </p>
-                                <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)", fontWeight: "bold" }}>
+                                <p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)", fontWeight: "bold" }}>
                                 {t('solution_p2')}                                 </p>
-                                <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
+                                <p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)" }}>
                                 {t('solution_p3')}                                 </p>
-                                <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
+                                <p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)" }}>
                                 {t('solution_p4')}         </p>                    </div>
                             <div style={{ display: useWindowSize() > 767 ? "flex" : 'none', justifyContent: "space-between", marginTop: "2rem" }}>
                                 <div style={{ textAlign: "center" }}><img src={cashflow} width="47px" height="60px" /><p style={{ marginTop: "1rem", color: "#2f439a", fontWeight: "bold" }}>{t('flow_diff')}</p></div>
@@ -58,16 +58,16 @@ const Solution = () => {
                     <div className='col-lg-8 col-md-12 col-sm-12' style={{ paddingLeft: "10px", fontWeight: "600", marginBottom: "1rem" }}>
                         <div className="mt-3 mb-2" style={{ marginBottom: "1rem !important" }}><h1 style={{ color: "#2f439a", fontSize: "40pt" }}>{t('solution_second_title')}<span style={{ color: "red" }}>?</span></h1></div>
 
-                        <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
+                        <p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)" }}>
                         {t('solution_p5')}            
                         </p>
-                        <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
+                        <p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)" }}>
                         {t('solution_p6')}            
                         </p>
-                        <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
+                        <p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)" }}>
                         {t('solution_p7')}            
                         </p>
-                        <p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
+                        <p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)" }}>
                         {t('solution_p8')}            
                             </p>
                         <div className='sol-grid'>

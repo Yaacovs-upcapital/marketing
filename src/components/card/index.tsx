@@ -22,7 +22,7 @@ export default function MediaControlCard(props: any) {
         boxShadow: " 0px 0px 30px -15px rgb(0 0 0 / 30%)",
         borderRadius: "20px",
         border: 1, 
-        height: window.location.href.indexOf("blog")!=-1 ?window.innerWidth>700?650:"100%":""
+        height: window.location.href.indexOf("blog")!=-1 ?window.innerWidth>700?"100%":"100%":""
       }}
     >
       {props.image ? (

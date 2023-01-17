@@ -96,13 +96,13 @@ const Footer = () => {
     }
     return true;
   }
-
+const direction =localStorage.getItem('direction')
   return (
     <div className="footer">
       <div className="contact" id="contact">
 
         <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`} style={{ display: "flex" }}>
-          <p className="form-title" style={{ fontSize: "35pt", paddingRight: "12px" }}>{t("contact")}</p>
+          <p className="form-title" style={{ fontSize: "35pt", paddingRight:direction=='ltr'?'':"12px" }}>{t("contact")}</p>
           <p className="form-title" style={{ color: "red", fontSize: "35pt" }}>.</p>
         </div>
         <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'} row`} style={{ margin: "auto" }}>

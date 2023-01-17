@@ -94,7 +94,7 @@
   border-radius: 0.5em;
   border-style: none;
   background: #2f439b;
-  font-family: "RAG-Sans 1.0";
+  /* font-family: "RAG-Sans1.0-Regular"; */
   font-weight: bold;
   font-size: 20px;
   letter-spacing: 0.75px;
@@ -965,7 +965,10 @@
 
   margin-top: 0;
 }
+.about-btn{
+  font-family: "RAG-Sans1.0-Regular";
 
+}
 .partners-title {
   font-size: 30px;
   font-weight: 600;

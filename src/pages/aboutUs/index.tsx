@@ -60,17 +60,17 @@ const About = () => {
 							<div className="col-lg-7 col-md-12 col-sm-12 p-3" style={{ paddingLeft: "60px !important", fontWeight: "600" }}>
 								<div className="up-title" style={{ display: "flex",color: "rgb(47,67,155)", marginBottom: "2rem" }}>
 									<h3 style={{ lineHeight: "1", color: "#2f439", fontFamily: "LeonRegular", fontSize: "50pt" }}>{t('up_capital')}</h3><h3 style={{ lineHeight: "1", color: "red", fontFamily: "LeonRegular", fontSize: "50pt" }}>.</h3></div>
-								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
+								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)" }}>
 									{t('about_p1')}								</p>
-								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)", fontWeight: "bold" }}>
+								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)", fontWeight: "bold" }}>
 {t('solution_p2')}								</p>
-								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
+								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)" }}>
 								{t('about_p2')}										</p>
-								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
+								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)" }}>
 								{t('about_p3')}										</p>
-								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
+								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)" }}>
 								{t('about_p4')}										</p>
-								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans 1.0", fontSize: "16pt", color: "rgb(47,67,155)" }}>
+								<p style={{ textAlign: "justify", fontFamily: "RAG-Sans1.0-Regular", fontSize: "16pt", color: "rgb(47,67,155)" }}>
 								{t('about_p5')}										</p>
 
 							</div>
