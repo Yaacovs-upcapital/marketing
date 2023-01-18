@@ -273,10 +273,9 @@ const Prepayment = () => {
 
 
                 {/* <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div> */}
-                <div><input disabled={!(errors.email == '' && errors.company == '' && errors.phone == '' && !isEmpty(vendorInput))} type="submit" value={t('send')} /></div>
+                <div style={{marginTop: 70}}><input disabled={!(errors.email == '' && errors.company == '' && errors.phone == '' && !isEmpty(vendorInput))} type="submit" value={t('send')} /></div>
               </form>
-            </div>
-            <div>
+              <div>
               <Button className='modal-btn' variant="contained" onClick={() => setModalOpen(!modalOpen)} >{t('add_customer')}</Button>
               <Modal
                 open={modalOpen}
@@ -327,6 +326,8 @@ const Prepayment = () => {
               </Modal>
               <div style={{ color: 'red', fontSize: "0.7rem" }}>{customerList.length != 0 ? '' : errors.customers}</div>
             </div>
+            </div>
+           
           </div>
 
           <div><CustomerTable data={customerList} /></div>

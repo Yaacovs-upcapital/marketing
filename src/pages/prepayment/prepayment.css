@@ -14,7 +14,9 @@
   color: #2f439a;
 
 }
-
+.modal-btn{
+  margin-top: -208px !important;
+}
 .prepayment-page {
   width: 100%;
   margin: auto;
