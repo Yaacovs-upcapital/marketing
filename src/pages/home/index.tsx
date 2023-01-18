@@ -507,7 +507,7 @@ localStorage.setItem('direction',directionValue)
                                     autoPlayInterval={1500}
                                     items={items}
                                     autoPlayDirection={'ltr'}
-                                    animationDuration={1000}
+                                    animationDuration={1500}
                                     infinite={true}
                                     disableButtonsControls={true}
                                 />
@@ -522,7 +522,7 @@ localStorage.setItem('direction',directionValue)
                                     autoPlayInterval={1500}
                                     items={items}
                                     autoPlayDirection={'ltr'}
-                                    animationDuration={1000}
+                                    animationDuration={1800}
                                     infinite={true}
                                     disableButtonsControls={true}
                                     responsive={responsive}

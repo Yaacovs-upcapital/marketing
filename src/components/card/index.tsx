@@ -21,8 +21,8 @@ export default function MediaControlCard(props: any) {
         display: "block",
         boxShadow: " 0px 0px 30px -15px rgb(0 0 0 / 30%)",
         borderRadius: "20px",
-        border: 1, 
-        height: window.location.href.indexOf("blog")!=-1 ?window.innerWidth>700?"100%":"100%":""
+        border: 1,
+        height: window.location.href.indexOf("blog") != -1 ? window.innerWidth > 700 ? "100%" : "100%" : ""
       }}
     >
       {props.image ? (
@@ -40,14 +40,15 @@ export default function MediaControlCard(props: any) {
 
         }}
       >
-        <CardContent style={{height:"100%"}}>{props.children}
-        <div style={{  display: 'flex',justifyContent:""}}>
-          <Link to={props.path || "/"} className="link-btn" style={{display: window.location.href.indexOf("blog")!=-1 ? 'none' : 'block' }}>
-            {t("to_apply")}
-          </Link>
-        </div></CardContent>
+        <CardContent style={{ height: "100%" }}>{props.children}
+          <div style={{ display: 'flex', justifyContent: "" }}>
+            <Link to={props.path || "/"} className="link-btn" style={{ display: window.location.href.indexOf("blog") != -1 ? 'none' : 'block' }}>
+              {t("to_apply")}
+            </Link>
+          </div>
+        </CardContent>
       </Box>
-  
+
     </Card>
   );
 }

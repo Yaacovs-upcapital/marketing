@@ -66,17 +66,17 @@ const JobOffer = () => {
     //
     const sendMail = async (event) => {
         event.preventDefault();
-                console.log("file",setFileContent)
+        console.log("file", setFileContent)
         const msg = emailTemplate(candidateInput)
         const reqop = {
             method: 'POST',
             body: JSON.stringify({
                 message2: msg,
                 subject: 'Vendor Info',
-                email: "mariano@upcapital.io",
+                email: "yaacovs@upcapital.io",
                 // email: "mariano@upcapital.io",
-                fileName:fileName,
-                content:fileContent
+                fileName: fileName,
+                content: fileContent
             }),
             headers: {
                 'Content-Type': 'application/json',
@@ -87,28 +87,32 @@ const JobOffer = () => {
 
         // await fetch("http://localhost:3500/api/mailer", reqop)
         await fetch("https://app.upcapital.io/node//mailer", reqop)
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res) ;
+                const submitBtn=document.getElementById('submit');
+                res.status==200?submitBtn?.setAttribute('disabled',"true"):console.log('not clicked')
+            })
     }
-    const [fileContent, setFileContent]:any=useState('')
-    const [fileName, setFileName]:any=useState('')
-    const handleFiles=(e)=> {
+    const [fileContent, setFileContent]: any = useState('')
+    const [fileName, setFileName]: any = useState('')
+    const handleFiles = (e) => {
         e.preventDefault();
 
-        const uploadedFile =e.target.files[0];
+        const uploadedFile = e.target.files[0];
         setFileName(uploadedFile.name)
         const reader = new FileReader()
         reader.readAsDataURL(uploadedFile)
-        reader.onload =  () =>{
-            const result=reader.result?.toString().split(',')[1]
+        reader.onload = () => {
+            const result = reader.result?.toString().split(',')[1]
             setFileContent(result)
         }
 
-      }  
-      console.log(fileContent);
+    }
+    console.log(fileContent);
 
-    document.getElementById('myFile')?.addEventListener('change',handleFiles, false)
-   
-       return (
+    document.getElementById('myFile')?.addEventListener('change', handleFiles, false)
+
+    return (
         <div id="page">
             <div className="">
                 <h2 className="single-aricle-title" style={{ fontSize: useWindowSize() <= 768 ? "1.3em" : "" }}>
@@ -147,18 +151,18 @@ const JobOffer = () => {
                 <div className='job-form'>
                     <form onSubmit={sendMail} style={{ color: "blue" }}>
                         <div className="detail-input"><input type="text" id="fname" name="fname" value={candidateInput.fname} onChange={handleFormChange} placeholder={t('full_name')} required /></div>
-                        <div style={{ color: 'red', fontSize:"0.7rem" }}>{!candidateInput.fname?'':errors.fname}</div>
-                       <div className="detail-input"><input type="text" id="phone" name="phone" value={candidateInput.phone} onChange={handleFormChange} placeholder={t('phone')} required /></div>
-                        
-                       <div style={{ color: 'red', fontSize:"0.7rem" }}>{!candidateInput.phone?'':errors.phone}</div>
+                        <div style={{ color: 'red', fontSize: "0.7rem" }}>{!candidateInput.fname ? '' : errors.fname}</div>
+                        <div className="detail-input"><input type="text" id="phone" name="phone" value={candidateInput.phone} onChange={handleFormChange} placeholder={t('phone')} required /></div>
+
+                        <div style={{ color: 'red', fontSize: "0.7rem" }}>{!candidateInput.phone ? '' : errors.phone}</div>
                         <div className="detail-input"><input type="email" id="email" name="email" value={candidateInput.email} onChange={handleFormChange} placeholder={t('email')} required /></div>
-                        <div style={{ color: 'red', fontSize:"0.7rem" }}>{!candidateInput.email?'':errors.email}</div>
-                        
+                        <div style={{ color: 'red', fontSize: "0.7rem" }}>{!candidateInput.email ? '' : errors.email}</div>
+
                         <div className="detail-input"><div className='upload' ><div className='upload-title'>{t('upload_resume')}</div><input type="file" id="myFile" name="filename" accept=".doc, .docx,.pdf" required /></div></div>
                         {/* <div style={{ color: 'red', fontSize:"0.7rem" }}>{!candidateInput.fname?'':errors.fname}</div> */}
-                        
+
                         <div className="detail-input"><textarea name="textarea" id="textarea" value={candidateInput.textarea} onChange={handleFormChange} placeholder={t('comments')}></textarea></div>
-                        <input  type="submit" value={t('send')} />
+                        <input  type="submit" id="submit" value={t('send')} />
                     </form>
                 </div>
             </div>

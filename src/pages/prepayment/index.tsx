@@ -277,7 +277,7 @@ const Prepayment = () => {
               </form>
             </div>
             <div>
-              <Button variant="contained" onClick={() => setModalOpen(!modalOpen)} >{t('add_customer')}</Button>
+              <Button className='modal-btn' variant="contained" onClick={() => setModalOpen(!modalOpen)} >{t('add_customer')}</Button>
               <Modal
                 open={modalOpen}
                 onClose={() => setModalOpen(!modalOpen)}

@@ -48,7 +48,7 @@
   padding: 0.6rem 1.5rem 0.6rem 1.5rem;
 }
 
-.prepayment-btn:active {
+.prepayment-btn:active, .about-btn:active , .consult-btn:active, .career-btn:active, .modal-btn:active, .blog-btn:active{
   transform: scale(0.98);
   /* Scaling button to 0.98 to its original size */
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
@@ -143,6 +143,16 @@
   color: #ffffff;
   padding: 0.8rem 2.5rem 0.8rem 2.5rem;
   margin-top: 1rem;
+}
+input[type="submit"]{
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  
+}
+input[type="submit"]:active{
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */  
 }
 .jumbotron-content h1 {
   color: #fff;
@@ -992,6 +1002,11 @@
 .image-border:hover {
   box-shadow: 0px 0px 10px #aaaaaa;
 }
+.image-border:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */}
 .images-row {
   display: grid;
   grid-gap: 12px;
