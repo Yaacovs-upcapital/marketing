@@ -97,7 +97,7 @@ const About = () => {
 							<div className="team-member" >
 								<div className={directionValue=='ltr'?"img-wrap-en":"img-wrap"}>
 									<img src={mariano} alt="mariano" className={directionValue=='ltr'?'member-image-en':'member-image' } />
-									<Description data={partners.mariano} />
+									<Description data={partners.mariano} direction={directionValue}/>
 								</div>
 								<div className="mt-2 mb-2">
 									<h4 className={directionValue=='ltr'?'member-title-en':'member-title' }>{t('mariano')} </h4>
@@ -109,7 +109,7 @@ const About = () => {
 							<div className="team-member" >
 								<div className={directionValue=='ltr'?"img-wrap-en":"img-wrap"}>
 									<img src={ron} alt="ron" className={directionValue=='ltr'?'member-image-en':'member-image' }></img>
-									<Description data={partners.ron} />
+									<Description data={partners.ron} direction={directionValue} />
 
 								</div>
 
@@ -123,7 +123,7 @@ const About = () => {
 								<div className={directionValue=='ltr'?"img-wrap-en":"img-wrap"}>
 									<img src={yaron} alt="yaron" className={directionValue=='ltr'?'member-image-en':'member-image' } />
 									<div style={{ cursor: "pointer" }}>
-										<Description data={partners.yaron} />
+										<Description data={partners.yaron} direction={directionValue} />
 									</div>
 								</div>
 								<div className="mt-2 mb-2">
@@ -136,7 +136,7 @@ const About = () => {
 								<div className={directionValue=='ltr'?"img-wrap-en":"img-wrap"}>
 									<img src={avi} alt="avi" className={directionValue=='ltr'?'member-image-en':'member-image' } />
 									<div style={{ cursor: "pointer" }}>
-										<Description data={partners.avi} />
+										<Description data={partners.avi} direction={directionValue} />
 
 									</div>
 
@@ -159,7 +159,7 @@ const About = () => {
 								<div className={directionValue=='ltr'?"img-wrap-en":"img-wrap"}>
 									<img src={yoni} alt="yoni" className={directionValue=='ltr'?'member-image-en':'member-image' } />
 									<div style={{ cursor: "pointer" }}>
-										<Description data={partners.yoni} />
+										<Description data={partners.yoni} direction={directionValue} yoni={true}/>
 
 									</div>
 
@@ -174,7 +174,7 @@ const About = () => {
 								<div className={directionValue=='ltr'?"img-wrap-en":"img-wrap"}>
 									<img src={tzahi} alt="tzahi" className={directionValue=='ltr'?'member-image-en':'member-image' } />
 									<div style={{ cursor: "pointer" }}>
-										<Description data={partners.tzahi} />
+										<Description data={partners.tzahi} direction={directionValue} />
 
 									</div>
 
@@ -189,7 +189,7 @@ const About = () => {
 								<div className={directionValue=='ltr'?"img-wrap-en":"img-wrap"}>
 									<img src={ore} alt="ore" className={directionValue=='ltr'?'member-image-en':'member-image' } />
 									<div style={{ cursor: "pointer" }}>
-										<Description data={partners.ore} />
+										<Description data={partners.ore} direction={directionValue} />
 
 									</div>
 

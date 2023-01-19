@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './prepayment.css'
 import { useTranslation } from 'react-i18next';
 
@@ -8,10 +8,14 @@ import dunBradstreet from "../../assets/images/dun-bradstreet.png";
 import iso from "../../assets/images/iso.png";
 import useWindowSize from '../../components/windowSize';
 import CustomerTable from '../../components/customerTable';
-import { Box, Button, Modal, Typography } from '@mui/material';
-import PhoneInput from 'react-phone-number-input'
-import { json } from 'stream/consumers';
-
+import {  Box, Button, Modal, Snackbar, Stack, Typography } from '@mui/material';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref,
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 const Prepayment = () => {
   const { t } = useTranslation()
 
@@ -19,6 +23,9 @@ const Prepayment = () => {
   const [customerList, setCustomerList]: any = useState([])
   const [customerInput, setCustomerInput] = useState({ customerName: '', averageSales: '', paymentMethod: '', contactName: '', customerPhone: '', customerEmail: '' })
   const [modalOpen, setModalOpen] = React.useState(false);
+  const [done, setDone] = useState(false)
+  const [open, setOpen] = React.useState(false);
+
 
   const [directionValue, setDirectionValue] = useState('')
   setTimeout(() => {
@@ -38,7 +45,7 @@ const Prepayment = () => {
     p: 4,
     // pb: 4,
     borderRadius: 4,
-    direction:directionValue
+    direction: directionValue
   };
   const handleContactFormChange = (event) => {
     event.preventDefault()
@@ -76,18 +83,17 @@ const Prepayment = () => {
 
     if (customerList.length == 0) {
       setErrors({ ...errors, customers: t("error_customers") })
-     
+
     } else {
       const msg = emailTemplate(vendorInput)
       setVendorInput({ fname: '', phone: '', email: '', company: '', message: '' })
-
+setOpen(true);
       const reqop = {
         method: 'POST',
         body: JSON.stringify({
           message2: msg,
           subject: 'Vendor Info',
-          // email: "mariano@upcapital.io"
-          email: "yaacovs@upcapital.io"
+          email: "mariano@upcapital.io"
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -97,17 +103,16 @@ const Prepayment = () => {
 
       // await fetch("http://localhost:3500/api/mailer", reqop)
       await fetch("https://app.upcapital.io/node//mailer", reqop)
-        .then(res => console.log(res))
+        .then(res => {console.log(res);})
 
       setVendorInput({ fname: '', phone: '', email: '', company: '', message: '' })
       setCustomerList([])
       setErrors({ ...errors, customers: t("") })
-
+      
     }
   }
-  // console.log('vendorInput', vendorInput);
+  // console.log('done', done);
 
- 
   let emailTemplate = (obj: any) => {
     const listToMail: any = customerList.map((item, i) =>
       (`<div>${i + 1}. Customer name - ${item.customerName}, Average sales - ${item.averageSales}, Payment terms -${item.paymentMethod}, Contact name - ${item.contactName}, Customer phone - ${item.customerPhone}, Customer email - ${item.customerEmail}</div>`))
@@ -131,7 +136,7 @@ const Prepayment = () => {
   // }
 
   // console.log('list', customerList)
-  const [errors, setErrors] = useState({ fname: '', phone: '', email: '', company: '', customers: '', averageSales: '', paymentMethod: '', contactName: '', customerEmail:'',customerPhone:'',customerName:'' })
+  const [errors, setErrors] = useState({ fname: '', phone: '', email: '', company: '', customers: '', averageSales: '', paymentMethod: '', contactName: '', customerEmail: '', customerPhone: '', customerName: '' })
   const isEmpty = (obj) => {
     for (var key in obj) {
       if (obj[key] !== null && obj[key] != "")
@@ -215,7 +220,7 @@ const Prepayment = () => {
 
       if (!/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(inputValue)) {
 
-        setErrors({ ...errors, customerEmail: t("required") })
+        setErrors({ ...errors, customerEmail: t("error_email") })
 
       } else {
         setErrors({ ...errors, customerEmail: '' })
@@ -226,7 +231,7 @@ const Prepayment = () => {
       if (!/^\+?(972|0)(\-)?0?(([23489]{1}\d{7})|([71,72,73,74,75,76,77]{2}\d{7})|[5]{1}\d{8})$/.test(inputValue)) {
 
 
-        setErrors({ ...errors, customerPhone: t("required") })
+        setErrors({ ...errors, customerPhone: t("error_phone") })
 
       } else {
         setErrors({ ...errors, customerPhone: '' })
@@ -244,7 +249,13 @@ const Prepayment = () => {
     }
   }
 
-  
+  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   // console.log('direction', directionValue);
   return (
@@ -253,7 +264,7 @@ const Prepayment = () => {
         <div className={`${useWindowSize() > 1550 ? 'container-big' : 'container'}`}>
           <div><p className="prepayment-page-title" >{t("sign_up_free")}<span style={{ color: 'red' }}>.</span></p></div>
 
-          <div style={{}} className="contact-page">
+          <div style={{}} className="prepayment-page">
             <div ><div>
               <p className="contact-title">{t("prepayment_second_title")}:</p>
             </div>
@@ -273,61 +284,74 @@ const Prepayment = () => {
 
 
                 {/* <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div> */}
-                <div style={{marginTop: 70}}><input disabled={!(errors.email == '' && errors.company == '' && errors.phone == '' && !isEmpty(vendorInput))} type="submit" value={t('send')} /></div>
+                <div style={{ marginTop: 70 }}><input disabled={!(errors.email == '' && errors.company == '' && errors.phone == '' && !isEmpty(vendorInput))} type="submit" value={t('send')} /></div>
               </form>
+              <Stack spacing={2} sx={{ width: '100%' }}>
+                      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                         {t('success')}
+                        </Alert>
+                      </Snackbar>
+                      </Stack>
               <div>
-              <Button className='modal-btn' variant="contained" onClick={() => setModalOpen(!modalOpen)} >{t('add_customer')}</Button>
-              <Modal
-                open={modalOpen}
-                onClose={() => setModalOpen(!modalOpen)}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-              >
-                <Box component="div" sx={modalStyle}>
-                  <Typography sx={{ color: "#2F439A", fontWeight: "bold", fontSize: "2vw" }} id="modal-modal-title"  >
-                    {t('customer_details')}
-                  </Typography>
-                  <Typography component='div' id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className='modal-btn'>
+                  <div>{t('add_customer_dets')}:</div>
+                  <Button variant="contained" onClick={() => setModalOpen(!modalOpen)} >{t('add_customer')}</Button></div>
+                <Modal
+                  open={modalOpen}
+                  onClose={() => setModalOpen(!modalOpen)}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                >
+                  <Box component="div" sx={modalStyle}>
 
-                    <form onSubmit={addCustomer} >
-                      <div>
-                        <div>
-                          <input className='customer-details' style={{ textAlign: directionValue == 'ltr' ? 'left' : 'right' }} type="text" id="customerName" name="customerName" placeholder={t("customer_name")} value={customerInput.customerName} onChange={handleContactFormChange} required />
-                          <div style={{ color: 'red', fontSize: "0.7rem" }}>{!customerInput.customerName ? '' : errors.customerName}</div>
-                        </div>
-                        <div>
-                          <input className='customer-details' style={{ textAlign: directionValue == 'ltr' ? 'left' : 'right' }} type="text" id="averageSales" name="averageSales" placeholder={t('average_sales')} value={customerInput.averageSales} onChange={handleContactFormChange} required />
-                          <div style={{ color: 'red', fontSize: "0.7rem" }}>{!customerInput.averageSales ? '' : errors.averageSales}</div>
+                    <Typography sx={{ color: "#2F439A", fontWeight: "bold", fontSize: "2vw" }} id="modal-modal-title"  >
+                      {t('customer_details')}
+                    </Typography>
+                    <Typography component='div' id="modal-modal-description" sx={{ mt: 2 }}>
 
-                        </div>
+                      <form onSubmit={addCustomer} >
                         <div>
-                          <input className='customer-details' style={{ textAlign: directionValue == 'ltr' ? 'left' : 'right' }} type="text" id="paymentMethod" name="paymentMethod" placeholder={t("payment_method")} value={customerInput.paymentMethod} onChange={handleContactFormChange} required />
-                          <div style={{ color: 'red', fontSize: "0.7rem" }}>{!customerInput.paymentMethod ? '' : errors.paymentMethod}</div>
+                          <div>
+                            <input className='customer-details' style={{ textAlign: directionValue == 'ltr' ? 'left' : 'right' }} type="text" id="customerName" name="customerName" placeholder={t("customer_name")} value={customerInput.customerName} onChange={handleContactFormChange} required />
+                            <div style={{ color: 'red', fontSize: "0.7rem" }}>{!customerInput.customerName ? '' : errors.customerName}</div>
+                          </div>
+                          <div>
+                            <input className='customer-details' style={{ textAlign: directionValue == 'ltr' ? 'left' : 'right' }} type="text" id="averageSales" name="averageSales" placeholder={t('average_sales')} value={customerInput.averageSales} onChange={handleContactFormChange} required />
+                            <div style={{ color: 'red', fontSize: "0.7rem" }}>{!customerInput.averageSales ? '' : errors.averageSales}</div>
 
-                        </div>
-                        <div>
-                          <input className='customer-details' style={{ textAlign: directionValue == 'ltr' ? 'left' : 'right' }} type="text" id="contactName" name="contactName" placeholder={t("contact_name")} value={customerInput.contactName} onChange={handleContactFormChange} />
-                          <div style={{ color: 'red', fontSize: "0.7rem" }}>{!customerInput.contactName ? '' : errors.contactName}</div>
-                        </div>
-                        <div>
-                          <input className='customer-details' style={{ textAlign: directionValue == 'ltr' ? 'left' : 'right' }} type="text" id="customerPhone" name="customerPhone" placeholder={t("customer_phone")} value={customerInput.customerPhone} onChange={handleContactFormChange} />
-                          <div style={{ color: 'red', fontSize: "0.7rem" }}>{!customerInput.customerPhone ? '' : errors.customerPhone}</div>
+                          </div>
+                          <div>
+                            <input className='customer-details' style={{ textAlign: directionValue == 'ltr' ? 'left' : 'right' }} type="text" id="paymentMethod" name="paymentMethod" placeholder={t("payment_method")} value={customerInput.paymentMethod} onChange={handleContactFormChange} required />
+                            <div style={{ color: 'red', fontSize: "0.7rem" }}>{!customerInput.paymentMethod ? '' : errors.paymentMethod}</div>
 
+                          </div>
+                          <div>
+                            <input className='customer-details' style={{ textAlign: directionValue == 'ltr' ? 'left' : 'right' }} type="text" id="contactName" name="contactName" placeholder={t("contact_name")} value={customerInput.contactName} onChange={handleContactFormChange} />
+                            <div style={{ color: 'red', fontSize: "0.7rem" }}>{!customerInput.contactName ? '' : errors.contactName}</div>
+                          </div>
+                          <div>
+                            <input className='customer-details' style={{ textAlign: directionValue == 'ltr' ? 'left' : 'right' }} type="text" id="customerPhone" name="customerPhone" placeholder={t("customer_phone")} value={customerInput.customerPhone} onChange={handleContactFormChange} />
+                            <div style={{ color: 'red', fontSize: "0.7rem" }}>{!customerInput.customerPhone ? '' : errors.customerPhone}</div>
+
+                          </div>
+                          <div>
+                            <input className='customer-details' style={{ textAlign: directionValue == 'ltr' ? 'left' : 'right' }} type="text" id="customerEmail" name="customerEmail" placeholder={t("customer_email")} value={customerInput.customerEmail} onChange={handleContactFormChange} />
+                            <div style={{ color: 'red', fontSize: "0.7rem" }}>{!customerInput.customerEmail ? '' : errors.customerEmail}</div>
+                          </div>
                         </div>
-                        <div>
-                          <input className='customer-details' style={{ textAlign: directionValue == 'ltr' ? 'left' : 'right' }} type="text" id="customerEmail" name="customerEmail" placeholder={t("customer_email")} value={customerInput.customerEmail} onChange={handleContactFormChange} />
-                          <div style={{ color: 'red', fontSize: "0.7rem" }}>{!customerInput.customerEmail ? '' : errors.customerEmail}</div>
-                        </div>
-                      </div>
-                      <input disabled={!(errors.email == '' && errors.phone == '' && !isEmpty(vendorInput))} type="submit" value={"הוספה"} style={{ width: '10rem', marginRight: 5, marginBottom: "2rem" }} />
-                    </form>
-                  </Typography>
-                </Box>
-              </Modal>
-              <div style={{ color: 'red', fontSize: "0.7rem" }}>{customerList.length != 0 ? '' : errors.customers}</div>
+                        <div style={{ display: "flex", justifyContent: "space-between" }}>
+                          <input disabled={!(errors.email == '' && errors.phone == '' && !isEmpty(vendorInput))} type="submit" value={t('add')} style={{ width: '10rem', marginRight: 5, marginBottom: "2rem", marginTop: "2rem" }} />
+                          <div className='close-btn' onClick={() => setModalOpen(false)} style={{ width: '10rem', marginRight: 5, marginBottom: "2rem", marginTop: "2rem" }}>{t('close')}</div></div>
+                      </form>
+                     
+                    </Typography>
+                  </Box>
+                </Modal>
+                <div style={{ color: 'red', fontSize: "0.7rem" }}>{customerList.length != 0 ? '' : errors.customers}</div>
+              </div>
             </div>
-            </div>
-           
+
           </div>
 
           <div><CustomerTable data={customerList} /></div>

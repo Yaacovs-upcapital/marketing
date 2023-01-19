@@ -121,10 +121,11 @@ const NavbarItems = (props) => {
 
   const classes = useStyles();
 
-  const [language, setLanguage] = useState("he");
+  const [language, setLanguage] = useState(localStorage.getItem("appLang")||"he");
   const handleOnclick = (e: any) => {
     e.preventDefault();
     setLanguage(e.target.value);
+    localStorage.setItem("appLang",e.target.value)
   };
 
   props.lang.navLang.getlang(language)
@@ -135,6 +136,7 @@ const NavbarItems = (props) => {
     setIsNavCollapsed(false);
   setTimeout(()=>setIsNavCollapsed(true),1)
   }
+console.log( "appLang"  , localStorage.getItem("appLang"));
 
 
 

@@ -7,8 +7,19 @@ import egg from "../../assets/images/egg.png";
 import dunBradstreet from "../../assets/images/dun-bradstreet.png";
 import iso from "../../assets/images/iso.png";
 import useWindowSize from '../../components/windowSize';
+import { Box, Button, Modal, Snackbar, Stack, Typography } from '@mui/material';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref,
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 const ContactUs = () => {
   const { t } = useTranslation()
+  const [open, setOpen] = React.useState(false);
 
   const [vendorInput, setVendorInput] = useState({ fname: '', phone: '', email: '', company: '', message: '' })
   const handleFormChange = (event) => {
@@ -30,7 +41,6 @@ const ContactUs = () => {
       body: JSON.stringify({
         message2: msg,
         subject: 'Vendor Info',
-        // email: "yaacovs@upcapital.io"
         email: "mariano@upcapital.io"
       }),
       headers: {
@@ -45,6 +55,8 @@ const ContactUs = () => {
     // await fetch("http://localhost:3500/api/mailer", reqop)
     await fetch("https://app.upcapital.io/node//mailer", reqop)
       .then(res => console.log(res))
+      setOpen(true)
+      setVendorInput({ fname: '', phone: '', email: '', company: '', message: '' })
   }
   const [errors, setErrors] = useState({ fname: '', phone: '', email: '', company: '' })
 
@@ -93,9 +105,6 @@ const ContactUs = () => {
   // emailTemplate(vendorInput)
 
 
-
-
-
   
   const [directionValue, setDirectionValue] = useState('')
   setTimeout(() => {
@@ -103,7 +112,9 @@ const ContactUs = () => {
     const valueAfterTimeout = getComputedStyle(obj, null).direction
     setDirectionValue(valueAfterTimeout)
   }, 100);
+
   console.log('direction', directionValue);
+
   const isEmpty = (obj) => {
     for (var key in obj) {
       if (obj[key] !== null && obj[key] != "")
@@ -111,6 +122,14 @@ const ContactUs = () => {
     }
     return true;
   }
+
+  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
   return (
     <div>
       <div className='contact-page-bg ' id="page" style={directionValue == 'ltr' ? { backgroundImage: 'linear-gradient(to left,#fff,#e5e8ff)' } : { backgroundImage: 'linear-gradient(to right,#fff,#e5e8ff)' }}>
@@ -138,13 +157,20 @@ const ContactUs = () => {
                   <div className="text-input"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div>
                   <div><input  disabled={!(errors.email == '' && errors.company == '' && errors.phone == '' && !isEmpty(vendorInput))} type="submit" value={t('send')} /></div>
                 </form>
+                <Stack spacing={2} sx={{ width: '100%' }}>
+                  <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                    <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                      {t('success')}
+                    </Alert>
+                  </Snackbar>
+                </Stack>
               </div></div>
             <div className="info" >
               <div className='info-details'>
                 <h2 className="contact-title" >{t("contact_info")}</h2>
                 <div ><Envelope style={{ height: "30px", width: "30px" }} />info@upcapital.io </div>
                 <div ><Telephone style={{ height: "30px", width: "30px" }} /> 073-7801153</div>
-                <div ><Waze style={{ height: "30px", width: "30px" }} /> {t("address_text")}</div>
+                <div ><Waze style={{ height: "30px", width: "30px" }} /> <a style={{ textDecoration: "none", color: "#2f439a" }} href="https://www.google.com/maps/place/Ha-Rakun+St+2,+Hod+HaSharon/@32.1333401,34.8992777,17z/data=!3m1!4b1!4m5!3m4!1s0x151d37a203e81299:0x7719e5e2c71c2b78!8m2!3d32.1333401!4d34.9014664" target="blank">{t("address_text")}</a></div>
               </div>
               <div>
                 <div className="contact-title" style={{ paddingRight: "0" }}>{t("additional_info")}</div>

@@ -11,7 +11,7 @@ function App() {
   
   const getLangauge = (lang: any) => {
     setLanguage(lang);
-    // console.log("appLang", language)
+    // localStorage.setItem("appLang", language)
   }
   i18n.changeLanguage(language);
 

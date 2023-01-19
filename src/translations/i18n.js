@@ -13,6 +13,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    lng:localStorage.getItem('appLang')||'he',
     returnEmptyString: false,
     resources: {
       he: {

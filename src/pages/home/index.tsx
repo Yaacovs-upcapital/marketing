@@ -460,7 +460,7 @@ localStorage.setItem('direction',directionValue)
                                         <div className="">
                                             <div style={{ textAlign: "center" }}>
                                                 <img src={mariano} className="personnel-image" />
-                                                <div className="about-desc"><Description data={`${t('mariano_description')}`} />
+                                                <div className="about-desc"><Description data={`${t('mariano_description')}`} direction={directionValue} />
 
                                                 </div>
                                                 <div className="about-name">
@@ -472,14 +472,14 @@ localStorage.setItem('direction',directionValue)
 
                                         <div className="">
                                             <div style={{ textAlign: "center" }}><img src={yaron} className="personnel-image" />
-                                                <div className="about-desc"><Description data={`${t('yaron_description')}`} /></div>
+                                                <div className="about-desc"><Description data={`${t('yaron_description')}`}  direction={directionValue}/></div>
                                                 <div className="about-name">
                                                     {t('yaron')}</div><div className="about-title">{t('yaron_title')}</div></div>
                                         </div>
 
                                         <div className="">
                                             <div style={{ textAlign: "center" }}><img src={ron} className="personnel-image" />
-                                                <div className="about-desc"><Description data={`${t('ron_description')}`} /></div>
+                                                <div className="about-desc"><Description data={`${t('ron_description')}`}  direction={directionValue}/></div>
                                                 <div className="about-name">
                                                     {t('ron')}</div><div className="about-title">{t('ron_title')}</div></div>
                                         </div>

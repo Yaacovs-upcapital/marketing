@@ -10,9 +10,18 @@ import useWindowSize from "../windowSize";
 import "./footer.css"
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-
+import { Box, Button, Modal, Snackbar, Stack, Typography } from '@mui/material';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import React from "react";
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref,
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 const Footer = () => {
   const { t } = useTranslation()
+  const [open, setOpen] = useState(false);
 
   const [vendorInput, setVendorInput] = useState({ fname: '', phone: '', email: '', company: '', message: '' })
   const handleFormChange = (event) => {
@@ -35,6 +44,7 @@ const Footer = () => {
         message2: msg,
         subject: 'Vendor Info',
         email: "mariano@upcapital.io"
+
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -45,6 +55,8 @@ const Footer = () => {
     // await fetch("http://localhost:3500/api/mailer", reqop)
     await fetch("https://app.upcapital.io/node//mailer", reqop)
       .then(res => console.log(res))
+      setOpen(true)
+      setVendorInput({ fname: '', phone: '', email: '', company: '', message: '' })
   }
   const [errors, setErrors] = useState({ fname: '', phone: '', email: '', company: '' })
 
@@ -97,6 +109,14 @@ const Footer = () => {
     return true;
   }
 const direction =localStorage.getItem('direction')
+
+const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+  if (reason === 'clickaway') {
+    return;
+  }
+
+  setOpen(false);
+};
   return (
     <div className="footer">
       <div className="contact" id="contact">
@@ -135,6 +155,13 @@ const direction =localStorage.getItem('direction')
                   <div className="text-input-footer"><input type="text" id="message" name="message" placeholder={t("message")} value={vendorInput.message} onChange={handleFormChange} /></div>
                   <div><input disabled={!(errors.email == '' && errors.company == '' && errors.phone == '' && !isEmpty(vendorInput))} type="submit" value={t('send')} /></div>
                 </form>
+                <Stack spacing={2} sx={{ width: '100%' }}>
+                  <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                    <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                      {t('success')}
+                    </Alert>
+                  </Snackbar>
+                </Stack>
               </div>
             </div>
           </div>

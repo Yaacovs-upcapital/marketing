@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import plus from '../../assets/images/plus.png'
 import Tooltip from '@mui/material/Tooltip';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -7,6 +7,8 @@ import './description.css';
 import useWindowSize from '../windowSize';
 
 const Description = (props) => {
+ console.log(props);
+ 
     const theme = createTheme({
         components: {
             // Name of the component
@@ -22,9 +24,9 @@ const Description = (props) => {
                         fontSize: "1em",
                         color: "#2f439a",
                         backgroundColor: "white",
-                        textAlign: 'justify',
+                        textAlign: props.yoni?'unset':'justify',
                         fontFamily: "RAG-Sans1.0-Regular",
-                        // direction: "rtl",
+                        direction: props.direction=='ltr'?'ltr':"rtl",
                         // boxShadow: " 0px 0px 50px -15px rgb(0 0 0 / 30%)",
                         filter: "drop-shadow(0px 0px 5px rgba(0, 0, 0, .5))",
 
@@ -63,6 +65,7 @@ const Description = (props) => {
     const handleOpen = () => {
         setOpen(true);
     };
+
 
     return (
         <div className='plus-img' >

@@ -15,7 +15,11 @@
 
 }
 .modal-btn{
-  margin-top: -208px !important;
+  margin-top: -108px !important;
+  display: flex;
+  justify-content: space-between;
+  color: #2f439a;
+
 }
 .prepayment-page {
   width: 100%;
@@ -51,7 +55,17 @@ padding: 2rem 2rem 6rem 2rem;
     bottom: 0;
     height: 0;
   }
-
+.close-btn{
+  background-color: #2f439a;
+  color: white !important;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
   .customer-details{
     margin: 5px;
     padding: 8px 8px;
