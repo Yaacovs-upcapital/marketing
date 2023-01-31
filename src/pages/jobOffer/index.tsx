@@ -1,13 +1,23 @@
 import "./jobOffer.css"
 import { jobOffers } from "../../data/jobOffer"
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import useWindowSize from "../../components/windowSize";
 import { useTranslation } from "react-i18next";
+import {  Box, Button, Modal, Snackbar, Stack, Typography } from '@mui/material';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref,
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const JobOffer = () => {
     const { t } = useTranslation();
     const [directionValue, setDirectionValue] = useState('')
+    const [open, setOpen] = useState(false);
+
     setTimeout(() => {
         const obj: any = document.getElementById('page')
         const valueAfterTimeout = getComputedStyle(obj, null).direction
@@ -87,10 +97,12 @@ const JobOffer = () => {
         // await fetch("http://localhost:3500/api/mailer", reqop)
         await fetch("https://app.upcapital.io/node//mailer", reqop)
             .then(res => {
-                console.log(res) ;
-                const submitBtn=document.getElementById('submit');
-                res.status==200?submitBtn?.setAttribute('disabled',"true"):console.log('not clicked')
+                console.log(res);
+                const submitBtn = document.getElementById('submit');
+                res.status == 200 ? submitBtn?.setAttribute('disabled', "true") : console.log('not clicked')
             })
+            setOpen(true);
+
     }
     const [fileContent, setFileContent]: any = useState('')
     const [fileName, setFileName]: any = useState('')
@@ -111,6 +123,13 @@ const JobOffer = () => {
 
     document.getElementById('myFile')?.addEventListener('change', handleFiles, false)
 
+    const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
     return (
         <div id="page">
             <div className="">
@@ -161,8 +180,15 @@ const JobOffer = () => {
                         {/* <div style={{ color: 'red', fontSize:"0.7rem" }}>{!candidateInput.fname?'':errors.fname}</div> */}
 
                         <div className="detail-input"><textarea name="textarea" id="textarea" value={candidateInput.textarea} onChange={handleFormChange} placeholder={t('comments')}></textarea></div>
-                        <input  type="submit" id="submit" value={t('send')} />
+                        <input type="submit" id="submit" value={t('send')} />
                     </form>
+                    <Stack spacing={2} sx={{ width: '100%' }}>
+                        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                            <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                                {t('success')}
+                            </Alert>
+                        </Snackbar>
+                    </Stack>
                 </div>
             </div>
         </div>

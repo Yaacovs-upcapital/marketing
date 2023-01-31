@@ -1,9 +1,9 @@
 import ron from "../../assets/images/ron.png";
 import mariano from '../../assets/images/mariano.png';
-import yaron from '../../assets/images/yaron.jpg';
-import yoni from '../../assets/images/yoni.png'
+import yaron from '../../assets/images/yaron.jpeg';
+import yoni from '../../assets/images/yoni.jpeg'
 import avi from '../../assets/images/avi.jpeg'
-import tzahi from '../../assets/images/tzahi.png'
+import tzahi from '../../assets/images/tzahi.jpeg'
 import ore from '../../assets/images/ore.png'
 import plus from '../../assets/images/plus.png'
 import aboutLeft from '../../assets/images/about-left.png'
@@ -13,7 +13,6 @@ import { t } from "i18next";
 import Tooltip from '@mui/material/Tooltip';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from "react";
-import Button from '@mui/material/Button';
 import Description from "../../components/description";
 
 

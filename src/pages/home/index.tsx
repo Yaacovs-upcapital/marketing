@@ -21,7 +21,7 @@ import efficient from "../../assets/images/efficient.png";
 import connect from "../../assets/images/connect.png";
 import mariano from "../../assets/images/mariano.png";
 import ron from "../../assets/images/ron.png";
-import yaron from "../../assets/images/yaron.png";
+import yaron from "../../assets/images/yaron.jpeg";
 import interview from "../../assets/images/interview.webp"
 import smiling from "../../assets/images/smiling.webp"
 import techbgb from "../../assets/images/tech-bgb.png"
@@ -129,9 +129,9 @@ localStorage.setItem('direction',directionValue)
                 <div className={`product-content ${useWindowSize() > 1750 ? 'container-big' : 'container'}`} >
                     <div className="row">
                         <div className="col-lg-4 col-md-4 col-sm-12">
-                            <div ><p className="product-title">{t('product')}</p></div>
+                            <div ><p className="product-title">{directionValue=='ltr'?t('our'):t('product')}</p></div>
                             <div style={{ display: "flex" }}>
-                                <p className="product-title" >{t('our')}</p>
+                                <p className="product-title" >{directionValue=='ltr'?t('product'):t('our')}</p>
                                 <p className="product-title" style={{ color: "red" }}>.</p>
                             </div>
                             <div>
@@ -471,12 +471,16 @@ localStorage.setItem('direction',directionValue)
                                         </div>
 
                                         <div className="">
-                                            <div style={{ textAlign: "center" }}><img src={yaron} className="personnel-image" />
+                                            <div style={{ textAlign: "center" }}><img src={yaron} style={{width:136, height:'auto', borderRadius:70,}} className="personnel-image" />
                                                 <div className="about-desc"><Description data={`${t('yaron_description')}`}  direction={directionValue}/></div>
                                                 <div className="about-name">
                                                     {t('yaron')}</div><div className="about-title">{t('yaron_title')}</div></div>
                                         </div>
-
+                                        {/* border-radius: 70px;
+    max-width: 100%;
+    max-height: 100%;
+    width: 174px;
+    height: 210px; */}
                                         <div className="">
                                             <div style={{ textAlign: "center" }}><img src={ron} className="personnel-image" />
                                                 <div className="about-desc"><Description data={`${t('ron_description')}`}  direction={directionValue}/></div>
