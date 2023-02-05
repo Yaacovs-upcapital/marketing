@@ -459,7 +459,7 @@ localStorage.setItem('direction',directionValue)
                                     <div className="image-flex">
                                         <div className="">
                                             <div style={{ textAlign: "center" }}>
-                                                <img src={mariano} className="personnel-image"  style={{width:'auto', height:187, borderRadius:70,}} />
+                                                <img src={mariano} className="personnel-image"  style={{width:'auto', height:165, borderRadius:80,}} />
                                                 <div className="about-desc"><Description data={`${t('mariano_description')}`} direction={directionValue} />
 
                                                 </div>
@@ -471,7 +471,7 @@ localStorage.setItem('direction',directionValue)
                                         </div>
 
                                         <div className="">
-                                            <div style={{ textAlign: "center" }}><img src={yaron} style={{width:'auto', height:187, borderRadius:70,}} className="personnel-image" />
+                                            <div style={{ textAlign: "center" }}><img src={yaron} style={{width:'auto', height:165, borderRadius:80,}} className="personnel-image" />
                                                 <div className="about-desc"><Description data={`${t('yaron_description')}`}  direction={directionValue}/></div>
                                                 <div className="about-name">
                                                     {t('yaron')}</div><div className="about-title">{t('yaron_title')}</div></div>
@@ -482,7 +482,7 @@ localStorage.setItem('direction',directionValue)
     width: 174px;
     height: 210px; */}
                                         <div className="">
-                                            <div style={{ textAlign: "center" }}><img src={ron} className="personnel-image"  style={{width:'auto', height:187, borderRadius:70,}}/>
+                                            <div style={{ textAlign: "center" }}><img src={ron} className="personnel-image"  style={{width:'auto', height:165, borderRadius:80,}}/>
                                                 <div className="about-desc"><Description data={`${t('ron_description')}`}  direction={directionValue}/></div>
                                                 <div className="about-name">
                                                     {t('ron')}</div><div className="about-title">{t('ron_title')}</div></div>
